@@ -32,9 +32,9 @@ export default defineConfig({
         icon: {
           svg: telegram
         },
-        link: 'https://t.me/alt_gnome'
+        link: 'https://t.me/alt_kde'
       },
-      { icon: 'github', link: 'https://github.com/OlegShchavelev/ALTRegularGnomeWiki' }
+      { icon: 'github', link: 'https://github.com/OlegShchavelev/ALTRegularKDEWiki' }
     ],
     nav: nav,
     sidebar: sidebar,
@@ -63,7 +63,7 @@ export default defineConfig({
       }
     },
     editLink: {
-      pattern: 'https://github.com/OlegShchavelev/ALTRegularGnomeWiki/edit/main/docs/:path',
+      pattern: 'https://github.com/OlegShchavelev/ALTRegularKDEWiki/edit/main/docs/:path',
       text: 'Предложить изменения на этой странице'
     },
     lastUpdated: {
