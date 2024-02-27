@@ -1,0 +1,11 @@
+{
+  "devDependencies": {
+    "vitepress": "^1.0.0-rc.25",
+    "@nolebase/vitepress-plugin-enhanced-readabilities": "1.22.4"
+  },
+  "scripts": {
+    "docs:dev": "vitepress dev",
+    "docs:build": "vitepress build",
+    "docs:preview": "vitepress preview"
+  }
+}
