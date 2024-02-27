@@ -18,14 +18,12 @@ export default defineConfig({
     ['link', { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
     ['link', { rel: 'icon', type: 'image/png', href: '/favicon.png' }],
     ['meta', { name: 'theme-color', content: '#62a0ea' }],
-    ['meta', { name: 'yandex-verification', content: '6ef3a36c3d09e43e' }]
   ],
-  base: '/ALTRegularKDEWiki/',
   srcDir: './docs',
   cleanUrls: true,
   lang: 'ru-RU',
   sitemap: {
-    hostname: 'https://alt-gnome.wiki'
+    hostname: 'https://alt-kde.wiki'
   },
   themeConfig: {
     logo: { src: '/logo.png', width: 36, height: 36, alt: "ALT KDE Wiki" },
