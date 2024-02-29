@@ -24,7 +24,10 @@ const sidebar_docs = [
     {
         text: 'Разработка', base: '/developers/', items: [
             {
-                text: 'Python', base: '/developers/python/', link: '/'
+                text: 'Python', base: '/developers/python/', link: '/', items: [
+                    { text: 'Poetry', link: 'poetry/' }
+                ],
+                collapsed: true
             }
         ],
         collapsed: true
