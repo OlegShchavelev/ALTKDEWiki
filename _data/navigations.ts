@@ -25,6 +25,7 @@ const sidebar_docs = [
         text: 'Разработка', base: '/developers/', items: [
             {
                 text: 'Python', base: '/developers/python/', link: '/', items: [
+                    { text: 'Приложение на Qt 6', link: 'qt6-app/' },
                     { text: 'Poetry', link: 'poetry/' }
                 ],
                 collapsed: true
