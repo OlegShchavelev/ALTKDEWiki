@@ -29,6 +29,9 @@ const sidebar_docs = [
                     { text: 'Poetry', link: 'poetry/' }
                 ],
                 collapsed: true
+            },
+            {
+                text: 'Rust', base: '/developers/rust/', link: '/'
             }
         ],
         collapsed: true
