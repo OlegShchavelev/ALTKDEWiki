@@ -10,6 +10,10 @@ export const nav = [
 
 export const sidebar = [
     { text: 'Установка и обновление программ',  items: [
+        { text: 'Arianna', link: '/apps/arianna/' },
+        { text: 'Kiten', link: '/apps/kiten/' },
+        { text: 'Plan', link: '/apps/plan/' },
+        { text: 'PlasmaTube', link: '/apps/plasma-tube/' },
         { text: 'qBittorrent', link: '/apps/qbittorrent/' }
     ],
     collapsed: true}
