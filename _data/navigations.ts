@@ -20,6 +20,21 @@ const sidebar_docs = [
             { text: 'qBittorrent', link: 'qbittorrent/' }
         ],
         collapsed: true
+    },
+    {
+        text: 'Разработка', base: '/developers/', items: [
+            {
+                text: 'Python', base: '/developers/python/', link: '/', items: [
+                    { text: 'Приложение на Qt 6', link: 'qt6-app/' },
+                    { text: 'Poetry', link: 'poetry/' }
+                ],
+                collapsed: true
+            },
+            {
+                text: 'Rust', base: '/developers/rust/', link: '/'
+            }
+        ],
+        collapsed: true
     }
 ]
 
