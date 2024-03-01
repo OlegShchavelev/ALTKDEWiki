@@ -2,6 +2,8 @@ import { defineConfig } from 'vitepress'
 
 import { nav, sidebar } from '../_data/navigations'
 import { telegram, gitflic, vk } from '../_data/icons'
+import * as seo from '../_data/seo'
+import { normalize } from './utils'
 
 export default defineConfig({
   vite: {
@@ -14,14 +16,21 @@ export default defineConfig({
   },
   title: "ALT KDE Wiki",
   description: "открытое сообщество пользователей операционной системы ALT Regular KDE",
+  titleTemplate: ':title' + seo.meta.SITE_TITLE_SEPARATOR + seo.meta.SITE_TITLE_POSTFIX,
   head: [
     ['link', { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
     ['link', { rel: 'icon', type: 'image/png', href: '/favicon.png' }],
-    ['meta', { name: 'theme-color', content: '#62a0ea' }],
+    ['meta', { name: 'theme-color', content: seo.meta.SITE_THEME_COLOR }],
+    ['meta', { name: 'og:type', content: seo.meta.SITE_TYPE }],
+    ['meta', { name: 'og:locale', content: seo.meta.SITE_LOCALE }],
+    ['meta', { name: 'og:site_name', content: seo.meta.SITE_NAME }],
+    ['meta', { name: 'og:image', content: seo.meta.SITE_HOST + seo.meta.SITE_OG_IMAGE }],
+    ['meta', { name: 'twitter:card', content: 'summary_large_image' }],
+    ['meta', { name: 'twitter:image', content: seo.meta.SITE_HOST + seo.meta.SITE_OG_IMAGE }],
   ],
   srcDir: './docs',
   cleanUrls: true,
-  lang: 'ru-RU',
+  lang: seo.meta.SITE_LOCALE,
   sitemap: {
     hostname: 'https://alt-kde.wiki'
   },
@@ -102,5 +111,15 @@ export default defineConfig({
       infoLabel: 'Информация',
       detailsLabel: 'Подробнее',
     },
+  },
+  transformPageData: (pageData) => {
+    pageData.frontmatter.head ??= []
+    pageData.frontmatter.head.push(
+      ['meta', { name: 'og:title', content: pageData.title + seo.meta.SITE_TITLE_SEPARATOR + seo.meta.SITE_TITLE_POSTFIX }],
+    )
+
+    if (pageData.frontmatter.layout !== 'home') {
+      pageData.description = `Cтатья написанная простым языком: «${pageData.title}» для ${seo.meta.SITE_NAME}. Последнее обновление ${seo.meta.SITE_NAME}: ${new Date(pageData.lastUpdated).toLocaleString(seo.meta.SITE_LOCALE)}`
+    }
   }
 })

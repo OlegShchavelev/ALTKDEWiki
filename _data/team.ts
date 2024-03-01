@@ -1,6 +1,6 @@
 import {
     gitflic
-  } from '../.vitepress/icons.js'
+  } from './icons'
 
 export const contributions = [
     {
