@@ -35,6 +35,12 @@ const sidebar_docs = [
             }
         ],
         collapsed: true
+    },
+    {
+        text: 'Решение проблем', base: '/workarrounds/', items: [
+            { text: 'Отсутствует список пользователей в настройках', link: 'settings-user-no-list/' }
+        ],
+        collapsed: true
     }
 ]
 
