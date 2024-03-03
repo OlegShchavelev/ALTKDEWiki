@@ -9,6 +9,7 @@ import {
 } from '@nolebase/vitepress-plugin-enhanced-readabilities'
 import type { Options } from '@nolebase/vitepress-plugin-enhanced-readabilities'
 import { InjectionKey } from '@nolebase/vitepress-plugin-enhanced-readabilities'
+import { enhanceAppWithTabs } from 'vitepress-plugin-tabs/client'
 
 import { lexiconEnhancedReadabilities } from './lexicon/enhanced-readabilities'
 
@@ -28,5 +29,6 @@ export default {
     app.provide(InjectionKey, {
       locales: lexiconEnhancedReadabilities
     } as Options)
+    enhanceAppWithTabs(app)
   }
 } satisfies Theme

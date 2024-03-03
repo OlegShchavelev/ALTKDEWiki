@@ -41,6 +41,11 @@ const sidebar_docs = [
             { text: 'Отсутствует список пользователей в настройках', link: 'settings-user-no-list/' }
         ],
         collapsed: true
+    },
+    {
+        text: 'Быстрые ссылки', items: [
+            { text: 'Flatpak', link: '/package-manager/flatpak/' }
+        ],
     }
 ]
 

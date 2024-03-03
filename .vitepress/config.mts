@@ -1,5 +1,7 @@
 import { defineConfig } from 'vitepress'
 
+import { tabsMarkdownPlugin } from 'vitepress-plugin-tabs'
+
 import { nav, sidebar } from '../_data/navigations'
 import { telegram, gitflic, vk } from '../_data/icons'
 import * as seo from '../_data/seo'
@@ -111,6 +113,9 @@ export default defineConfig({
       infoLabel: 'Информация',
       detailsLabel: 'Подробнее',
     },
+    config(md) {
+      md.use(tabsMarkdownPlugin)
+    }
   },
   transformPageData: (pageData) => {
     pageData.frontmatter.head ??= []

@@ -1,7 +1,8 @@
 {
   "devDependencies": {
+    "@nolebase/vitepress-plugin-enhanced-readabilities": "1.22.4",
     "vitepress": "^1.0.0-rc.25",
-    "@nolebase/vitepress-plugin-enhanced-readabilities": "1.22.4"
+    "vitepress-plugin-tabs": "^0.5.0"
   },
   "scripts": {
     "docs:dev": "vitepress dev",
