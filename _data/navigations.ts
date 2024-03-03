@@ -38,7 +38,8 @@ const sidebar_docs = [
     },
     {
         text: 'Решение проблем', base: '/workarrounds/', items: [
-            { text: 'Отсутствует список пользователей в настройках', link: 'settings-user-no-list/' }
+            { text: 'Отсутствует список пользователей в настройках', link: 'settings-user-no-list/' },
+            { text: 'LightDM не запоминает последнюю выбранную сессию', link: 'lightdm-does-not-remember-last-session/' }
         ],
         collapsed: true
     },
