@@ -40,7 +40,8 @@ const sidebar_docs = [
         text: 'Решение проблем', base: '/workarrounds/', items: [
             { text: 'Отсутствует список пользователей в настройках', link: 'settings-user-no-list/' },
             { text: 'LightDM не запоминает последнюю выбранную сессию', link: 'lightdm-does-not-remember-last-session/' },
-            { text: 'Не работает загрузка сторонних тем KDE', link: 'enable-downloading-of-third-party-themes/' }
+            { text: 'Не работает загрузка сторонних тем KDE', link: 'enable-downloading-of-third-party-themes/' },
+            { text: 'Некоторые GTK приложения выглядят ужасно', link: 'change-gtk-themes/' }
         ],
         collapsed: true
     },
