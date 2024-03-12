@@ -14,5 +14,5 @@ appstreamFlatpak: org.kde.arianna
 flatpak install org.kde.arianna
 ```
 
-<!--@include: ../../parts/install/software-flatpak.md-->>
+<!--@include: ../../parts/install/software-flatpak.md-->
 

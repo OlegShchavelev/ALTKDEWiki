@@ -1,11 +1,19 @@
-# qBittorrent
+---
+title: qBittorrent
+appstreamRepo: org.qbittorrent.qBittorrent
+appstreamFlatpak: org.qbittorrent.qBittorrent
+---
+# {{ $frontmatter.title }}
 
-qBittorrent - это клиент bittorrent, запрограммированный на C ++ / Qt, который использует libtorrent (иногда называемый libtorrent-rasterbar) Арвида Норберга.
-Он призван стать хорошей альтернативой всем другим существующим клиентам bittorrent. qBittorrent быстр, стабилен и предоставляет поддержку Unicode, а также множество функций.
+{{ $frontmatter.title }} — это бесплатный и открытый клиент BitTorrent, который позволяет пользователям загружать и скачивать файлы через протокол BitTorrent.
+
+![Скриншот программы](./img/screenshot.png)
 
 ## Установка из репозитория 
 
-**qBittorrent** можно установить любым привычным и удобным способом:
+**{{ $frontmatter.title }}** можно установить любым привычным и удобным способом:
+
+<!--@include: ../../parts/install/software-repo.md-->
 
 **Установка через терминал**
 
@@ -20,3 +28,12 @@ apt-get install qbittorrent
 epm -i qbittorrent
 ```
 :::
+
+## Установка с помощью Flatpak
+
+При наличии пакета [Flatpak](/flatpak), можно установить **{{ $frontmatter.title }}** одной командой:
+```shell
+flatpak install flathub org.qbittorrent.qBittorrent
+```
+
+<!--@include: ../../parts/install/software-flatpak.md-->
