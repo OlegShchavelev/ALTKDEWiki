@@ -1,6 +1,11 @@
-# Plan
+---
+title: Plan
+appstreamRepo: org.kde.calligraplan.desktop
+---
 
-Plan — приложение по управлению проектами, предназначено для работы c it-проектами.
+# {{ $frontmatter.title }}
+
+{{ $frontmatter.title }} — приложение по управлению проектами, предназначено для работы c it-проектами.
 
 Возможности:
 
@@ -10,9 +15,13 @@ Plan — приложение по управлению проектами, пр
 - Поддержка итоговых задач, задач и этапов
 - Настраиваемые ограничения планирования
 
+![Скриншот программы](./img/screenshot.png)
+
 ## Установка из репозитория
 
-**Plan** можно установить любым привычным и удобным способом:
+**{{ $frontmatter.title }}** можно установить любым привычным и удобным способом:
+
+<!--@include: ../../parts/install/software-repo.md-->
 
 **Установка через терминал**
 
@@ -21,9 +30,9 @@ Plan — приложение по управлению проектами, пр
 ```shell[apt-get]
 su -
 apt-get update
-apt-get install calligraplan
+apt-get install calligra-plan
 ```
 ```shell[epm]
-epm -i calligraplan
+epm -i calligra-plan
 ```
 :::
