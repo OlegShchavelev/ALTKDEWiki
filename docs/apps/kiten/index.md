@@ -32,10 +32,10 @@ epm -i kde5-kiten
 
 ## Установка c помощью Flatpak
 
-При наличии пакета [Flatpak](/flatpak), можно установить **{{ $frontmatter.title }}** одной командой:
+При наличии пакета [Flatpak](/package-manager/flatpak/), можно установить **{{ $frontmatter.title }}** одной командой:
 
 ```shell
 flatpak install flathub org.kde.kiten
 ```
 
-<!--@include: ../../parts/install/software-flatpak.md-->
+<!--@include: /parts/install/software-flatpak.md-->

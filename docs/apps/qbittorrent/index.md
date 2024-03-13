@@ -13,7 +13,7 @@ appstreamFlatpak: org.qbittorrent.qBittorrent
 
 **{{ $frontmatter.title }}** можно установить любым привычным и удобным способом:
 
-<!--@include: ../../parts/install/software-repo.md-->
+<!--@include: /parts/install/software-repo.md-->
 
 **Установка через терминал**
 
@@ -31,9 +31,9 @@ epm -i qbittorrent
 
 ## Установка с помощью Flatpak
 
-При наличии пакета [Flatpak](/flatpak), можно установить **{{ $frontmatter.title }}** одной командой:
+При наличии пакета [Flatpak](/package-manager/flatpak/), можно установить **{{ $frontmatter.title }}** одной командой:
 ```shell
 flatpak install flathub org.qbittorrent.qBittorrent
 ```
 
-<!--@include: ../../parts/install/software-flatpak.md-->
+<!--@include: /parts/install/software-flatpak.md-->

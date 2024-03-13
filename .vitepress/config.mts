@@ -1,11 +1,13 @@
 import { defineConfig } from 'vitepress'
 
 import { tabsMarkdownPlugin } from 'vitepress-plugin-tabs'
+import markdownItKdb from 'markdown-it-kbd'
 
 import { nav, sidebar } from '../_data/navigations'
 import { telegram, gitflic, vk } from '../_data/icons'
-import * as seo from '../_data/seo'
 import { normalize } from './utils'
+
+import * as config from './config.json'
 
 export default defineConfig({
   vite: {
@@ -16,23 +18,23 @@ export default defineConfig({
       ],
     },
   },
-  title: "ALT KDE Wiki",
+  title: config.title,
   description: "открытое сообщество пользователей операционной системы ALT Regular KDE",
-  titleTemplate: ':title' + seo.meta.SITE_TITLE_SEPARATOR + seo.meta.SITE_TITLE_POSTFIX,
+  titleTemplate: ':title' + config.head.titleSeponator + config.title,
   head: [
     ['link', { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
     ['link', { rel: 'icon', type: 'image/png', href: '/favicon.png' }],
-    ['meta', { name: 'theme-color', content: seo.meta.SITE_THEME_COLOR }],
-    ['meta', { name: 'og:type', content: seo.meta.SITE_TYPE }],
-    ['meta', { name: 'og:locale', content: seo.meta.SITE_LOCALE }],
-    ['meta', { name: 'og:site_name', content: seo.meta.SITE_NAME }],
-    ['meta', { name: 'og:image', content: seo.meta.SITE_HOST + seo.meta.SITE_OG_IMAGE }],
+    ['meta', { name: 'theme-color', content: config.head.themeColor }],
+    ['meta', { name: 'og:type', content: config.head.type }],
+    ['meta', { name: 'og:locale', content: config.lang }],
+    ['meta', { name: 'og:site_name', content: config.title }],
+    ['meta', { name: 'og:image', content: config.host + config.head.ogImage }],
     ['meta', { name: 'twitter:card', content: 'summary_large_image' }],
-    ['meta', { name: 'twitter:image', content: seo.meta.SITE_HOST + seo.meta.SITE_OG_IMAGE }],
+    ['meta', { name: 'twitter:image', content: config.host + config.head.ogImage }],
   ],
   srcDir: './docs',
   cleanUrls: true,
-  lang: seo.meta.SITE_LOCALE,
+  lang: config.lang,
   sitemap: {
     hostname: 'https://alt-kde.wiki'
   },
@@ -115,16 +117,17 @@ export default defineConfig({
     },
     config(md) {
       md.use(tabsMarkdownPlugin)
+      md.use(markdownItKdb)
     }
   },
   transformPageData: (pageData) => {
+
     pageData.frontmatter.head ??= []
     pageData.frontmatter.head.push(
-      ['meta', { name: 'og:title', content: pageData.title + seo.meta.SITE_TITLE_SEPARATOR + seo.meta.SITE_TITLE_POSTFIX }],
+      ['meta', { name: 'og:title', content: pageData.title + config.head.titleSeponator + config.title }],
     )
-
     if (pageData.frontmatter.layout !== 'home') {
-      pageData.description = `Cтатья написанная простым языком: «${pageData.title}» для ${seo.meta.SITE_NAME}. Последнее обновление ${seo.meta.SITE_NAME}: ${new Date(pageData.lastUpdated).toLocaleString(seo.meta.SITE_LOCALE)}`
+      pageData.description = `Cтатья написанная простым языком: «${pageData.title}» для ${config.title}. Последнее обновление ${config.title}: ${new Date(pageData.lastUpdated).toLocaleString(config.lang)}`
     }
   }
 })

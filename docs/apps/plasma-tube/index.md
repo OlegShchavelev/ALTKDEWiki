@@ -17,4 +17,4 @@ PlasmaTube — приложение PlasmaTube позволяет просмат
 flatpak install flathub org.kde.plasmatube
 ```
 
-<!--@include: ../../parts/install/software-flatpak.md-->
+<!--@include: /parts/install/software-flatpak.md-->

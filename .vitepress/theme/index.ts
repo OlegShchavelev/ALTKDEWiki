@@ -13,8 +13,8 @@ import { enhanceAppWithTabs } from 'vitepress-plugin-tabs/client'
 
 import { lexiconEnhancedReadabilities } from './lexicon/enhanced-readabilities'
 
-import './style.css'
-import './custom.css'
+import './styles/style.css'
+import './styles/custom.css'
 import '@nolebase/vitepress-plugin-enhanced-readabilities/dist/style.css'
 
 export default {

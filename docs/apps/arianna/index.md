@@ -9,10 +9,10 @@ appstreamFlatpak: org.kde.arianna
 ![Скриншот программы](https://cdn.kde.org/screenshots/arianna/library-view.png)
 ## Установка с помощью Flatpak
 
-При наличии пакета [Flatpak](/flatpak), можно установить **{{ $frontmatter.title }}** одной командой:
+При наличии пакета [Flatpak](/package-manager/flatpak/), можно установить **{{ $frontmatter.title }}** одной командой:
 ```shell
 flatpak install org.kde.arianna
 ```
 
-<!--@include: ../../parts/install/software-flatpak.md-->
+<!--@include: /parts/install/software-flatpak.md-->
 
