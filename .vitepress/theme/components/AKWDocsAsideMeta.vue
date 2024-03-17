@@ -4,8 +4,7 @@ import { type Ref, computed } from 'vue'
 import VPImage from 'vitepress/dist/client/theme-default/components/VPImage.vue'
 import VPLink from 'vitepress/dist/client/theme-default/components/VPLink.vue'
 
-import { withBase } from 'vitepress'
-import { useData } from '../composables/data'
+import { withBase, useData } from 'vitepress'
 import { getDomainName } from '../composables/link'
 
 const { frontmatter } = useData()
