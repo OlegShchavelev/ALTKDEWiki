@@ -10,7 +10,7 @@ appstream:
     name: qBittorrent
     summary: Клиент Bittorrent с открытым исходным кодом
     icon: 
-        src: ./img/org.qbittorrent.qBittorrent.png
+        src: img/org.qbittorrent.qBittorrent.png
         title: qBittorrent
     metadata_license: 
         name: GPLv2+
