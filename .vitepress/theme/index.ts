@@ -9,7 +9,9 @@ import {
 } from '@nolebase/vitepress-plugin-enhanced-readabilities'
 import type { Options } from '@nolebase/vitepress-plugin-enhanced-readabilities'
 import { InjectionKey } from '@nolebase/vitepress-plugin-enhanced-readabilities'
+import AKWDocsAsideMeta from './components/AKWDocsAsideMeta.vue'
 import { enhanceAppWithTabs } from 'vitepress-plugin-tabs/client'
+
 
 import { lexiconEnhancedReadabilities } from './lexicon/enhanced-readabilities'
 
@@ -23,6 +25,7 @@ export default {
     return h(DefaultTheme.Layout, null, {
       'nav-bar-content-after': () => h(NolebaseEnhancedReadabilitiesMenu),
       'nav-screen-content-after': () => h(NolebaseEnhancedReadabilitiesScreenMenu),
+      'aside-outline-after': () => h(AKWDocsAsideMeta),
     })
   },
   enhanceApp({ app, router, siteData }) {

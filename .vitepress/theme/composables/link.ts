@@ -1,0 +1,1 @@
+export const getDomainName = (url: { match: (arg0: RegExp) => any[]; }) => url.match(/^https?:\/\/([^\/]+)\.[^\/]+/)[1];
