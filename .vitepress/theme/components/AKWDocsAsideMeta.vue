@@ -1,8 +1,10 @@
 <script setup lang="ts">
 import { type Ref, computed } from 'vue'
+
 import VPImage from 'vitepress/dist/client/theme-default/components/VPImage.vue'
 import VPLink from 'vitepress/dist/client/theme-default/components/VPLink.vue'
 
+import { withBase } from 'vitepress'
 import { useData } from '../composables/data'
 import { getDomainName } from '../composables/link'
 
@@ -15,7 +17,7 @@ const bundle = computed(() => frontmatter.value.bundle)
 <template>
     <article v-if="meta" class="AKWDocsAsideMeta">
         <figure class="figure" v-if="meta.icon && meta.icon.src">
-            <VPImage :image="meta.icon.src" :alt="meta.icon.title ?? meta.name" />
+            <VPImage :image="withBase(meta.icon.src)" :alt="meta.icon.title ?? meta.name" />
         </figure>
         <div class="AKWAsideMetaBody">
             <div v-if="meta.summary" class="summary">{{ meta.summary }}</div>
