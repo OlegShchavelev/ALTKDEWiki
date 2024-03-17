@@ -32,7 +32,7 @@ appstreamRepo: org.qbittorrent.qBittorrent
 appstreamFlatpak: org.qbittorrent.qBittorrent
 ---
 
-# {{ $frontmatter.title }}
+# qBittorrent
 
 {{ $frontmatter.title }} — это бесплатный и открытый клиент BitTorrent, который позволяет пользователям загружать и скачивать файлы через протокол BitTorrent.
 
