@@ -7,16 +7,19 @@ import VPLink from 'vitepress/dist/client/theme-default/components/VPLink.vue'
 import { withBase, useData } from 'vitepress'
 import { getDomainName } from '../composables/link'
 
+
 const { frontmatter } = useData()
 const meta = computed(() => frontmatter.value.appstream ?? null)
 const bundle = computed(() => frontmatter.value.bundle)
+
+const metaIconSrc = computed(() => new URL(frontmatter.value.appstream.icon.src, import.meta.url).href)
 
 </script>
 
 <template>
     <article v-if="meta" class="AKWDocsAsideMeta">
         <figure class="figure" v-if="meta.icon && meta.icon.src">
-            <VPImage :image="withBase(meta.icon.src)" :alt="meta.icon.title ?? meta.name" />
+            <VPImage :image="withBase(metaIconSrc)" :alt="meta.icon.title ?? meta.name" />
         </figure>
         <div class="AKWAsideMetaBody">
             <div v-if="meta.summary" class="summary">{{ meta.summary }}</div>
