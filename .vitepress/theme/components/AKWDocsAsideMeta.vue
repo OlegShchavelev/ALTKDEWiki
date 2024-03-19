@@ -12,7 +12,7 @@ const { frontmatter } = useData()
 const meta = computed(() => frontmatter.value.appstream ?? null)
 const bundle = computed(() => frontmatter.value.bundle)
 
-const metaIconSrc = computed(() => new URL(frontmatter.value.appstream.icon.src, import.meta.url).href)
+const metaIconSrc = computed(() => new URL(frontmatter.value.appstream.icon.src).href)
 
 </script>
 
