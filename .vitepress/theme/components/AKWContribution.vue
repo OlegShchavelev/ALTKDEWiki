@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { contributions } from '../../_data/team';
+import { contributions } from '../../data/team';
 import { VPTeamPage, VPTeamPageTitle, VPTeamMembers } from 'vitepress/theme';
 
 import { useData } from 'vitepress'

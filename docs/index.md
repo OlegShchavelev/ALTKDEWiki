@@ -34,8 +34,8 @@ import {
   VPHomeSponsors,
   VPSponsors
 } from 'vitepress/theme'
-import { contributions } from '../_data/team'
-import { sponsors } from '../_data/sponsors'
+import { contributions } from '../.vitepress/data/team'
+import { sponsors } from '../.vitepress/data/sponsors'
 </script>
 
 <VPTeamPage>

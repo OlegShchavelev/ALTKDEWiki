@@ -3,8 +3,8 @@ import { defineConfig } from 'vitepress'
 import { tabsMarkdownPlugin } from 'vitepress-plugin-tabs'
 import markdownItKdb from 'markdown-it-kbd'
 
-import { nav, sidebar } from './_data/navigations'
-import { telegram, gitflic, vk } from './_data/icons'
+import { nav, sidebar } from './data/navigations'
+import { telegram, gitflic, vk } from './data/icons'
 import { normalize } from './utils'
 
 import * as config from './config.json'
