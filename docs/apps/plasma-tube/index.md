@@ -1,6 +1,9 @@
 ---
-title: PlasmaTube
-appstreamFlatpak: org.kde.plasmatube
+aggregation:
+    flatpak: org.kde.plasmatube
+appstream:
+    id: org.kde.plasmatube
+    name: PlasmaTube
 ---
 
 # PlasmaTube
@@ -9,12 +12,4 @@ PlasmaTube — приложение PlasmaTube позволяет просмат
 
 ![Скриншот программы](https://cdn.kde.org/screenshots/plasmatube/plasmatube.png)
 
-## Установка c помощью Flatpak
-
-При наличии пакета Flatpak, можно установить **PlasmaTube** одной командой:
-
-```shell
-flatpak install flathub org.kde.plasmatube
-```
-
-<!--@include: /parts/install/software-flatpak.md-->
+<!--@include: @apps/_parts/install/content-flatpak.md-->

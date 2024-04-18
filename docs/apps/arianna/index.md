@@ -1,18 +1,14 @@
 ---
-title: Arianna
-appstreamFlatpak: org.kde.arianna
+aggregation:
+    flatpak: org.kde.arianna
+appstream:
+    id: org.kde.arianna
+    name: Arianna
 ---
-# {{ $frontmatter.title }}
+# Arianna
 
-{{ $frontmatter.title }} — приложение для чтения электронных книг и управления библиотекой с поддержкой файлов «.epub». {{ $frontmatter.title }} автоматически обнаруживает книги и сортирует их по категориям, жанрам и авторам.
+Arianna — приложение для чтения электронных книг и управления библиотекой с поддержкой файлов «.epub». Arianna автоматически обнаруживает книги и сортирует их по категориям, жанрам и авторам.
 
 ![Скриншот программы](https://cdn.kde.org/screenshots/arianna/library-view.png)
-## Установка с помощью Flatpak
 
-При наличии пакета [Flatpak](/package-manager/flatpak/), можно установить **{{ $frontmatter.title }}** одной командой:
-```shell
-flatpak install org.kde.arianna
-```
-
-<!--@include: /parts/install/software-flatpak.md-->
-
+<!--@include: @apps/_parts/install/content-flatpak.md-->
