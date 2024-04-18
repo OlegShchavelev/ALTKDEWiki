@@ -14,6 +14,7 @@ import { enhanceAppWithTabs } from 'vitepress-plugin-tabs/client'
 
 
 import { lexiconEnhancedReadabilities } from './lexicon/enhanced-readabilities'
+import AKWContribution from './components/AKWContribution.vue'
 
 import './styles/style.css'
 import './styles/custom.css'
@@ -25,7 +26,6 @@ export default {
     return h(DefaultTheme.Layout, null, {
       'nav-bar-content-after': () => h(NolebaseEnhancedReadabilitiesMenu),
       'nav-screen-content-after': () => h(NolebaseEnhancedReadabilitiesScreenMenu),
-      'aside-outline-after': () => h(AKWDocsAsideMeta),
     })
   },
   enhanceApp({ app, router, siteData }) {
@@ -33,5 +33,6 @@ export default {
       locales: lexiconEnhancedReadabilities
     } as Options)
     enhanceAppWithTabs(app)
+    app.component('contribution', AKWContribution);
   }
 } satisfies Theme
