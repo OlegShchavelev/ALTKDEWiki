@@ -3,6 +3,10 @@ import { h } from 'vue'
 import type { Theme } from 'vitepress'
 import DefaultTheme from 'vitepress/theme'
 
+import AKWContribution from './components/AKWContribution.vue'
+import AKWHomeTeamMembers from './components/AKWHomeTeamMembers.vue'
+import AKWHomeSponsors from './components/AKWHomeSponsors.vue'
+
 import {
   NolebaseEnhancedReadabilitiesMenu,
   NolebaseEnhancedReadabilitiesScreenMenu,
@@ -14,7 +18,6 @@ import { enhanceAppWithTabs } from 'vitepress-plugin-tabs/client'
 
 
 import { lexiconEnhancedReadabilities } from './lexicon/enhanced-readabilities'
-import AKWContribution from './components/AKWContribution.vue'
 
 import './styles/style.css'
 import './styles/custom.css'
@@ -26,6 +29,7 @@ export default {
     return h(DefaultTheme.Layout, null, {
       'nav-bar-content-after': () => h(NolebaseEnhancedReadabilitiesMenu),
       'nav-screen-content-after': () => h(NolebaseEnhancedReadabilitiesScreenMenu),
+      'home-features-after': () => [h(AKWHomeTeamMembers), h(AKWHomeSponsors)]
     })
   },
   enhanceApp({ app, router, siteData }) {
