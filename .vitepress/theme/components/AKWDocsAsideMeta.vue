@@ -3,6 +3,7 @@ import { type Ref, computed } from 'vue'
 import VPImage from 'vitepress/dist/client/theme-default/components/VPImage.vue';
 import { withBase, useData } from 'vitepress'
 import { getThumb } from '../composables/asidemeta'
+import img from  '../../../docs/apps/qbittorrent/img/org.qbittorrent.qBittorrent.png'
 
 const { frontmatter, theme } = useData()
 
@@ -14,7 +15,7 @@ const props = computed(() => {
     const { icon, name, summary } = frontmatter.value.appstream
 
     return {
-        thumb: getThumb(icon, name),
+        thumb: getThumb(img, name),
         title: summary,
     }
 })
