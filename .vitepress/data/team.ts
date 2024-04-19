@@ -50,5 +50,7 @@ export const contributions = [
       links: [
         { icon: 'github', link: 'https://github.com/Katze-942' }
       ],
+      actionText: 'Поддержать',
+      sponsor: 'https://www.tinkoff.ru/cf/1qXUImsZFTN'
     },
   ]
