@@ -4,6 +4,7 @@ import type { Theme } from 'vitepress'
 import DefaultTheme from 'vitepress/theme'
 
 import AKWContribution from './components/AKWContribution.vue'
+import AKWDocsAsideMeta from './components/AKWDocsAsideMeta.vue'
 import AKWHomeTeamMembers from './components/AKWHomeTeamMembers.vue'
 import AKWHomeSponsors from './components/AKWHomeSponsors.vue'
 
@@ -13,7 +14,6 @@ import {
 } from '@nolebase/vitepress-plugin-enhanced-readabilities'
 import type { Options } from '@nolebase/vitepress-plugin-enhanced-readabilities'
 import { InjectionKey } from '@nolebase/vitepress-plugin-enhanced-readabilities'
-import AKWDocsAsideMeta from './components/AKWDocsAsideMeta.vue'
 import { enhanceAppWithTabs } from 'vitepress-plugin-tabs/client'
 
 
@@ -29,7 +29,8 @@ export default {
     return h(DefaultTheme.Layout, null, {
       'nav-bar-content-after': () => h(NolebaseEnhancedReadabilitiesMenu),
       'nav-screen-content-after': () => h(NolebaseEnhancedReadabilitiesScreenMenu),
-      'home-features-after': () => [h(AKWHomeTeamMembers), h(AKWHomeSponsors)]
+      'home-features-after': () => [h(AKWHomeTeamMembers), h(AKWHomeSponsors)],
+      'aside-outline-after': () => h(AKWDocsAsideMeta),
     })
   },
   enhanceApp({ app, router, siteData }) {
