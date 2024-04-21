@@ -11,9 +11,9 @@
 ```shell-vue[apt-get]
 su -
 apt-get update
-apt-get install kde5-kiten
+apt-get install {{ $frontmatter?.aggregation?.sisyphus.id ?? $frontmatter?.aggregation?.sisyphus }}
 ```
 ```shell-vue[epm]
-epm -i kde5-kiten
+epm -i {{ $frontmatter?.aggregation?.sisyphus.id ?? $frontmatter?.aggregation?.sisyphus }}
 ```
 :::
