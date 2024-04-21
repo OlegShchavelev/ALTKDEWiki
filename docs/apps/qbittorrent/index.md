@@ -1,20 +1,20 @@
 ---
 aggregation:
-    sisyphus: qbittorrent
     flatpak: org.qbittorrent.qBittorrent
+    sisyphus: qbittorrent
 appstream:
     id: org.qbittorrent.qBittorrent
     name: qBittorrent
-    icon: ./img/org.qbittorrent.qBittorrent.png
+    icon: https://dl.flathub.org/media/org/qbittorrent/qBittorrent/17063a278896b2aa0432818306e29cac/icons/128x128/org.qbittorrent.qBittorrent.png
     summary: Cвободный кроссплатформенный клиент файлообменной сети BitTorrent.
     developer: 
         name: qBittorrent Community
     metadata_license: 
         name: GNU GPLv3 + OpenSSL
-        link: https://github.com/qbittorrent/qBittorrent/blob/master/COPYING
+        link: https://github.com/qbittorrent/qBittorrent/blob/master/COPYING/
     url: 
         homepage: https://www.qbittorrent.org/
-        bugtracker: https://github.com/qbittorrent/qBittorrent/issues
+        bugtracker: https://github.com/qbittorrent/qBittorrent/issues/
         translate: https://github.com/qbittorrent/qBittorrent/wiki/How-to-translate-qBittorrent
 ---
 

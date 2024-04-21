@@ -2,36 +2,60 @@
 import { type Ref, computed } from 'vue'
 import VPImage from 'vitepress/dist/client/theme-default/components/VPImage.vue';
 import { withBase, useData } from 'vitepress'
-import { getThumb } from '../composables/asidemeta'
-import img from  '../../../docs/apps/qbittorrent/img/org.qbittorrent.qBittorrent.png'
+import { getLists, getLinks, getLicence } from '../composables/asidemeta'
+
+import AKWAsideMetaList from './AKWAsideMetaList.vue'
+import AKWAsideMetaLink from './AKWAsideMetaLink.vue'
 
 const { frontmatter, theme } = useData()
 
+
 const props = computed(() => {
+
     if (!frontmatter.value.appstream) {
         return
     }
 
-    const { icon, name, summary } = frontmatter.value.appstream
+    const { icon, name, summary, metadata_license, developer, url } = frontmatter.value.appstream
+    const links = frontmatter.value.aggregation
+    const config = theme.value.asideMeta
+    const license = getLicence(metadata_license)
 
     return {
-        thumb: getThumb(img, name),
+        thumb: icon,
+        name: name,
         title: summary,
+        developer: developer,
+        lists: getLists({ ...license, ...url }, config.labels),
+        links: getLinks(links, config.links)
     }
 })
-
-console.log(props);
 
 </script>
 
 <template>
     <article v-if="props" class="AKWDocsAsideMeta">
-        <figure class="figure" v-if="props.thumb.src">
-            <VPImage :image="props.thumb.src" :alt="props.thumb.alt" />
+        <figure class="figure" v-if="props.thumb">
+            <VPImage :image="props.thumb" :alt="props.thumb?.alt ?? props.name" />
         </figure>
         <div class="body">
             <div v-if="props.title" class="title">{{ props.title }}</div>
+            <div v-if="props.developer" class="developers">
+                <figure v-if="props.developer?.avatar" class="avatar">
+                    <VPImage :image="props.developer?.avatar" :alt="props.developer?.name" />
+                </figure>
+                <div>
+                    <div class="caption">Разработчик</div>
+                    <div class="name">{{ props.developer?.name }}
+                        <span class="nickname">
+                            {{ props.developer?.nickname }}
+                        </span>
+                    </div>
+                </div>
+            </div>
         </div>
+        <AKWAsideMetaList :lists="props.lists" />
+        <AKWAsideMetaLink :links="props.links" />
     </article>
 </template>
 
@@ -57,6 +81,9 @@ console.log(props);
     height: 128px;
 }
 
+.AKWDocsAsideMeta:hover :deep(.VPImage) {
+    filter: grayscale(0) invert(0);
+}
 
 .body {
     padding: 16px;
@@ -73,4 +100,36 @@ console.log(props);
     margin-bottom: 0;
 }
 
+.developers {
+    margin-top: 12px;
+    display: flex;
+    gap: 12px;
+}
+
+.avatar {
+    position: relative;
+    width: 48px;
+    height: 48px;
+    flex-shrink: 0;
+    border-radius: 50%;
+    box-shadow: var(--vp-shadow-3);
+}
+
+.caption {
+    font-size: 12px;
+    color: var(--vp-c-text-2);
+    font-weight: 500;
+}
+
+.name {
+    line-height: 1.5;
+    font-size: 14px;
+}
+
+.nickname {
+    display: block;
+    font-size: 11px;
+    color: var(--vp-c-text-3);
+    font-weight: 500;
+}
 </style>

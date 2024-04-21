@@ -9,4 +9,4 @@ export const isValidUrl = (urlString: string) => {
  }
  
 
-export const getDomainName = (url: { match: (arg0: RegExp) => any[]; }) => url.match(/^https?:\/\/([^\/]+)\.[^\/]+/)[1];
+ export const getDomainName = (url: any) => url.match(/\/\/([^/]+)\//)[1].replace('www.', '');
