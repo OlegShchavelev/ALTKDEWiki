@@ -17,7 +17,8 @@ const sidebar_docs = [
             { text: 'Kiten', link: 'kiten/' },
             { text: 'Plan', link: 'plan/' },
             { text: 'PlasmaTube', link: 'plasma-tube/' },
-            { text: 'qBittorrent', link: 'qbittorrent/' }
+            { text: 'qBittorrent', link: 'qbittorrent/' },
+            { text: 'Steam', link: 'steam/' }
         ],
         collapsed: true
     },
@@ -48,7 +49,8 @@ const sidebar_docs = [
     },
     {
         text: 'Быстрые ссылки', items: [
-            { text: 'Flatpak', link: '/package-manager/flatpak/' }
+            { text: 'Flatpak', link: '/package-manager/flatpak/' },
+            { text: 'EPM', link: '/package-manager/epm/' }
         ],
     }
 ]
