@@ -1,3 +1,31 @@
+---
+aggregation:
+    flatpak: 
+        id: com.valvesoftware.Steam
+        build: unoffical
+    sisyphus: steam
+    epm:
+        play:
+            id: steam
+            build: unoffical
+appstream:
+    id: steam.desktop
+    name: Steam
+    icon: https://dl.flathub.org/media/com/valvesoftware/Steam/f4d049e9c760abb6e8ba92854d6d68a5/icons/128x128/com.valvesoftware.Steam.png
+    summary: Клиент для платформы Steam
+    keywords: 
+        - proprietary
+        - restrictions
+    developer: 
+        name: Valve Software
+        avatar: https://avatars.githubusercontent.com/u/3082775?s=200&v=4
+    metadata_license: 
+        name: Собственная
+        link: https://store.steampowered.com/eula/243950_eula_0
+    url: 
+        homepage: https://store.steampowered.com/
+        bugtracker: https://github.com/ValveSoftware/steam-for-linux/issues 
+---
 
 # Steam
 
@@ -7,41 +35,9 @@ Steam — крупнейшая в мире платформа от Valve для 
 Для корректной работы рекомендуется устанавливать Steam с помощью `epm play`
 :::
 
-## Установка из репозитория
-
-**Steam** можно установить с помощью терминала:
-
-::: code-group
-
-```shell-vue[apt-get]
-su -
-apt-get update
-apt-get install steam
-```
-```shell-vue[epm]
-epm -i steam
-```
-:::
-
-## Установка c помощью Flatpak <Badge type="danger" text="Неофициальная сборка" />
-
-При наличии пакета [Flatpak](/package-manager/flatpak/), можно установить **Steam** одной командой:
-
-```shell
-flatpak install flathub com.valvesoftware.Steam
-```
-
-:::tip Или с помощью Discover :thinking:
-Перейдите по ссылке для <a :href="'appstream://' + 'com.valvesoftware.Steam'">установки Steam</a>, затем в браузере подтвердите операцию «открыть приложение». После этого откроется Discover, выберите в нём источник **«Flathub»** и нажмите кнопку «скачать»
-:::
-
-## Установка c помощью epm play <Badge type="danger" text="Неофициальная сборка" />
-
-При наличии пакета [eepm](/package-manager/epm/), можно установить **Steam** одной командой:
-
-```shell
-epm play steam
-```
+<!--@include: @apps/_parts/install/content-repo.md-->
+<!--@include: @apps/_parts/install/content-flatpak.md-->
+<!--@include: @apps/_parts/install/content-epm-play.md-->
 
 ## Как поменять язык в Steam
 
