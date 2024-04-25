@@ -7,8 +7,9 @@ import { getLists, getLinks, getLicence } from '../composables/asidemeta'
 import AKWAsideMetaList from './AKWAsideMetaList.vue'
 import AKWAsideMetaLink from './AKWAsideMetaLink.vue'
 
-const { frontmatter, theme } = useData()
+import thumb from '../../../docs/apps/qbittorrent/img/org.qbittorrent.qBittorrent.png'
 
+const { frontmatter, theme } = useData()
 
 const props = computed(() => {
 
@@ -22,7 +23,7 @@ const props = computed(() => {
     const license = getLicence(metadata_license)
 
     return {
-        thumb: icon,
+        thumb: thumb,
         name: name,
         title: summary,
         developer: developer,
