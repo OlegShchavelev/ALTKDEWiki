@@ -3,7 +3,6 @@ import { type Ref, computed } from 'vue'
 import VPImage from 'vitepress/dist/client/theme-default/components/VPImage.vue';
 import { withBase, useData } from 'vitepress'
 import { getLists, getLinks, getLicence } from '../composables/asidemeta'
-import { fileURLToPath, URL } from 'node:url'
 
 import AKWAsideMetaList from './AKWAsideMetaList.vue'
 import AKWAsideMetaLink from './AKWAsideMetaLink.vue'
@@ -20,12 +19,9 @@ const props = computed(() => {
     const links = frontmatter.value.aggregation
     const config = theme.value.asideMeta
     const license = getLicence(metadata_license)
-    const aliasThumb = 'org.qbittorrent.qBittorrent.png'
-    const imgUrl = new URL(`./img/${aliasThumb}.png`, import.meta.url).href
-    console.log(import.meta.url);
 
     return {
-        thumb: imgUrl,
+        thumb: icon,
         name: name,
         title: summary,
         developer: developer,
