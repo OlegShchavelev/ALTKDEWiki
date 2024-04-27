@@ -53,4 +53,12 @@ export const contributions = [
       actionText: 'Поддержать',
       sponsor: 'https://www.tinkoff.ru/cf/1qXUImsZFTN'
     },
+    {
+      avatar: 'https://avatars.githubusercontent.com/u/167680957?v=4',
+      name: 'Дмитрий Третьяков',
+      title: 'Участник',
+      links: [
+        { icon: 'github', link: 'https://github.com/dtwrk' }
+      ],
+    },
   ]

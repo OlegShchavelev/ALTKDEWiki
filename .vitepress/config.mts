@@ -1,4 +1,4 @@
-import { defineConfig } from 'vitepress'
+import { defineConfigWithTheme } from 'vitepress'
 
 import { tabsMarkdownPlugin } from 'vitepress-plugin-tabs'
 import markdownItKdb from 'markdown-it-kbd'
@@ -9,7 +9,7 @@ import { normalize } from './utils'
 
 import * as config from './config.json'
 
-export default defineConfig({
+export default defineConfigWithTheme({
   vite: {
     ssr: {
       noExternal: [
@@ -105,6 +105,35 @@ export default defineConfig({
       title: 'Страница не найдена',
       quote: 'Похоже, что вы перешли по неверной или устаревшей ссылке. Вы можете воспользоваться поиском.',
       linkText: 'Вернуться на главную'
+    },
+    asideMeta: {
+      labels: {
+        metadata_license: 'Лицензия',
+        homepage: 'Сайт проекта',
+        help: 'Помощь',
+        translate: 'Помощь в переводе',
+        bugtracker: 'Сообщить о проблеме'
+      },
+      links: {
+        sisyphus: {
+          anchor: 'Сизиф',
+          target: '_blank',
+          baseUrl: '//packages.altlinux.org/ru/sisyphus/srpms/',
+          style: '--agw-btn-bg: var(--vp-c-yellow-dimm-1); --agw-btn-color: var(--vp-c-yellow-darker); --agw-btn-hover-bg:var(--vp-c-yellow-dark); --agw-btn-hover-color: var(--vp-c-white);'
+        },
+        flatpak: {
+          anchor: 'Flatpak',
+          target: '_blank',
+          baseUrl: '//flathub.org/apps/',
+          style: '--agw-btn-bg: var(--vp-c-blue-dimm-1); --agw-btn-color: var(--vp-c-blue-darker); --agw-btn-hover-bg:var(--vp-c-blue-dark); --agw-btn-hover-color: var(--vp-c-white);'
+        },
+        snap: {
+          anchor: 'Snapcraft',
+          target: '_blank',
+          baseUrl: '//snapcraft.io/',
+          style: '--agw-btn-bg: var(--vp-c-orange-dimm-1); --agw-btn-color: var(--vp-c-orange-darker); --agw-btn-hover-bg:var(--vp-c-orange-dark); --agw-btn-hover-color: var(--vp-c-white);'
+        }
+      }
     }
   },
   markdown: {
