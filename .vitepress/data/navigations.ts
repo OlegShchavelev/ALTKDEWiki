@@ -15,6 +15,7 @@ const sidebar_docs = [
         text: 'Установка и обновление программ', base: '/apps/', items: [
             { text: 'Arianna', link: 'arianna/' },
             { text: 'Kiten', link: 'kiten/' },
+            { text: 'LibreOffice', link: 'libreoffice/' },
             { text: 'Plan', link: 'plan/' },
             { text: 'PlasmaTube', link: 'plasma-tube/' },
             { text: 'qBittorrent', link: 'qbittorrent/' },
