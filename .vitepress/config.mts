@@ -151,8 +151,14 @@ export default defineConfigWithTheme({
   },
   transformPageData: (pageData) => {
 
+    const canonicalUrl = `https://alt-kde.wiki/${pageData.relativePath}`
+      .replace(/index\.md$/, '')
+      .replace(/\.md$/, '.html')
+
     pageData.frontmatter.head ??= []
+
     pageData.frontmatter.head.push(
+      ['link', { rel: 'canonical', href: canonicalUrl }],
       ['meta', { name: 'og:title', content: pageData.title + config.head.titleSeponator + config.title }],
     )
     if (pageData.frontmatter.layout !== 'home') {
