@@ -7,7 +7,7 @@ import { getLists, getLinks, getLicence } from '../composables/asidemeta'
 import AKWAsideMetaList from './AKWAsideMetaList.vue'
 import AKWAsideMetaLink from './AKWAsideMetaLink.vue'
 
-const { frontmatter, theme } = useData()
+const { frontmatter, theme, page } = useData()
 
 const props = computed(() => {
 
@@ -15,10 +15,29 @@ const props = computed(() => {
         return
     }
 
-    const { icon, name, summary, metadata_license, developer, url } = frontmatter.value.appstream
+    const { name, summary, metadata_license, url } = frontmatter.value.appstream
     const links = frontmatter.value.aggregation
     const config = theme.value.asideMeta
     const license = getLicence(metadata_license)
+
+    var icon = frontmatter.value.appstream.icon
+    var developer = frontmatter.value.appstream.developer
+
+    if (icon) {
+        if (icon.includes('https:')||icon.includes('http:')){
+            icon = icon
+        } else {
+            icon = new URL(`/${page.value.filePath.split("/").slice(0, -1).join("/") + frontmatter.value.appstream.icon.slice(1)}`, import.meta.url).href
+        }
+    }
+
+    if (developer.avatar) {
+        if (icon.includes('https:')||icon.includes('http:')){
+            developer.avatar = developer.avatar
+        } else {
+            developer.avatar = new URL(`/${page.value.filePath.split("/").slice(0, -1).join("/") + frontmatter.value.developer.avatar.slice(1)}`, import.meta.url).href
+        }
+    }
 
     return {
         thumb: icon,
