@@ -99,7 +99,7 @@ export default defineConfigWithTheme({
     },
     footer: {
       message: 'Содержание доступно <a href="/licence">по лицензии MIT</a>',
-      copyright: '2024 ALT KDE Wiki, разработано на платформе <a href="//vitepress.dev/">VitePress 1.1.3</a>'
+      copyright: `${new Date().getFullYear()} ALT KDE Wiki, разработано на платформе <a href="//vitepress.dev/">VitePress 1.1.4</a>`
     },
     notFound: {
       title: 'Страница не найдена',
