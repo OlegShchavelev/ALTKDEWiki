@@ -1,13 +1,14 @@
 <script setup lang="ts">
 import { type Ref, computed } from 'vue'
 import VPImage from 'vitepress/dist/client/theme-default/components/VPImage.vue';
-import { withBase, useData } from 'vitepress'
+import { useData, useRoute } from 'vitepress'
 import { getLists, getLinks, getLicence } from '../composables/asidemeta'
 
 import AKWAsideMetaList from './AKWAsideMetaList.vue'
 import AKWAsideMetaLink from './AKWAsideMetaLink.vue'
 
-const { frontmatter, theme, page } = useData()
+const { frontmatter, theme } = useData()
+const route = useRoute()
 
 const props = computed(() => {
 
@@ -26,7 +27,7 @@ const props = computed(() => {
         if (icon.includes('https:')||icon.includes('http:')){
             icon = icon
         } else {
-            icon = new URL(`/${page.value.filePath.split("/").slice(0, -1).join("/") + frontmatter.value.appstream.icon.slice(1)}`, import.meta.url).href
+            icon = new URL(`/${route.path.slice(1) + frontmatter.value.appstream.icon.slice(2)}`, import.meta.url).href
         }
     }
 
@@ -35,7 +36,7 @@ const props = computed(() => {
             if (developer.avatar.includes('https:')||developer.avatar.includes('http:')){
                 developer.avatar = developer.avatar
             } else {
-                developer.avatar = new URL(`/${page.value.filePath.split("/").slice(0, -1).join("/") + frontmatter.value.developer.avatar.slice(1)}`, import.meta.url).href
+                developer.avatar = new URL(`/${route.path.slice(1) + frontmatter.value.developer.avatar.slice(2)}`, import.meta.url).href
             }
         }
     }
