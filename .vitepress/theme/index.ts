@@ -7,6 +7,8 @@ import AKWContribution from './components/AKWContribution.vue'
 import AKWDocsAsideMeta from './components/AKWDocsAsideMeta.vue'
 import AKWHomeTeamMembers from './components/AKWHomeTeamMembers.vue'
 import AKWHomeSponsors from './components/AKWHomeSponsors.vue'
+import AKWGallery from './components/AKWGallery.vue'
+import VueSilentbox from 'vue-silentbox'
 
 import {
   NolebaseEnhancedReadabilitiesMenu,
@@ -39,5 +41,9 @@ export default {
     } as Options)
     enhanceAppWithTabs(app)
     app.component('contribution', AKWContribution);
-  }
+    app.use(VueSilentbox, {
+      downloadButtonLabel: "Скачать 📥"
+    });
+    app.component('AKWGallery', AKWGallery);
+  },
 } satisfies Theme
