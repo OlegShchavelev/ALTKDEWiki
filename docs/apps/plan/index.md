@@ -1,4 +1,5 @@
 ---
+title: Plan
 aggregation:
     sisyphus: calligra-plan
 appstream:

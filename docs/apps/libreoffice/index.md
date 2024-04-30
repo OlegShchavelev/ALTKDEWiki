@@ -1,4 +1,5 @@
 ---
+title: LibreOffice
 aggregation:
     sisyphus: LibreOffice-still
     flatpak: 

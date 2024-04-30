@@ -1,4 +1,5 @@
 ---
+title: Steam
 aggregation:
     flatpak: 
         id: com.valvesoftware.Steam

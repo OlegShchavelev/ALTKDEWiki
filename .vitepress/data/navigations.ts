@@ -1,3 +1,5 @@
+import { generateSidebar } from 'vitepress-sidebar';
+
 export const nav = [
     { text: 'Главная', link: '/' },
     { text: 'Документация', link: '/wiki/' },
@@ -10,51 +12,39 @@ export const nav = [
     },
 ]
 
-const sidebar_docs = [
-    {
-        text: 'Установка и обновление программ', base: '/apps/', items: [
-            { text: 'Arianna', link: 'arianna/' },
-            { text: 'Kiten', link: 'kiten/' },
-            { text: 'LibreOffice', link: 'libreoffice/' },
-            { text: 'Plan', link: 'plan/' },
-            { text: 'PlasmaTube', link: 'plasma-tube/' },
-            { text: 'qBittorrent', link: 'qbittorrent/' },
-            { text: 'Steam', link: 'steam/' }
-        ],
-        collapsed: true
-    },
-    {
-        text: 'Разработка', base: '/developers/', items: [
-            {
-                text: 'Python', base: '/developers/python/', link: '/', items: [
-                    { text: 'Приложение на Qt 6', link: 'qt6-app/' },
-                    { text: 'Poetry', link: 'poetry/' }
-                ],
-                collapsed: true
-            },
-            {
-                text: 'Rust', base: '/developers/rust/', link: '/'
-            }
-        ],
-        collapsed: true
-    },
-    {
-        text: 'Решение проблем', base: '/workarrounds/', items: [
-            { text: 'Отсутствует список пользователей в настройках', link: 'settings-user-no-list/' },
-            { text: 'LightDM не запоминает последнюю выбранную сессию', link: 'lightdm-does-not-remember-last-session/' },
-            { text: 'Не работает загрузка сторонних тем KDE', link: 'enable-downloading-of-third-party-themes/' },
-            { text: 'Некоторые GTK приложения выглядят чужеродно', link: 'change-gtk-themes/' },
-            { text: 'Не срабатывает блокировка экрана после пробуждения системы', link: 'how-lock-screen-after-waking/' }
-        ],
-        collapsed: true
-    },
-    {
-        text: 'Быстрые ссылки', items: [
-            { text: 'Flatpak', link: '/package-manager/flatpak/' },
-            { text: 'EPM', link: '/package-manager/epm/' }
-        ],
-    }
-]
+const sidebar_docs = [{
+    text: 'Установка и обновление программ', base: '/apps/', items: generateSidebar({
+        documentRootPath: 'docs/apps',
+        excludeFolders: ['_parts'],
+        useTitleFromFrontmatter: true,
+        useFolderTitleFromIndexFile: true,
+        useFolderLinkFromIndexFile: true
+    }),
+    collapsed: true
+}, {
+    text: 'Разработка', base: '/developers/', items: generateSidebar({
+        documentRootPath: 'docs/developers',
+        useTitleFromFrontmatter: true,
+        useFolderTitleFromIndexFile: true,
+        useFolderLinkFromIndexFile: true
+    }),
+    collapsed: true
+}, {
+    text: 'Решение проблем', base: '/workarrounds/', items: generateSidebar({
+        documentRootPath: 'docs/workarrounds',
+        useTitleFromFrontmatter: true,
+        useFolderTitleFromIndexFile: true,
+        useFolderLinkFromIndexFile: true
+    }),
+    collapsed: true
+}, {
+    text: 'Быстрые ссылки', base: '/package-manager/', items: generateSidebar({
+        documentRootPath: 'docs/package-manager',
+        useTitleFromFrontmatter: true,
+        useFolderTitleFromIndexFile: true,
+        useFolderLinkFromIndexFile: true
+    }),
+}]
 
 const sidebar_reference = []
 

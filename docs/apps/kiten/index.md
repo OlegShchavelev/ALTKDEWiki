@@ -1,4 +1,5 @@
 ---
+title: Kiten
 aggregation:
     flatpak: org.kde.kiten.desktop
     sisyphus: kde5-kiten

@@ -1,4 +1,5 @@
 ---
+title: PlasmaTube
 aggregation:
     flatpak: org.kde.plasmatube
 appstream:

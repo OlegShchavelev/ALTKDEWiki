@@ -1,4 +1,5 @@
 ---
+title: Arianna
 aggregation:
     flatpak: org.kde.arianna
 appstream:

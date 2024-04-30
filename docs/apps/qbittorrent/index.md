@@ -1,4 +1,5 @@
 ---
+title: qBittorrent
 aggregation:
     flatpak: org.qbittorrent.qBittorrent
     sisyphus: qbittorrent
