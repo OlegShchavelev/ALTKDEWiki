@@ -48,13 +48,5 @@ gallery:
 
 qBittorrent — это бесплатный и открытый клиент BitTorrent, который позволяет пользователям загружать и скачивать файлы через протокол BitTorrent.
 
-<AKWGallery id=1 />
-
-[Скриншот программы](./img/screenshot.png)
-
 <!--@include: @apps/_parts/install/content-repo.md-->
-
-<AKWGallery id=2 />
-
-
 <!--@include: @apps/_parts/install/content-flatpak.md-->
