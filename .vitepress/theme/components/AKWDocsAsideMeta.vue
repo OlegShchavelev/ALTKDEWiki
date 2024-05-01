@@ -3,6 +3,7 @@ import { type Ref, computed } from 'vue'
 import VPImage from 'vitepress/dist/client/theme-default/components/VPImage.vue';
 import { useData, useRoute } from 'vitepress'
 import { getLists, getLinks, getLicence } from '../composables/asidemeta'
+import { assetImage } from '../composables/image'
 
 import AKWAsideMetaList from './AKWAsideMetaList.vue'
 import AKWAsideMetaLink from './AKWAsideMetaLink.vue'
@@ -16,41 +17,20 @@ const props = computed(() => {
         return
     }
 
-    const { name, summary, metadata_license, url } = frontmatter.value.appstream
-    var { icon, developer } = frontmatter.value.appstream
+    const { icon, name, summary, developer, metadata_license, url } = frontmatter.value.appstream
     const links = frontmatter.value.aggregation
     const config = theme.value.asideMeta
     const license = getLicence(metadata_license)
 
-
-    if (typeof icon !== 'undefined') {
-        if (icon.includes('https:')||icon.includes('http:')){
-            icon = icon
-        } else {
-            icon = new URL(`/${route.path.slice(1) + frontmatter.value.appstream.icon.slice(2)}`, import.meta.url).href
-        }
-    }
-
-    if (typeof developer !== 'undefined') {
-        if (typeof developer.avatar !== 'undefined'){
-            if (developer.avatar.includes('https:')||developer.avatar.includes('http:')){
-                developer.avatar = developer.avatar
-            } else {
-                developer.avatar = new URL(`/${route.path.slice(1) + frontmatter.value.developer.avatar.slice(2)}`, import.meta.url).href
-            }
-        }
-    }
-
     return {
-        thumb: icon,
+        thumb: assetImage(icon, route.path),
         name: name,
         title: summary,
-        developer: developer,
+        developer: { ...developer, ...{ 'avatar': assetImage(developer.avatar, route.path) } },
         lists: getLists({ ...license, ...url }, config.labels),
         links: getLinks(links, config.links)
-    }
+    } 
 })
-
 </script>
 
 <template>
