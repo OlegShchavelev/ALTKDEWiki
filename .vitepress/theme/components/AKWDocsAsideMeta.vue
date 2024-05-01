@@ -26,7 +26,7 @@ const props = computed(() => {
         thumb: assetImage(icon, route.path),
         name: name,
         title: summary,
-        developer: { ...developer, ...{ 'avatar': assetImage(developer.avatar, route.path) } },
+        developer: { ...developer, ...{ 'avatar': assetImage(developer?.avatar, route.path) } },
         lists: getLists({ ...license, ...url }, config.labels),
         links: getLinks(links, config.links)
     } 
