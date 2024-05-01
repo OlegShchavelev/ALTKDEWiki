@@ -2,7 +2,7 @@ import { isValidUrl } from './link'
 
 export const assetImage = (url: string, path: any) => {
     
-    if (!url) return
+    if (!url) return {}
     if (isValidUrl(url) != false) return url
 
     console.log(isValidUrl(url));

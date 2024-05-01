@@ -31,6 +31,9 @@ const props = computed(() => {
         links: getLinks(links, config.links)
     } 
 })
+
+console.log(props)
+
 </script>
 
 <template>
