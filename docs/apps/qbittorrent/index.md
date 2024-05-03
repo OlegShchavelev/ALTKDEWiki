@@ -20,6 +20,7 @@ appstream:
 gallery:
     1:
         title: Галерея
+        type: silentbox
         images:
             https://www.youtube.com/watch?v=XPe_MSCHBQ8:
                 description: Видео фиулвифдцтдл
@@ -35,6 +36,7 @@ gallery:
         lazyload: true
     2:
         title: Ой, а это вторая галерея
+        type: silentbox
         images:
             ./img/screenshot.png: 1
             ./img/screenshot copy.png: 
@@ -42,6 +44,7 @@ gallery:
             ./img/screenshot copy 2.png: 
                 description: Очередной скриншот
         lazyload: true
+
 ---
 
 # qBittorrent
