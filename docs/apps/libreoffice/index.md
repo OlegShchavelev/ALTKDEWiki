@@ -8,7 +8,7 @@ aggregation:
 appstream:
     id: org.libreoffice.LibreOffice
     name: LibreOffice
-    icon: https://dl.flathub.org/media/org/libreoffice/LibreOffice.desktop/54b682485fe916624b2bc881e7f62f87/icons/128x128/org.libreoffice.LibreOffice.desktop.png
+    icon: ./img/org.libreoffice.LibreOffice.desktop.png
     summary: Мощный офисный пакет LibreOffice
     metadata_license: 
         name: MPL-v2.0

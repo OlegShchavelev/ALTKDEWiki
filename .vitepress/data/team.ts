@@ -61,4 +61,12 @@ export const contributions = [
         { icon: 'github', link: 'https://github.com/dtwrk' }
       ],
     },
+    {
+      avatar: 'https://github.com/trashb1t.png',
+      name: 'Владислав Темнов',
+      title: 'Участник',
+      links: [
+        { icon: 'github', link: 'https://github.com/trashb1t' },
+      ],
+    }
   ]
