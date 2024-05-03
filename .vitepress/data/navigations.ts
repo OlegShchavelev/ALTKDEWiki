@@ -22,6 +22,16 @@ const sidebar_docs = [{
     }),
     collapsed: true
 }, {
+    text: 'Настройка графики', base: '/graphics/', items: [
+        { text: 'NVIDIA', link: '/nvidia/', items: [
+            { 'text': 'Открытые драйвара', link: '/nvidia/nvidia-nouveau/' },
+            { 'text': 'Закрытые драйвара', link: '/nvidia/nvidia-drivers/' }
+        ],
+        collapsed: false
+    }
+    ],
+    collapsed: true
+}, {
     text: 'Разработка', base: '/developers/', items: generateSidebar({
         documentRootPath: 'docs/developers',
         useTitleFromFrontmatter: true,
