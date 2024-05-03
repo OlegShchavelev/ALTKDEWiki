@@ -32,8 +32,6 @@ const props = computed(() => {
     } 
 })
 
-console.log(props)
-
 </script>
 
 <template>
