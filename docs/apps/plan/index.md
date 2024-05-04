@@ -5,6 +5,17 @@ aggregation:
 appstream:
     id: org.kde.calligraplan.desktop
     name: Plan
+    icon: ./img/org.kde.calligraplan.svg
+    summary: Приложение по управлению проектами.
+    developer:
+        avatar: ./img/plan-avatar.png
+        name: KDE Community
+    metadata_license: 
+        name: GNU GPLv2.0+
+        link: https://choosealicense.com/licenses/gpl-2.0/
+    url: 
+        homepage: https://apps.kde.org/ru/calligraplan/
+        bugtracker: https://bugs.kde.org/enter_bug.cgi?format=guided&product=calligraplan
 ---
 
 # Plan

@@ -1,5 +1,19 @@
 ---
 title: EPM
+aggregation:
+    sisyphus: eepm
+appstream:
+    name: EPM
+    icon: ./img/etersoft.png
+    summary: Единая система управления пакетами.
+    developer:
+        name: Этерсофт
+    metadata_license: 
+        name: GNU AGPLv3
+        link: https://choosealicense.com/licenses/agpl-3.0/
+    url: 
+        homepage: https://github.com/Etersoft/eepm
+        bugtracker: https://github.com/Etersoft/eepm/issues
 ---
 
 # Единая команда управления пакетами (epm)
