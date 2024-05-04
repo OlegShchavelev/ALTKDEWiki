@@ -1,4 +1,4 @@
-name: Deploy VitePress site to Pages
+name: Deploy ALT KDE Wiki to Pages
 
 on:
   push:
