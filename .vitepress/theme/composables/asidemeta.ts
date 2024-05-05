@@ -30,21 +30,19 @@ export const getLinks = (data: {}, config: {}) => {
     return { ..._data }
 }
 
-export const getKeywords = (data: any, config: {}) => {
+export const getKeywords = (data: Record<string, string>, config: Record<string, any>) => {
+    if (!data) return;
 
-    if(!data) return
-
-    const _data = []
+    const _data: Record<string, any> = {};
 
     Object.values(data).forEach((value: string) => {
-        (value && config[value]) ?
-            _data[value] = config[value]
-            : {}
-    })
+        if (value && config[value]) {
+            _data[value] = config[value];
+        }
+    });
 
-    return Object.assign({}, _data)
-
-}
+    return _data;
+};
 
 export const getLicence = (data: any) => {
 
