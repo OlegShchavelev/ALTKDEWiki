@@ -2,11 +2,11 @@
 import { type Ref, computed } from 'vue'
 import VPImage from 'vitepress/dist/client/theme-default/components/VPImage.vue';
 import { useData, useRoute, withBase } from 'vitepress'
-import { getLists, getLinks, getLicence } from '../composables/asidemeta'
+import { getLists, getLinks, getLicence, getKeywords } from '../composables/asidemeta'
 import { assetImage } from '../composables/image'
 
 import AKWAsideMetaList from './AKWAsideMetaList.vue'
-import AKWAsideMetaLink from './AKWAsideMetaLink.vue'
+import AKWAsideMetaKeyword from './AKWAsideMetaKeyword.vue'
 
 const { frontmatter, theme } = useData()
 const route = useRoute() 
@@ -17,7 +17,7 @@ const props = computed(() => {
         return
     }
 
-    const { icon, name, summary, developer, metadata_license, url } = frontmatter.value.appstream
+    const { icon, name, summary, developer, metadata_license, keywords, url } = frontmatter.value.appstream
     const links = frontmatter.value.aggregation
     const config = theme.value.asideMeta
     const license = getLicence(metadata_license)
@@ -29,6 +29,7 @@ const props = computed(() => {
         thumb: assetImage(icon, path),
         name: name,
         title: summary,
+        keywords: getKeywords(keywords, config.keywords),
         developer: { ...developer, ...{ 'avatar': assetImage(developer?.avatar, path) } },
         lists: getLists({ ...license, ...url }, config.labels),
         links: getLinks(links, config.links)
@@ -45,6 +46,7 @@ const props = computed(() => {
         </figure>
         <div class="body">
             <div v-if="props.title" class="title">{{ props.title }}</div>
+            <AKWAsideMetaKeyword :keywords="props.keywords" />
             <div v-if="props.developer" class="developers">
                 <figure v-if="props.developer?.avatar" class="avatar">
                     <VPImage :image="props.developer?.avatar" :alt="props.developer?.name" />

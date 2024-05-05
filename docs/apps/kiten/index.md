@@ -9,6 +9,8 @@ appstream:
     name: Kiten
     icon: ./img/org.kde.kiten.svg
     summary: Справочник и учебное пособие по изучению японского языка.
+    keywords:
+        - kdedeveloped
     developer:
         avatar: ./img/kiten-avatar.png
         name: KDE Community
