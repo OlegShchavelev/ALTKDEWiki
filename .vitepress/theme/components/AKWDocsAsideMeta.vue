@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { type Ref, computed } from 'vue'
 import VPImage from 'vitepress/dist/client/theme-default/components/VPImage.vue';
-import { useData, useRoute } from 'vitepress'
+import { useData, useRoute, withBase } from 'vitepress'
 import { getLists, getLinks, getLicence } from '../composables/asidemeta'
 import { assetImage } from '../composables/image'
 
@@ -9,7 +9,7 @@ import AKWAsideMetaList from './AKWAsideMetaList.vue'
 import AKWAsideMetaLink from './AKWAsideMetaLink.vue'
 
 const { frontmatter, theme } = useData()
-const route = useRoute()
+const route = useRoute() 
 
 const props = computed(() => {
 
@@ -22,6 +22,8 @@ const props = computed(() => {
     const config = theme.value.asideMeta
     const license = getLicence(metadata_license)
     const path = route.path
+
+    console.log(withBase(icon), path)
 
     return {
         thumb: assetImage(icon, path),
@@ -36,6 +38,7 @@ const props = computed(() => {
 </script>
 
 <template>
+    
     <article v-if="props" class="AKWDocsAsideMeta">
         <figure class="figure" v-if="props.thumb">
             <VPImage :image="props.thumb" :alt="props.thumb?.alt ?? props.name" />
