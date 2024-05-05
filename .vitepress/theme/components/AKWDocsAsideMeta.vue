@@ -21,12 +21,13 @@ const props = computed(() => {
     const links = frontmatter.value.aggregation
     const config = theme.value.asideMeta
     const license = getLicence(metadata_license)
+    const path = route.path
 
     return {
-        thumb: assetImage(icon, route.path),
+        thumb: assetImage(icon, path),
         name: name,
         title: summary,
-        developer: { ...developer, ...{ 'avatar': assetImage(developer?.avatar, route.path) } },
+        developer: { ...developer, ...{ 'avatar': assetImage(developer?.avatar, path) } },
         lists: getLists({ ...license, ...url }, config.labels),
         links: getLinks(links, config.links)
     } 
