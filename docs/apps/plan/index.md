@@ -7,6 +7,8 @@ appstream:
     name: Plan
     icon: ./img/org.kde.calligraplan.svg
     summary: Приложение по управлению проектами.
+    keywords:
+        - kdedeveloped
     developer:
         avatar: ./img/plan-avatar.png
         name: KDE Community
