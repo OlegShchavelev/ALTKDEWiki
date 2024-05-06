@@ -1,5 +1,6 @@
 {
   "devDependencies": {
+    "@hywax/vitepress-yandex-metrika": "^0.4.0",
     "@nolebase/vitepress-plugin-enhanced-readabilities": "^1.22.4",
     "markdown-it-kbd": "^2.2.2",
     "vitepress": "^1.0.0-rc.25",

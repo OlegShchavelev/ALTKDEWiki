@@ -25,6 +25,9 @@ import './styles/style.css'
 import './styles/custom.css'
 import '@nolebase/vitepress-plugin-enhanced-readabilities/dist/style.css'
 
+/* Yandex metrika */
+import { yandexMetrika } from '@hywax/vitepress-yandex-metrika'
+
 export default {
   extends: DefaultTheme,
   Layout: () => {
@@ -35,15 +38,24 @@ export default {
       'aside-outline-after': () => h(AKWDocsAsideMeta),
     })
   },
-  enhanceApp({ app, router, siteData }) {
-    app.provide(InjectionKey, {
+  enhanceApp(ctx) {
+    ctx.app.provide(InjectionKey, {
       locales: lexiconEnhancedReadabilities
     } as Options)
-    enhanceAppWithTabs(app)
-    app.component('contribution', AKWContribution);
-    app.use(VueSilentbox, {
+
+    // Yandex metrika
+    yandexMetrika(ctx, {
+      counter: {
+        id: 97206782
+      },
+    }),
+
+    enhanceAppWithTabs(ctx.app)
+    ctx.app.component('contribution', AKWContribution);
+    ctx.app.use(VueSilentbox, {
       downloadButtonLabel: "Скачать 📥"
     });
-    app.component('Gallery', AKWGallery);
+    ctx.app.component('Gallery', AKWGallery);
   },
 } satisfies Theme
+
