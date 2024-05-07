@@ -1,11 +1,11 @@
 ---
 title: Kiten
 aggregation:
-    flatpak: org.kde.kiten.desktop
+    flatpak: org.kde.kiten
     sisyphus: kde5-kiten
     snap: kiten
 appstream:
-    id: org.kde.kiten.desktop
+    id: org.kde.kiten
     name: Kiten
     icon: ./img/org.kde.kiten.svg
     summary: Справочник и учебное пособие по изучению японского языка.

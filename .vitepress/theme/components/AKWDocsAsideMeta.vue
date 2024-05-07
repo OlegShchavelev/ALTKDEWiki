@@ -6,6 +6,7 @@ import { getLists, getLinks, getLicence, getKeywords } from '../composables/asid
 import { assetImage } from '../composables/image'
 
 import AKWAsideMetaList from './AKWAsideMetaList.vue'
+import AKWAsideMetaLink from './AKWAsideMetaLink.vue'
 import AKWAsideMetaKeyword from './AKWAsideMetaKeyword.vue'
 
 const { frontmatter, theme } = useData()
