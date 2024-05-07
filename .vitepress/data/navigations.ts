@@ -53,7 +53,16 @@ const sidebar_docs = [{
         useTitleFromFrontmatter: true,
         useFolderTitleFromIndexFile: true,
         useFolderLinkFromIndexFile: true
-    }),
+    })
+}, {
+    text: 'Тестовые пункты', base: '/tests/', items: [
+        {
+            text: 'Пункт 1', link: 'page-1/'
+        },
+        {
+            text: 'Пункт 2', link: 'page-2/'
+        },
+    ] 
 }]
 
 const sidebar_reference = []
