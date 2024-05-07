@@ -3,7 +3,9 @@
     "@nolebase/vitepress-plugin-enhanced-readabilities": "^1.22.4",
     "markdown-it-kbd": "^2.2.2",
     "vitepress": "^1.0.0-rc.25",
-    "vitepress-plugin-tabs": "^0.5.0"
+    "vitepress-plugin-tabs": "^0.5.0",
+    "vitepress-sidebar": "^1.22.0",
+    "vue-silentbox": "^3.0.4"
   },
   "scripts": {
     "docs:dev": "vitepress dev",

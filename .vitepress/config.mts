@@ -99,7 +99,7 @@ export default defineConfigWithTheme({
     },
     footer: {
       message: 'Содержание доступно <a href="/licence">по лицензии MIT</a>',
-      copyright: '2024 ALT KDE Wiki, разработано на платформе <a href="//vitepress.dev/">VitePress 1.1.3</a>'
+      copyright: `${new Date().getFullYear()} ALT KDE Wiki, разработано на платформе <a href="//vitepress.dev/">VitePress 1.1.4</a>`
     },
     notFound: {
       title: 'Страница не найдена',
@@ -107,6 +107,20 @@ export default defineConfigWithTheme({
       linkText: 'Вернуться на главную'
     },
     asideMeta: {
+      keywords: {
+        proprietary: {
+          name: 'Проприетарное',
+          type: 'danger'
+        },
+        restrictions: {
+          name: 'Региональные ограничения',
+          type: 'danger'
+        },
+        kdedeveloped: {
+          name: 'Разработано KDE',
+          type: 'tip'
+        }
+      },
       labels: {
         metadata_license: 'Лицензия',
         homepage: 'Сайт проекта',
@@ -151,8 +165,14 @@ export default defineConfigWithTheme({
   },
   transformPageData: (pageData) => {
 
+    const canonicalUrl = `https://alt-kde.wiki/${pageData.relativePath}`
+      .replace(/index\.md$/, '')
+      .replace(/\.md$/, '.html')
+
     pageData.frontmatter.head ??= []
+
     pageData.frontmatter.head.push(
+      ['link', { rel: 'canonical', href: canonicalUrl }],
       ['meta', { name: 'og:title', content: pageData.title + config.head.titleSeponator + config.title }],
     )
     if (pageData.frontmatter.layout !== 'home') {

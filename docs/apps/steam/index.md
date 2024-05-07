@@ -1,4 +1,5 @@
 ---
+title: Steam
 aggregation:
     flatpak: 
         id: com.valvesoftware.Steam
@@ -11,7 +12,7 @@ aggregation:
 appstream:
     id: steam.desktop
     name: Steam
-    icon: https://dl.flathub.org/media/com/valvesoftware/Steam/f4d049e9c760abb6e8ba92854d6d68a5/icons/128x128/com.valvesoftware.Steam.png
+    icon: ./img/steam-logo.svg
     summary: Клиент для платформы Steam
     keywords: 
         - proprietary
