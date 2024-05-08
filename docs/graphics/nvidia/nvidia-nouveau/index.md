@@ -25,7 +25,7 @@ reboot
 
 ```shell[epm]
 su -
-apt-get remove nvidia_glx_common
+epm -e nvidia_glx_common
 # удаляем initcall_blacklist и nvidia-drm.modeset если они есть
 mcedit /etc/sysconfig/grub2 # тут может быть и nano, и vi, и другой редактор
 # сохраняем и выходим

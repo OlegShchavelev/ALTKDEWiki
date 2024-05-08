@@ -24,8 +24,8 @@ const sidebar_docs = [{
 }, {
     text: 'Настройка графики', base: '/graphics/', items: [
         { text: 'NVIDIA', link: '/nvidia/', items: [
-            { 'text': 'Открытые драйвара', link: '/nvidia/nvidia-nouveau/' },
-            { 'text': 'Закрытые драйвара', link: '/nvidia/nvidia-drivers/' }
+            { 'text': 'Открытые драйвера', link: '/nvidia/nvidia-nouveau/' },
+            { 'text': 'Закрытые драйвера', link: '/nvidia/nvidia-drivers/' }
         ],
         collapsed: false
     }
