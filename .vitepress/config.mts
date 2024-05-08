@@ -108,6 +108,20 @@ export default defineConfigWithTheme({
       linkText: 'Вернуться на главную'
     },
     asideMeta: {
+      keywords: {
+        proprietary: {
+          name: 'Проприетарное',
+          type: 'danger'
+        },
+        restrictions: {
+          name: 'Региональные ограничения',
+          type: 'danger'
+        },
+        kdedeveloped: {
+          name: 'Разработано KDE',
+          type: 'tip'
+        }
+      },
       labels: {
         metadata_license: 'Лицензия',
         homepage: 'Сайт проекта',

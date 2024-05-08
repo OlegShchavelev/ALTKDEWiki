@@ -7,6 +7,8 @@ appstream:
     name: Arianna
     icon: ./img/org.kde.arianna.svg
     summary: Приложение для чтения электронных книг и управления библиотекой.
+    keywords:
+        - kdedeveloped
     developer:
         avatar: ./img/arianna-avatar.png 
         name: KDE Community
