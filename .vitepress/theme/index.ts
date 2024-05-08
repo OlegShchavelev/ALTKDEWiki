@@ -46,7 +46,9 @@ export default {
     // Yandex metrika
     yandexMetrika(ctx, {
       counter: {
-        id: 97206782
+        id: config.yaMetrikaId, initParams: {
+          webvisor: true
+        }
       },
     }),
 
