@@ -1,4 +1,5 @@
 <script setup lang="ts">
+
 import { contributions, mainPageTopLimit } from '../../data/team';
 import { VPTeamMembers } from 'vitepress/theme';
 import AKWTeamPageButton from './AKWTeamPageButton.vue';
@@ -43,9 +44,9 @@ const { members, size } = defineProps({
          Участники
       </template>
     </VPTeamPageTitle>
-    <VPTeamMembers :members="contributors" />
+    <VPTeamMembers :members="contributions.slice(0, 6)" />
     <AKWTeamPageButton>
-      <VPButton text="Все участники" class="button" size="big" href="/contributions.html" />
+      <VPButton text="Все участники" class="button" size="big" href="/project/contributions/" />
     </AKWTeamPageButton>
   </VPTeamPage>
 </template>

@@ -10,7 +10,7 @@ export const contributions = [
     {
       avatar: 'https://avatars.githubusercontent.com/u/20732384?v=4',
       name: 'Олег Щавелев',
-      title: 'Разработчик',
+      title: 'Разработчик, Участник',
       links: [
         { icon: 'github', link: 'https://github.com/OlegShchavelev' },
         {
@@ -20,6 +20,14 @@ export const contributions = [
           link: 'https://gitflic.ru/user/olegshchavelev'
         },
       ]
+    },
+    {
+      avatar: 'https://github.com/trashb1t.png',
+      name: 'Владислав Темнов',
+      title: 'Разработчик, Участник',
+      links: [
+        { icon: 'github', link: 'https://github.com/trashb1t' },
+      ],
     },
     {
       avatar: 'https://avatars.githubusercontent.com/u/57626821?v=4',
@@ -63,14 +71,6 @@ export const contributions = [
       title: 'Участник',
       links: [
         { icon: 'github', link: 'https://github.com/dtwrk' }
-      ],
-    },
-    {
-      avatar: 'https://github.com/trashb1t.png',
-      name: 'Владислав Темнов',
-      title: 'Участник',
-      links: [
-        { icon: 'github', link: 'https://github.com/trashb1t' },
       ],
     }
   ]

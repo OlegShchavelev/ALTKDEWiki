@@ -7,6 +7,8 @@ appstream:
     name: PlasmaTube
     icon: ./img/org.kde.plasmatube.svg
     summary: Приложение для просмотра видео с YouTube на телефоне или компьютере.
+    keywords:
+        - kdedeveloped
     developer:
         avatar: ./img/plasmatube-avatar.png
         name: KDE Community
