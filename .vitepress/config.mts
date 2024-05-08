@@ -9,8 +9,48 @@ import { normalize } from './utils'
 
 import * as config from './config.json'
 
+/* GitLog */
+import UnoCSS from 'unocss/vite'
+import {
+  GitChangelog,
+  GitChangelogMarkdownSection
+} from '@nolebase/vitepress-plugin-git-changelog/vite'
+
+import {
+  gitRepository,
+  gitMaxCommits,
+  gitDisplay,
+  gitRewritePath,
+  gitHeadersLocale
+} from './data/gitlog'
+
 export default defineConfigWithTheme({
   vite: {
+    plugins: [
+      UnoCSS(),
+      GitChangelog({
+        maxGitLogCount: gitMaxCommits,
+        repoURL: () => gitRepository,
+        rewritePaths: gitRewritePath,
+      }),
+      GitChangelogMarkdownSection({
+        getChangelogTitle: (_, __, { helpers }): string => {
+          return gitHeadersLocale.history_title
+        },
+        getContributorsTitle: (_, __, { helpers }): string => {
+          return gitHeadersLocale.author_title
+        },
+        excludes: [],
+        exclude: (_, { helpers }): boolean => {
+          for (var page of config.nolebase_exclude) {
+            if (helpers.idStartsWith(page))
+              return true
+          }
+          return false
+        },
+        sections: gitDisplay,
+      }),
+    ],
     ssr: {
       noExternal: [
         '@nolebase/vitepress-plugin-enhanced-readabilities',

@@ -2,6 +2,10 @@ import {
     gitflic
   } from './icons'
 
+export const mainPageTopLimit = 6
+
+export const filter_type = 'additions'
+
 export const contributions = [
     {
       avatar: 'https://avatars.githubusercontent.com/u/20732384?v=4',
