@@ -31,7 +31,7 @@ export default defineConfigWithTheme({
     ['meta', { name: 'og:image', content: config.host + config.head.ogImage }],
     ['meta', { name: 'twitter:card', content: 'summary_large_image' }],
     ['meta', { name: 'twitter:image', content: config.host + config.head.ogImage }],
-    ['meta', { name: 'yandex-verification', content: config.yandex_metrika }]
+    ['meta', { name: 'yandex-verification', content: config.yandexMetrika }]
   ],
   srcDir: './docs',
   cleanUrls: true,

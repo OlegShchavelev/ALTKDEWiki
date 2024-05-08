@@ -52,12 +52,25 @@
     --vp-c-brand-dark: #2c6388    ;
     --vp-c-brand-darker: #224d6a;
     --vp-c-brand-dimm: rgba(100, 108, 255, 0.08);
+    --vp-c-light-gray: #515c67;
   }
 
   :root {
     --vp-c-brand-1: var(--vp-c-blue);
     --vp-c-brand-2: var(--vp-c-blue-light);
     --vp-c-brand-3: var(--vp-c-blue-lighter);
+  }
+  
+  /*Snapcraft*/
+  :root {
+    --vp-c-orange-dimm-1: rgba(255, 102, 0, 0.05);
+    --vp-c-orange-darker: #cc5200;
+    --vp-c-orange-dark: #e65c00;
+  }
+
+  /*Sponsors btn*/
+  :root {
+    --vp-c-light-gray: #4a545e;
   }
   
   :root {
@@ -155,6 +168,10 @@
     margin-top: 0 !important;
   }
 
+  /*Dark theme btn Sponsors*/
+  .dark .vp-sponsor-grid-item:hover {
+    background: var(--vp-c-light-gray);
+  }
   /**
   *
    * -------------------------------------------------------------------------- */
