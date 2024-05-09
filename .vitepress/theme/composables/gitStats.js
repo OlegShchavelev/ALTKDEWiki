@@ -33,13 +33,20 @@ export async function getContributors(key, owner, repo, autosearch){
 
     for (const contributor of contributorsRawBase.data){
         const { author, total, weeks } = contributor
-        const { name } = autosearch == true ? (await userGetMore(author.login)).data : undefined 
         let additions = 0
+        let name = undefined
+
         for (const week of weeks) {
             additions += week.a
         }
 
-        //console.log(name)
+        if (autosearch) {
+          name = await userGetMore(author.login).then((response) => {
+            return response.data.name
+          }).catch((response)=>{
+            return undefined
+          })
+        }
 
         contributors.push({
             avatar: author.avatar_url,
@@ -67,13 +74,13 @@ export function filterContributors(contributors, filter_type){
         });
       }
     }
-  }
-  for (const contributor of contributors){
-    if (contributor.name.includes(leader_name)){
-      contributors = contributors.sort((x,y) => { 
-        return x == contributor ? -1 : y == contributor ? 1 : 0; 
-      });
-      break
+    for (const contributor of contributors){
+      if (contributor.name.includes(leader_name)){
+        contributors = contributors.sort((x,y) => { 
+          return x == contributor ? -1 : y == contributor ? 1 : 0; 
+        });
+        break
+      }
     }
   }
   return contributors
