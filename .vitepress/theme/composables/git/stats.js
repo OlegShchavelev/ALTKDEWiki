@@ -1,6 +1,6 @@
 import { Octokit } from "@octokit/core";
-import { contributions, leader_name } from '../../data/team';
-import { gitMapContributors } from '../../data/gitlog'
+import { contributions, leader_name } from '../../../data/team';
+import { gitMapContributors } from '../../../data/gitlog'
 
 
 export async function getContributors(key, owner, repo, autosearch){
@@ -18,7 +18,7 @@ export async function getContributors(key, owner, repo, autosearch){
         headers: {
             'X-GitHub-Api-Version': '2022-11-28'
         }
-    })
+    }).then( response => { return response })
     
     const userGetMore = async (user) => {
       return await octokit.request('GET /users/{user}', {
@@ -41,11 +41,7 @@ export async function getContributors(key, owner, repo, autosearch){
         }
 
         if (autosearch) {
-          name = await userGetMore(author.login).then((response) => {
-            return response.data.name
-          }).catch((response)=>{
-            return undefined
-          })
+          name = await userGetMore(author.login).then( response  => { return response.data.name }).catch( err => { return undefined })
         }
 
         contributors.push({
