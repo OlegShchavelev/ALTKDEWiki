@@ -1,13 +1,7 @@
 <script setup lang="ts">
-import {
-  VPTeamPage,
-  VPTeamPageTitle,
-  VPTeamMembers,
-  VPButton,
-} from 'vitepress/theme'
-import AKWHomeTeamButton from './AKWHomeTeamButton.vue';
+import { VPTeamPage, VPTeamPageTitle, VPTeamMembers } from 'vitepress/theme'
 
-import { contributions, homeTopLimit, home_filter_type, enable_autosearch } from '../../data/team';
+import { contributions, enable_autosearch, page_filter_type } from '../../data/team';
 import { gitRepository } from '../../data/gitlog'
 import { getContributors, filterContributors, getContributorsTopInfo } from '../composables/gitStats'
 
@@ -18,14 +12,20 @@ let contributors = await getContributors(
   enable_autosearch
 ).then( async ( response ) => {
   response = await getContributorsTopInfo(response).then( async ( response ) => {
-    filterContributors( response, home_filter_type)
-    return response.slice(0, homeTopLimit)
+    filterContributors( response, page_filter_type )
+    return response
   })
   return response
 }
 ).catch( async ( response ) => {
-  return response = contributions.slice(0, homeTopLimit)
+  return response = contributions
 })
+
+const { title } = defineProps({
+  title: {
+    type: String
+  },
+});
 
 </script>
 
@@ -33,13 +33,10 @@ let contributors = await getContributors(
 <template>
   <VPTeamPage>
     <VPTeamPageTitle>
-      <template #title>
-         Участники
+      <template v-if="title" #title>
+       {{ title }}
       </template>
     </VPTeamPageTitle>
     <VPTeamMembers :members="contributors" />
-    <AKWHomeTeamButton>
-      <VPButton text="Все участники" class="button" size="big" href="/project/contributions/" />
-    </AKWHomeTeamButton>
   </VPTeamPage>
 </template>

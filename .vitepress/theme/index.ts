@@ -3,9 +3,10 @@ import { h, Suspense } from 'vue'
 import type { Theme } from 'vitepress'
 import DefaultTheme from 'vitepress/theme'
 
-import AKWContribution from './components/AKWContribution.vue'
+import AKWTeamPage from './components/AKWTeamPage.vue'
 import AKWDocsAsideMeta from './components/AKWDocsAsideMeta.vue'
 import AKWHomeTeamMembers from './components/AKWHomeTeamMembers.vue'
+import AKWTeamLoader from './components/AKWTeamLoader.vue'
 import AKWHomeSponsors from './components/AKWHomeSponsors.vue'
 import AKWGallery from './components/AKWGallery.vue'
 import VueSilentbox from 'vue-silentbox'
@@ -42,7 +43,8 @@ export default {
       'nav-screen-content-after': () => h(NolebaseEnhancedReadabilitiesScreenMenu),
       'home-features-after': () => [
         h(Suspense, null, {
-            default: h(AKWHomeTeamMembers)
+            default: h(AKWHomeTeamMembers),
+            fallback: h(AKWTeamLoader)
         }),
         h(AKWHomeSponsors)],
       'aside-outline-after': () => h(AKWDocsAsideMeta),
@@ -53,7 +55,7 @@ export default {
       locales: lexiconEnhancedReadabilities
     } as Options)
     enhanceAppWithTabs(app)
-    app.component('contribution', AKWContribution);
+    app.component('contribution', AKWTeamPage);
     app.use(VueSilentbox, {
       downloadButtonLabel: "Скачать 📥"
     });

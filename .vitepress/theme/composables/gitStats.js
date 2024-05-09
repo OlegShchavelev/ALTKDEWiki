@@ -1,8 +1,9 @@
 import { Octokit } from "@octokit/core";
-import { contributions, filter_type } from '../../data/team';
+import { contributions, leader_name } from '../../data/team';
 import { gitMapContributors } from '../../data/gitlog'
 
-export async function getContributors(key, owner, repo){
+
+export async function getContributors(key, owner, repo, autosearch){
     if (!key) return false
     if (!owner) return false
     if (!repo) return false
@@ -11,24 +12,43 @@ export async function getContributors(key, owner, repo){
         auth: key
     })
 
-    const contributorsRaw = await octokit.request('GET /repos/{owner}/{repo}/stats/contributors', {
+    const contributorsRawBase = await octokit.request('GET /repos/{owner}/{repo}/stats/contributors', {
         owner: owner,
         repo: repo,
         headers: {
             'X-GitHub-Api-Version': '2022-11-28'
         }
     })
+    
+    const userGetMore = async (user) => {
+      return await octokit.request('GET /users/{user}', {
+        user: user,
+        headers: {
+          'X-GitHub-Api-Version': '2022-11-28'
+        }
+      })
+    }
 
     const contributors = []
 
-    for (const contributor of contributorsRaw.data){
+    for (const contributor of contributorsRawBase.data){
         const { author, total, weeks } = contributor
+        const { name } = autosearch == true ? (await userGetMore(author.login)).data : undefined 
         let additions = 0
         for (const week of weeks) {
             additions += week.a
         }
+
+        //console.log(name)
+
         contributors.push({
+            avatar: author.avatar_url,
+            links: [
+              { icon: 'github', link: author.html_url },
+            ],
+            title: "Участник",
             login: author.login,
+            name: name,
             commits: total,
             additions: additions
         })
@@ -36,20 +56,32 @@ export async function getContributors(key, owner, repo){
     return contributors 
 }
 
-export function filterContributors(contributors, last){
-    if (filter_type === "commits"){
-        contributors = contributors.sort((a, b) => (-a.commits) - (-b.commits)).slice(0, last)
-        console.log(contributors)
-        return contributors
+export function filterContributors(contributors, filter_type){
+  contributors = (filter_type.includes("commits")) ? contributors.sort((a, b) => (-a.commits) - (-b.commits)) : contributors
+  contributors = (filter_type.includes("additions")) ? contributors.sort((a, b) => (-a.additions) - (-b.additions)) : contributors
+  if (filter_type.includes("role")){
+    for (const contributor of contributors){
+      if (contributor.title.includes('Разработчик')){
+        contributors = contributors.sort((x,y) => { 
+          return x == contributor ? -1 : y == contributor ? 1 : 0; 
+        });
       }
-    if (filter_type == "additions"){
-        contributors = contributors.sort((a, b) => (-a.additions) - (-b.additions)).slice(0, last)
-        return contributors
     }
+  }
+  for (const contributor of contributors){
+    if (contributor.name.includes(leader_name)){
+      contributors = contributors.sort((x,y) => { 
+        return x == contributor ? -1 : y == contributor ? 1 : 0; 
+      });
+      break
+    }
+  }
+  return contributors
 } 
 
-export function getContributorsTopInfo(contributors){
+export async function getContributorsTopInfo(contributors){
     for (let contributor of contributors){
+        
         // Ищем имя для сайта по нику гита
         for (const gitContributor of gitMapContributors){
           if (gitContributor.nameAliases.includes(contributor.login)) {
@@ -63,7 +95,12 @@ export function getContributorsTopInfo(contributors){
               contributor[key] = siteContributor[key]
             }
           }
+          if(contributor.name == undefined){
+            contributor.name = contributor.login
+          }
         }
+
+        //console.log(contributor)
     }
     return contributors
 }
