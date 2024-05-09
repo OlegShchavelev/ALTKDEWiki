@@ -1,11 +1,12 @@
 // https://vitepress.dev/guide/custom-theme
-import { h } from 'vue'
+import { h, Suspense } from 'vue'
 import type { Theme } from 'vitepress'
 import DefaultTheme from 'vitepress/theme'
 
-import AKWContribution from './components/AKWContribution.vue'
+import AKWTeamPage from './components/AKWTeamPage.vue'
 import AKWDocsAsideMeta from './components/AKWDocsAsideMeta.vue'
 import AKWHomeTeamMembers from './components/AKWHomeTeamMembers.vue'
+import AKWTeamLoader from './components/AKWTeamLoader.vue'
 import AKWHomeSponsors from './components/AKWHomeSponsors.vue'
 import AKWGallery from './components/AKWGallery.vue'
 import VueSilentbox from 'vue-silentbox'
@@ -18,9 +19,18 @@ import type { Options } from '@nolebase/vitepress-plugin-enhanced-readabilities'
 import { InjectionKey } from '@nolebase/vitepress-plugin-enhanced-readabilities'
 import { enhanceAppWithTabs } from 'vitepress-plugin-tabs/client'
 
+import { 
+  NolebaseGitChangelogPlugin 
+} from '@nolebase/vitepress-plugin-git-changelog/client'
+
+import {
+  gitLocales,
+  gitMapContributors
+} from '../data/gitlog'
 
 import { lexiconEnhancedReadabilities } from './lexicon/enhanced-readabilities'
 
+import 'uno.css'
 import './styles/style.css'
 import './styles/custom.css'
 import '@nolebase/vitepress-plugin-enhanced-readabilities/dist/style.css'
@@ -31,7 +41,12 @@ export default {
     return h(DefaultTheme.Layout, null, {
       'nav-bar-content-after': () => h(NolebaseEnhancedReadabilitiesMenu),
       'nav-screen-content-after': () => h(NolebaseEnhancedReadabilitiesScreenMenu),
-      'home-features-after': () => [h(AKWHomeTeamMembers), h(AKWHomeSponsors)],
+      'home-features-after': () => [
+        h(Suspense, null, {
+            default: h(AKWHomeTeamMembers),
+            fallback: h(AKWTeamLoader)
+        }),
+        h(AKWHomeSponsors)],
       'aside-outline-after': () => h(AKWDocsAsideMeta),
     })
   },
@@ -40,10 +55,11 @@ export default {
       locales: lexiconEnhancedReadabilities
     } as Options)
     enhanceAppWithTabs(app)
-    app.component('contribution', AKWContribution);
+    app.component('contribution', AKWTeamPage);
     app.use(VueSilentbox, {
       downloadButtonLabel: "Скачать 📥"
     });
     app.component('Gallery', AKWGallery);
+    app.use(NolebaseGitChangelogPlugin, {locales: gitLocales, mapContributors: gitMapContributors})
   },
 } satisfies Theme
