@@ -18,12 +18,14 @@ import AKWTeamLoader from './AKWTeamLoader.vue';
                 Участники
             </template>
         </VPTeamPageTitle>
-        <Suspense>
-            <AKWHomeTeamMembers/>
-            <template #fallback>
-                <AKWTeamLoader />
-            </template>
-        </Suspense>
+        <ClientOnly>
+            <Suspense>
+                <AKWHomeTeamMembers/>
+                <template #fallback>
+                    <AKWTeamLoader />
+                </template>
+            </Suspense>
+        </ClientOnly>
         <AKWHomeTeamButton>
             <VPButton text="Все участники" class="button" size="big" href="/project/contributions/" />
         </AKWHomeTeamButton>
