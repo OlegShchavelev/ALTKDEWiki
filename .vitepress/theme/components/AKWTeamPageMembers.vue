@@ -23,9 +23,13 @@ let contributors = await getContributors(
   return contributions 
 })
 
+const refs = computed(()=>{
+  return contributors
+})
+
 </script>
 
 
 <template>
-    <VPTeamMembers :members="contributors" />
+    <VPTeamMembers :members="refs" />
 </template>
