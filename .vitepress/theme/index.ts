@@ -1,10 +1,10 @@
 // https://vitepress.dev/guide/custom-theme
 import { h, Suspense } from 'vue'
 import type { Theme } from 'vitepress'
+import {defineClientComponent} from 'vitepress'
 import DefaultTheme from 'vitepress/theme'
 
 import AKWTeamPage from './components/AKWTeamPage.vue'
-import AKWDocsAsideMeta from './components/AKWDocsAsideMeta.vue'
 import AKWHomeTeam from './components/AKWHomeTeam.vue'
 import AKWHomeSponsors from './components/AKWHomeSponsors.vue'
 import AKWGallery from './components/AKWGallery.vue'
@@ -44,7 +44,7 @@ export default {
         h(AKWHomeTeam),
         h(AKWHomeSponsors)
       ],
-      'aside-outline-after': () => h(AKWDocsAsideMeta),
+      'aside-outline-after': () => h(defineClientComponent(() => import('./components/AKWDocsAsideMeta.vue'))),
     })
   },
   enhanceApp({ app, router, siteData }) {
