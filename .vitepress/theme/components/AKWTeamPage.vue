@@ -20,12 +20,14 @@ const { frontmatter } = useData();
         {{ frontmatter.longtitle }}
         </template>
         </VPTeamPageTitle>
-        <Suspense>
-            <AKWTeamPageMembers />
-            <template #fallback>
-                <AKWTeamLoader />
-            </template>
-        </Suspense>
+        <ClientOnly>
+            <Suspense>
+                <AKWTeamPageMembers />
+                <template #fallback>
+                    <AKWTeamLoader />
+                </template>
+            </Suspense>
+        </ClientOnly>
     </VPTeamPage>
 </template>
 
