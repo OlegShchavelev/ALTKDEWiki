@@ -1,5 +1,6 @@
 <script setup lang="ts">
 
+import { computed } from 'vue'
 import { VPTeamPage, VPTeamPageTitle, VPTeamMembers } from 'vitepress/theme'
 
 import { contributions, enable_autosearch, page_filter_type } from '../../data/team';
