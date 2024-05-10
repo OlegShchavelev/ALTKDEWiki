@@ -9,23 +9,29 @@ import AKWHomeTeamButton from './AKWHomeTeamButton.vue';
 
 import { contributions, homeTopLimit, home_filter_type, enable_autosearch } from '../../data/team';
 import { gitRepository } from '../../data/gitlog'
-import { getContributors, filterContributors, getContributorsTopInfo } from '../composables/gitStats'
+import { getContributors, filterContributors, getContributorsTopInfo } from '../composables/git/stats'
+
+const pageName = '[AKWHomeTeamMembers]:'
 
 let contributors = await getContributors(
   import.meta.env.VITE_GIT_KEY,
   gitRepository.split('/')[3],
   gitRepository.split('/')[4],
   enable_autosearch
-).then( async ( response ) => {
-  response = await getContributorsTopInfo(response).then( async ( response ) => {
-    filterContributors( response, home_filter_type)
-    return response.slice(0, homeTopLimit)
-  })
-  return response
-}
-).catch( async ( response ) => {
-  return response = contributions.slice(0, homeTopLimit)
+).then( response  => { 
+  return response 
+}).catch( err => { 
+  console.warn(`${pageName} Не удалось получить данные: ${err}
+                      (Сортировка будет проигнорирована. Проверьте наличие токена в .env или github actions.
+                      Если вы уверены в конфигурации и своем соединении- откройте issue)`);
+  return undefined 
 })
+
+if (contributors) {
+  contributors = filterContributors(await getContributorsTopInfo(contributors).then( response => { return response } ), home_filter_type)
+} else {
+  contributors = contributions
+}
 
 </script>
 
@@ -37,7 +43,7 @@ let contributors = await getContributors(
          Участники
       </template>
     </VPTeamPageTitle>
-    <VPTeamMembers :members="contributors" />
+    <VPTeamMembers :members="contributors.slice(0, homeTopLimit)" />
     <AKWHomeTeamButton>
       <VPButton text="Все участники" class="button" size="big" href="/project/contributions/" />
     </AKWHomeTeamButton>
