@@ -1,5 +1,6 @@
 <script setup lang="ts">
 
+import { computed } from 'vue'
 import { VPTeamPage, VPTeamPageTitle, VPTeamMembers } from 'vitepress/theme'
 
 import { contributions, enable_autosearch, page_filter_type } from '../../data/team';
@@ -22,9 +23,13 @@ let contributors = await getContributors(
   return contributions 
 })
 
+const refs = computed(()=>{
+  return contributors
+})
+
 </script>
 
 
 <template>
-    <VPTeamMembers :members="contributors" />
+    <VPTeamMembers :members="refs" />
 </template>
