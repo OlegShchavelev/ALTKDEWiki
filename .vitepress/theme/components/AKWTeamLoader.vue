@@ -1,10 +1,5 @@
 <script setup lang=ts>
-import {
-  VPTeamPage,
-  VPTeamPageTitle,
-  VPButton,
-} from 'vitepress/theme'
-import AKWHomeTeamPageButton from './AKWHomeTeamButton.vue';
+
 import { loading_placeholders } from '../../data/team';
 
 const random_placeholder = loading_placeholders[Math.floor(Math.random()*loading_placeholders.length)]
@@ -12,12 +7,6 @@ const random_placeholder = loading_placeholders[Math.floor(Math.random()*loading
 </script>
 
 <template>
-    <VPTeamPage>
-      <VPTeamPageTitle>
-      <template #title>
-         Участники
-      </template>
-      </VPTeamPageTitle>
       <div class='AKWSpiner'>
         <div class="container">
           <div class="item">
@@ -26,10 +15,6 @@ const random_placeholder = loading_placeholders[Math.floor(Math.random()*loading
           </div>
         </div>
       </div>
-      <AKWHomeTeamPageButton>
-        <VPButton text="Все участники" class="button" size="big" href="/project/contributions/" />
-      </AKWHomeTeamPageButton>
-  </VPTeamPage>
 </template>
 
 <style scoped>

@@ -5,8 +5,7 @@ import DefaultTheme from 'vitepress/theme'
 
 import AKWTeamPage from './components/AKWTeamPage.vue'
 import AKWDocsAsideMeta from './components/AKWDocsAsideMeta.vue'
-import AKWHomeTeamMembers from './components/AKWHomeTeamMembers.vue'
-import AKWTeamLoader from './components/AKWTeamLoader.vue'
+import AKWHomeTeam from './components/AKWHomeTeam.vue'
 import AKWHomeSponsors from './components/AKWHomeSponsors.vue'
 import AKWGallery from './components/AKWGallery.vue'
 import VueSilentbox from 'vue-silentbox'
@@ -42,11 +41,9 @@ export default {
       'nav-bar-content-after': () => h(NolebaseEnhancedReadabilitiesMenu),
       'nav-screen-content-after': () => h(NolebaseEnhancedReadabilitiesScreenMenu),
       'home-features-after': () => [
-        h(Suspense, null, {
-            default: h(AKWHomeTeamMembers),
-            fallback: h(AKWTeamLoader)
-        }),
-        h(AKWHomeSponsors)],
+        h(AKWHomeTeam),
+        h(AKWHomeSponsors)
+      ],
       'aside-outline-after': () => h(AKWDocsAsideMeta),
     })
   },
