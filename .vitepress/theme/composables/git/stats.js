@@ -30,38 +30,36 @@ export async function getContributors(key, owner, repo, autosearch){
     }
 
     const contributors = []
-
-
-    if (contributorsRawBase == {} || typeof contributorsRawBase == "undefined"){
+    if (contributorsRawBase || contributorsRawBase == {} ){
       for (const contributor of contributorsRawBase.data){
           const { author, total, weeks } = contributor
           let additions = 0
           let name = undefined
 
-        for (const week of weeks) {
-            additions += week.a
-        }
+          for (const week of weeks) {
+              additions += week.a
+          }
 
-        if (autosearch) {
-          name = await userGetMore(author.login).then( response  => { return response.data.name }).catch( err => { return undefined })
-        }
+          if (autosearch) {
+            name = await userGetMore(author.login).then( response  => { return response.data.name }).catch( err => { return undefined })
+          }
 
-        contributors.push({
-            avatar: author.avatar_url,
-            links: [
-              { icon: 'github', link: author.html_url },
-            ],
-            title: "Участник",
-            login: author.login,
-            name: name,
-            commits: total,
-            additions: additions
-        })
+          contributors.push({
+              avatar: author.avatar_url,
+              links: [
+                { icon: 'github', link: author.html_url },
+              ],
+              title: "Участник",
+              login: author.login,
+              name: name,
+              commits: total,
+              additions: additions
+          })
       }
-    return contributors 
-  } else {
-    return undefined
-  }
+      return contributors 
+    } else {
+      return undefined
+    }
 }
 
 export function filterContributors(contributors, filter_type){
@@ -89,6 +87,7 @@ export function filterContributors(contributors, filter_type){
 
 export async function getContributorsTopInfo(contributors){
     for (let contributor of contributors){
+        
         // Ищем имя для сайта по нику гита
         for (const gitContributor of gitMapContributors){
           if (gitContributor.nameAliases.includes(contributor.login)) {
@@ -106,7 +105,8 @@ export async function getContributorsTopInfo(contributors){
             contributor.name = contributor.login
           }
         }
-    }
 
+        //console.log(contributor)
+    }
     return contributors
 }
