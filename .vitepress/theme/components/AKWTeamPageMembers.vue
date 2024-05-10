@@ -15,7 +15,14 @@ let contributors = await getContributors(
   gitRepository.split('/')[4],
   enable_autosearch
 ).then( async response  => { 
-  return filterContributors(await getContributorsTopInfo(response).then( response => { return response } ), page_filter_type) 
+  if (response) {
+    return filterContributors(await getContributorsTopInfo(response).then( response => { return response } ).catch( err => { 
+      console.warn(`${pageName} Не удалось получить расширенные данные: ${err}
+                        (Сортировка будет проигнорирована. Проверьте наличие токена в .env или github actions.
+                        Если вы уверены в конфигурации - откройте issue)`);
+      return contributions 
+    }), page_filter_type)
+  } 
 }).catch( err => { 
   console.warn(`${pageName} Не удалось получить данные: ${err}
                       (Сортировка будет проигнорирована. Проверьте наличие токена в .env или github actions.

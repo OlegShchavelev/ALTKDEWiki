@@ -31,6 +31,9 @@ export async function getContributors(key, owner, repo, autosearch){
 
     const contributors = []
 
+    console.log(contributorsRawBase)
+
+    if (contributorsRawBase){
     for (const contributor of contributorsRawBase.data){
         const { author, total, weeks } = contributor
         let additions = 0
@@ -55,11 +58,26 @@ export async function getContributors(key, owner, repo, autosearch){
             commits: total,
             additions: additions
         })
+        console.log('-------------------------------------------\nПолучен участник: ', {
+          avatar: author.avatar_url,
+          links: [
+            { icon: 'github', link: author.html_url },
+          ],
+          title: "Участник",
+          login: author.login,
+          name: name,
+          commits: total,
+          additions: additions
+      })
     }
     return contributors 
+  } else {
+    return undefined
+  }
 }
 
 export function filterContributors(contributors, filter_type){
+  console.log('-------------------------------------------\nДо сортировки: ', contributors)
   contributors = (filter_type.includes("commits")) ? contributors.sort((a, b) => (-a.commits) - (-b.commits)) : contributors
   contributors = (filter_type.includes("additions")) ? contributors.sort((a, b) => (-a.additions) - (-b.additions)) : contributors
   if (filter_type.includes("role")){
@@ -79,18 +97,20 @@ export function filterContributors(contributors, filter_type){
       }
     }
   }
+  console.log('-------------------------------------------\nПосле сортировки: ', contributors)
   return contributors
 } 
 
 export async function getContributorsTopInfo(contributors){
     for (let contributor of contributors){
-        
+        console.log( "-------------------------------------------\nСток: ", contributor )
         // Ищем имя для сайта по нику гита
         for (const gitContributor of gitMapContributors){
           if (gitContributor.nameAliases.includes(contributor.login)) {
             contributor.name = gitContributor.name
           }
         }
+        console.log( "Достали имя из team.ts: ", contributor )
         // По имени достаем остальные параметры для сайта по нику
         for(const siteContributor of contributions){
           if(siteContributor.name == contributor.name){
@@ -102,8 +122,9 @@ export async function getContributorsTopInfo(contributors){
             contributor.name = contributor.login
           }
         }
-
-        //console.log(contributor)
+        console.log( "Остальные параметры с гита: ", contributor )
     }
+
+    console.log('-------------------------------------------\nПолучена доп информация: ',contributors)
     return contributors
 }
