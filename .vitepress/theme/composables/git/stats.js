@@ -31,6 +31,9 @@ export async function getContributors(key, owner, repo, autosearch){
 
     const contributors = []
 
+    console.log(contributorsRawBase)
+
+    if (contributorsRawBase){
     for (const contributor of contributorsRawBase.data){
         const { author, total, weeks } = contributor
         let additions = 0
@@ -68,6 +71,9 @@ export async function getContributors(key, owner, repo, autosearch){
       })
     }
     return contributors 
+  } else {
+    return undefined
+  }
 }
 
 export function filterContributors(contributors, filter_type){
