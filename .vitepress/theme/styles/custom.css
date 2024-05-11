@@ -33,7 +33,6 @@
   --vp-c-yellow-dimm-2: rgba(255, 193, 7, 0.2);
   --vp-c-yellow-dimm-3: rgba(255, 193, 7, 0.5);
 
-
   --vp-c-red: #dc3545;
   --vp-c-red-light: #df4957;
   --vp-c-red-lighter: #e6717c;
@@ -42,6 +41,16 @@
   --vp-c-red-dimm-1: rgba(220, 53, 69, 0.05);
   --vp-c-red-dimm-2: rgba(220, 53, 69, 0.2);
   --vp-c-red-dimm-3: rgba(220, 53, 69, 0.5);
+
+  --vp-c-orange: #ffa000;
+  --vp-c-orange-light: #ffc107;
+  --vp-c-orange-lighter: #ffd166;
+  --vp-c-orange-dark: #f57c00;
+  --vp-c-orange-darker: #c05900;
+  --vp-c-orange-dimm-1: rgba(255, 160, 0, 0.05);
+  --vp-c-orange-dimm-2: rgba(255, 160, 0, 0.2);
+  --vp-c-orange-dimm-3: rgba(255, 160, 0, 0.5);
+
  }
 
  :root {
