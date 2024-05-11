@@ -15,12 +15,7 @@ let contributors = await getContributors(
   enable_autosearch
 ).then( async response  => { 
   if (response) {
-    return filterContributors(await getContributorsTopInfo(response).then( response => { return response } ).catch( err => { 
-      console.warn(`${pageName} Не удалось получить расширенные данные: ${err}
-                        (Сортировка будет проигнорирована. Проверьте наличие токена в .env или github actions.
-                        Если вы уверены в конфигурации - откройте issue)`);
-      return contributions 
-    }), home_filter_type).slice(0, homeTopLimit)
+    return filterContributors( response, home_filter_type).slice(0, homeTopLimit)
   }
 }).catch( err => { 
   console.warn(`${pageName} Не удалось получить данные: ${err}
