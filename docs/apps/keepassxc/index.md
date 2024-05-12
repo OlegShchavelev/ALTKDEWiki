@@ -15,6 +15,9 @@ appstream:
         link: https://choosealicense.com/licenses/gpl-3.0/
     url: 
         homepage: https://keepassxc.org/
+        bugtracker: https://github.com/keepassxreboot/keepassxc/issues
+        translate: https://www.transifex.com/keepassxc/keepassxc
+        help: https://keepassxc.org/docs
 ---
 
 # KeePassXC
@@ -24,7 +27,7 @@ KeePassXC - менеджер паролей, позволяющий хранит
 Также при помощи неофициального порта, он доступен и на Android.
 Еще одной приятной особенностью рассматриваемого менеджера паролей является его одинаковый внешний вид на любой поддерживаемой платформе.
 
-![скриншот программы KeePassXC](./img/keepassxc_screen.png 'скриншот программы KeePassXC')
+![Скриншот программы KeePassXC](./img/keepassxc_screen.png 'Скриншот программы KeePassXC')
 
 <!--@include: @apps/_parts/install/content-repo.md-->
 <!--@include: @apps/_parts/install/content-flatpak.md-->
