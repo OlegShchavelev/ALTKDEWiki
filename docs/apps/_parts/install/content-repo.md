@@ -4,16 +4,17 @@
 
 <!--@include: @apps/_parts/install/software-repo.md-->
 
-**Установка через терминал**
+**Установка при помощи терминала**
 
-::: code-group
-
-```shell-vue[apt-get]
+::: tabs
+==apt-get
+```shell-vue
 su -
 apt-get update
 apt-get install {{ $frontmatter?.aggregation?.sisyphus.id ?? $frontmatter?.aggregation?.sisyphus }}
 ```
-```shell-vue[epm]
+==epm
+```shell-vue
 epm -i {{ $frontmatter?.aggregation?.sisyphus.id ?? $frontmatter?.aggregation?.sisyphus }}
 ```
 :::
