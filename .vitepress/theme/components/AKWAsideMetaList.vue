@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import VPLink from 'vitepress/dist/client/theme-default/components/VPLink.vue'
+import VPLink from '@vitepress/theme/components/VPLink.vue'
 import { getDomainName } from './../composables/link'
 
 export interface Lists {

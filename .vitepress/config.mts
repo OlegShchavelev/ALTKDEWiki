@@ -1,4 +1,5 @@
 import { defineConfigWithTheme } from 'vitepress'
+import { fileURLToPath, URL } from 'node:url'
 
 import { tabsMarkdownPlugin } from 'vitepress-plugin-tabs'
 import markdownItKdb from 'markdown-it-kbd'
@@ -57,6 +58,9 @@ export default defineConfigWithTheme({
         '@nolebase/vitepress-plugin-page-properties',
       ],
     },
+    resolve: {
+      alias: { '@vitepress/theme': fileURLToPath(new URL('../node_modules/vitepress/dist/client/theme-default', import.meta.url)) }
+    }
   },
   title: config.title,
   description: "открытое сообщество пользователей операционной системы ALT Regular KDE",

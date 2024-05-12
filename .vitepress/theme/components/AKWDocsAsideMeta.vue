@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { type Ref, computed } from 'vue'
-import VPImage from 'vitepress/dist/client/theme-default/components/VPImage.vue';
-import { useData, useRoute, withBase } from 'vitepress'
+import { VPImage } from 'vitepress/theme';
+import { useData, useRoute } from 'vitepress'
 import { getLists, getLinks, getLicence, getKeywords } from '../composables/asidemeta'
 import { assetImage } from '../composables/image'
 
@@ -23,8 +23,6 @@ const props = computed(() => {
     const config = theme.value.asideMeta
     const license = getLicence(metadata_license)
     const path = route.path
-
-    console.log(withBase(icon), path)
 
     return {
         thumb: assetImage(icon, path),
