@@ -3,6 +3,7 @@ import { fileURLToPath, URL } from 'node:url'
 
 import { tabsMarkdownPlugin } from 'vitepress-plugin-tabs'
 import markdownItKdb from 'markdown-it-kbd'
+import markdownItImplicitFigures from 'markdown-it-implicit-figures'
 
 import { nav, sidebar } from './data/navigations'
 import { telegram, gitflic, vk } from './data/icons'
@@ -205,6 +206,10 @@ export default defineConfigWithTheme({
     config(md) {
       md.use(tabsMarkdownPlugin)
       md.use(markdownItKdb)
+      md.use(markdownItImplicitFigures, {
+        figcaption: 'title',
+        copyAttrs: '^class$'
+      })
     }
   },
   transformPageData: (pageData) => {

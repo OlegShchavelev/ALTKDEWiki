@@ -24,7 +24,7 @@ KeePassXC - менеджер паролей, позволяющий хранит
 Также при помощи неофициального порта, он доступен и на Android.
 Еще одной приятной особенностью рассматриваемого менеджера паролей является его одинаковый внешний вид на любой поддерживаемой платформе.
 
-![скриншот программы KeePassXC](./img/keepassxc_screen.png)
+![скриншот программы KeePassXC](./img/keepassxc_screen.png 'скриншот программы KeePassXC')
 
 <!--@include: @apps/_parts/install/content-repo.md-->
 <!--@include: @apps/_parts/install/content-flatpak.md-->
