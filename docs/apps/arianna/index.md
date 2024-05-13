@@ -10,7 +10,6 @@ appstream:
     keywords:
         - kdedeveloped
     developer:
-        avatar: ./img/arianna-avatar.png 
         name: KDE Community
     metadata_license: 
         name: GNU GPLv3

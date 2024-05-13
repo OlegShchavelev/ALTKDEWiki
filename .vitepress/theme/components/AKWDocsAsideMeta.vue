@@ -4,10 +4,12 @@ import { VPImage } from 'vitepress/theme';
 import { useData, useRoute } from 'vitepress'
 import { getLists, getLinks, getLicence, getKeywords } from '../composables/asidemeta'
 import { assetImage } from '../composables/image'
+import { popular_developers } from '../../data/popular_developers'
 
 import AKWAsideMetaList from './AKWAsideMetaList.vue'
 import AKWAsideMetaLink from './AKWAsideMetaLink.vue'
 import AKWAsideMetaKeyword from './AKWAsideMetaKeyword.vue'
+import { isValidUrl } from '../composables/link';
 
 const { frontmatter, theme } = useData()
 const route = useRoute() 
@@ -25,11 +27,27 @@ const props = computed(() => {
     const path = route.path
 
     return {
-        thumb: assetImage(icon, path),
+        thumb: {
+            src: assetImage(icon?.src, path) ?? assetImage(icon, path),
+            alt: icon?.alt ?? name
+        },
         name: name,
         title: summary,
         keywords: getKeywords(keywords, config.keywords),
-        developer: { ...developer, ...{ 'avatar': assetImage(developer?.avatar, path) } },
+        developer: { 
+            ...developer,
+            ...{
+                avatar: (Object.keys(popular_developers).includes(developer.name)) ?
+                            {
+                                src: assetImage(popular_developers[developer.name], path),
+                                alt: popular_developers[developer.name].alt
+                            }:
+                            {
+                                src: assetImage(developer?.avatar?.src, path) ?? assetImage(developer?.avatar, path),
+                                alt: developer?.avatar?.alt ?? developer?.name
+                            } 
+            }
+        },
         lists: getLists({ ...license, ...url }, config.labels),
         links: getLinks(links, config.links)
     } 
@@ -40,15 +58,15 @@ const props = computed(() => {
 <template>
     
     <article v-if="props" class="AKWDocsAsideMeta">
-        <figure class="figure" v-if="props.thumb">
-            <VPImage :image="props.thumb" :alt="props.thumb?.alt ?? props.name" />
+        <figure class="figure" v-if="props.thumb?.src">
+            <VPImage :image="props.thumb.src" :alt="props.thumb.alt" />
         </figure>
         <div class="body">
             <div v-if="props.title" class="title">{{ props.title }}</div>
             <AKWAsideMetaKeyword :keywords="props.keywords" />
             <div v-if="props.developer" class="developers">
-                <figure v-if="props.developer?.avatar" class="avatar">
-                    <VPImage :image="props.developer?.avatar" :alt="props.developer?.name" />
+                <figure v-if="props.developer?.avatar?.src" class="avatar">
+                    <VPImage :image="props.developer?.avatar?.src" :alt="props.developer?.avatar?.alt" />
                 </figure>
                 <div>
                     <div class="caption">Разработчик</div>

@@ -12,7 +12,6 @@ appstream:
     keywords:
         - kdedeveloped
     developer:
-        avatar: ./img/kiten-avatar.png
         name: KDE Community
     metadata_license: 
         name: GNU GPLv2.0+
