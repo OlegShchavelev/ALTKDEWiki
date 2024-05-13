@@ -4,6 +4,7 @@ import { VPImage } from 'vitepress/theme';
 import { useData, useRoute } from 'vitepress'
 import { getLists, getLinks, getLicence, getKeywords } from '../composables/asidemeta'
 import { assetImage } from '../composables/image'
+import { popular_developers } from '../../data/popular_developers'
 
 import AKWAsideMetaList from './AKWAsideMetaList.vue'
 import AKWAsideMetaLink from './AKWAsideMetaLink.vue'
@@ -34,12 +35,17 @@ const props = computed(() => {
         title: summary,
         keywords: getKeywords(keywords, config.keywords),
         developer: { 
-            ...developer, 
-            ...{ 
-                'avatar': {
-                    src: assetImage(developer?.avatar?.src, path) ?? assetImage(developer?.avatar, path),
-                    alt: developer?.avatar?.alt ?? developer?.name
-                } 
+            ...developer,
+            ...{
+                avatar: (Object.keys(popular_developers).includes(developer.name)) ?
+                            {
+                                src: assetImage(popular_developers[developer.name], path),
+                                alt: popular_developers[developer.name].alt
+                            }:
+                            {
+                                src: assetImage(developer?.avatar?.src, path) ?? assetImage(developer?.avatar, path),
+                                alt: developer?.avatar?.alt ?? developer?.name
+                            } 
             }
         },
         lists: getLists({ ...license, ...url }, config.labels),
