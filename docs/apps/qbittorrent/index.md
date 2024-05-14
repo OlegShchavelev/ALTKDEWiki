@@ -6,7 +6,7 @@ aggregation:
 appstream:
     id: org.qbittorrent.qBittorrent
     name: qBittorrent
-    icon: ./img/org.qbittorrent.qBittorrent.png
+    icon: ./img/qbittorrent-logo.svg
     summary: Cвободный кроссплатформенный клиент файлообменной сети BitTorrent.
     developer: 
         name: qBittorrent Community
