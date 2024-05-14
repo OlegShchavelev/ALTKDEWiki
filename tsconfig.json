@@ -1,0 +1,9 @@
+{
+    "compilerOptions": {
+      "moduleResolution": "Node",
+      "baseUrl": ".",
+      "paths": {
+        "@vitepress/theme/*": ["node_modules/vitepress/dist/client/theme-default/*"]
+      },
+    },
+  }
