@@ -9,7 +9,6 @@ import { popular_developers } from '../../data/popular_developers'
 import AKWAsideMetaList from './AKWAsideMetaList.vue'
 import AKWAsideMetaLink from './AKWAsideMetaLink.vue'
 import AKWAsideMetaKeyword from './AKWAsideMetaKeyword.vue'
-import { isValidUrl } from '../composables/link';
 
 const { frontmatter, theme } = useData()
 const route = useRoute() 
@@ -39,8 +38,8 @@ const props = computed(() => {
             ...{
                 avatar: (Object.keys(popular_developers).includes(developer.name)) ?
                             {
-                                src: assetImage(popular_developers[developer.name], path),
-                                alt: popular_developers[developer.name].alt
+                                src: assetImage(popular_developers[developer.name]?.src, path),
+                                alt: popular_developers[developer.name]?.alt
                             }:
                             {
                                 src: assetImage(developer?.avatar?.src, path) ?? assetImage(developer?.avatar, path),
