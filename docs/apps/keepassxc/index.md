@@ -6,7 +6,7 @@ aggregation:
 appstream:
     id: org.keepassxc.KeePassXC
     name: KeePassXC
-    icon: ./img/org.keepassxc.KeePassXC.png
+    icon: ./img/keepassxc-logo.svg
     summary: Кроссплатформенный менеджер паролей с открытым исходным кодом.
     developer:
         name: KeePassXC Team
