@@ -1,5 +1,5 @@
 // https://vitepress.dev/guide/custom-theme
-import { h, Suspense } from 'vue'
+import { h } from 'vue'
 import type { Theme } from 'vitepress'
 import {defineClientComponent} from 'vitepress'
 import DefaultTheme from 'vitepress/theme'

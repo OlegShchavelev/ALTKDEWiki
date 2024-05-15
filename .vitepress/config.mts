@@ -7,7 +7,6 @@ import markdownItImplicitFigures from 'markdown-it-implicit-figures'
 
 import { nav, sidebar } from './data/navigations'
 import { telegram, gitflic, vk } from './data/icons'
-import { normalize } from './utils'
 
 import * as config from './config.json'
 
@@ -33,7 +32,7 @@ export default defineConfigWithTheme({
       GitChangelog({
         maxGitLogCount: gitMaxCommits,
         repoURL: () => gitRepository,
-        rewritePaths: gitRewritePath,
+        rewritePathsBy: gitRewritePath,
       }),
       GitChangelogMarkdownSection({
         getChangelogTitle: (_, __, { helpers }): string => {
@@ -225,7 +224,7 @@ export default defineConfigWithTheme({
       ['meta', { name: 'og:title', content: pageData.title + config.head.titleSeponator + config.title }],
     )
     if (pageData.frontmatter.layout !== 'home') {
-      pageData.description = `Cтатья написанная простым языком: «${pageData.title}» для ${config.title}. Последнее обновление ${config.title}: ${new Date(pageData.lastUpdated).toLocaleString(config.lang)}`
+      pageData.description = `Cтатья написанная простым языком: «${pageData.title}» для ${config.title}. Последнее обновление ${config.title}: ${ new Date( pageData.lastUpdated ?? new Date()).toLocaleString(config.lang)}`
     }
   }
 })
