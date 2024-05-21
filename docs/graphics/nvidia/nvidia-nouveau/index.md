@@ -1,7 +1,7 @@
 # Nouveau драйвер:
-## Смена проприетарных драйверов от NVIDIA на Nouveau
+## Смена проприетарного драйвера от NVIDIA на Nouveau
 
-Для установки открытых драйверов NOUVEAU, необходимо следующее:
+Для установки открытого драйвера NOUVEAU, необходимо следующее:
 
 ::: code-group
 ```shell[apt-get]
@@ -11,7 +11,7 @@ apt-get remove nvidia_glx_common
 mcedit /etc/sysconfig/grub2 # тут может быть и nano, и vi, и другой редактор
 # сохраняем и выходим
 grub-mkconfig -o /boot/grub/grub.cfg
-# Удаляем правила запрещающие nouveau, если они есть
+# Удаляем правила запрещающие Nouveau, если они есть
 rm /etc/modprobe.d/blacklist-nvidia-x11.conf
 # Удаляем изменение размещения видеопамяти, если оно есть
 rm /etc/modprobe.d/nvidia_videomemory_allocation.conf
@@ -30,7 +30,7 @@ epm -e nvidia_glx_common
 mcedit /etc/sysconfig/grub2 # тут может быть и nano, и vi, и другой редактор
 # сохраняем и выходим
 grub-mkconfig -o /boot/grub/grub.cfg
-# Удаляем правила запрещающие nouveau, если они есть
+# Удаляем правила запрещающие Nouveau, если они есть
 rm /etc/modprobe.d/blacklist-nvidia-x11.conf
 # Удаляем изменение размещения видеопамяти, если оно есть
 rm /etc/modprobe.d/nvidia_videomemory_allocation.conf
@@ -63,7 +63,6 @@ su -
 mcedit /etc/sysconfig/grub2
 grub-mkconfig -o /boot/grub/grub.cfg
 ```
-
 
 ### Источники:
 
