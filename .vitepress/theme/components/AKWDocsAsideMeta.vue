@@ -1,14 +1,16 @@
 <script setup lang="ts">
 import { type Ref, computed } from 'vue'
 import VPImage from 'vitepress/dist/client/theme-default/components/VPImage.vue';
-import { useData, useRoute } from 'vitepress'
-import { getLists, getLinks, getLicence } from '../composables/asidemeta'
+import { useData, useRoute, withBase } from 'vitepress'
+import { getLists, getLinks, getLicence, getKeywords } from '../composables/asidemeta'
+import { assetImage } from '../composables/image'
 
 import AKWAsideMetaList from './AKWAsideMetaList.vue'
 import AKWAsideMetaLink from './AKWAsideMetaLink.vue'
+import AKWAsideMetaKeyword from './AKWAsideMetaKeyword.vue'
 
 const { frontmatter, theme } = useData()
-const route = useRoute()
+const route = useRoute() 
 
 const props = computed(() => {
 
@@ -16,50 +18,36 @@ const props = computed(() => {
         return
     }
 
-    const { name, summary, metadata_license, url } = frontmatter.value.appstream
-    var { icon, developer } = frontmatter.value.appstream
+    const { icon, name, summary, developer, metadata_license, keywords, url } = frontmatter.value.appstream
     const links = frontmatter.value.aggregation
     const config = theme.value.asideMeta
     const license = getLicence(metadata_license)
+    const path = route.path
 
-
-    if (typeof icon !== 'undefined') {
-        if (icon.includes('https:')||icon.includes('http:')){
-            icon = icon
-        } else {
-            icon = new URL(`/${route.path.slice(1) + frontmatter.value.appstream.icon.slice(2)}`, import.meta.url).href
-        }
-    }
-
-    if (typeof developer !== 'undefined') {
-        if (typeof developer.avatar !== 'undefined'){
-            if (developer.avatar.includes('https:')||developer.avatar.includes('http:')){
-                developer.avatar = developer.avatar
-            } else {
-                developer.avatar = new URL(`/${route.path.slice(1) + frontmatter.value.developer.avatar.slice(2)}`, import.meta.url).href
-            }
-        }
-    }
+    console.log(withBase(icon), path)
 
     return {
-        thumb: icon,
+        thumb: assetImage(icon, path),
         name: name,
         title: summary,
-        developer: developer,
+        keywords: getKeywords(keywords, config.keywords),
+        developer: { ...developer, ...{ 'avatar': assetImage(developer?.avatar, path) } },
         lists: getLists({ ...license, ...url }, config.labels),
         links: getLinks(links, config.links)
-    }
+    } 
 })
 
 </script>
 
 <template>
+    
     <article v-if="props" class="AKWDocsAsideMeta">
         <figure class="figure" v-if="props.thumb">
             <VPImage :image="props.thumb" :alt="props.thumb?.alt ?? props.name" />
         </figure>
         <div class="body">
             <div v-if="props.title" class="title">{{ props.title }}</div>
+            <AKWAsideMetaKeyword :keywords="props.keywords" />
             <div v-if="props.developer" class="developers">
                 <figure v-if="props.developer?.avatar" class="avatar">
                     <VPImage :image="props.developer?.avatar" :alt="props.developer?.name" />

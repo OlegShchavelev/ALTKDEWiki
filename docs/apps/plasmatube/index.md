@@ -1,9 +1,23 @@
 ---
+title: PlasmaTube
 aggregation:
     flatpak: org.kde.plasmatube
 appstream:
     id: org.kde.plasmatube
     name: PlasmaTube
+    icon: ./img/org.kde.plasmatube.svg
+    summary: Приложение для просмотра видео с YouTube на телефоне или компьютере.
+    keywords:
+        - kdedeveloped
+    developer:
+        avatar: ./img/plasmatube-avatar.png
+        name: KDE Community
+    metadata_license: 
+        name: GNU GPLv3.0
+        link: https://choosealicense.com/licenses/gpl-3.0/
+    url: 
+        homepage: https://apps.kde.org/ru/plasmatube/
+        bugtracker: https://bugs.kde.org/enter_bug.cgi?product=PlasmaTube
 ---
 
 # PlasmaTube

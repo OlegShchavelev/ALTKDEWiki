@@ -15,20 +15,34 @@ export const getLists = (data: {}, labels: {}) => {
     return { ..._data }
 }
 
-export const getLinks = (data: {}, config: {}) => {
+export const getLinks = (data: any, config: {}) => {
 
-    if (!data) return []
+    if (!data) return
 
     const _data = []
 
     Object.entries(data).forEach(([key, value]) => {
         (value && config[key]) ?
-            _data[key] = Object.assign({}, { id: value }, config[key])
+            _data[key] = Object.assign({}, { id: value?.id ?? value }, config[key])
             : {}
     })
 
-    return { ..._data }
+    return Object.assign({}, _data)
 }
+
+export const getKeywords = (data: Record<string, string>, config: Record<string, any>) => {
+    if (!data) return;
+
+    const _data: Record<string, any> = {};
+
+    Object.values(data).forEach((value: string) => {
+        if (value && config[value]) {
+            _data[value] = config[value];
+        }
+    });
+
+    return _data;
+};
 
 export const getLicence = (data: any) => {
 

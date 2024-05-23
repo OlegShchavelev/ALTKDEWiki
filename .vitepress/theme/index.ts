@@ -44,6 +44,6 @@ export default {
     app.use(VueSilentbox, {
       downloadButtonLabel: "Скачать 📥"
     });
-    app.component('AKWGallery', AKWGallery);
+    app.component('Gallery', AKWGallery);
   },
 } satisfies Theme
