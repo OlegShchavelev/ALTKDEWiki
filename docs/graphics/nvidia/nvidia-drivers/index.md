@@ -690,7 +690,7 @@ https://justin.palpant.us/monitor-and-maximize-nvidia-gpu-performance-on-linux/
 Также, для разных версий драйвера в документации заявлено разное кол-во функций. в документации для 364.19 их описано 6, а в 550.54.14 их уже 2.
 :::
 
-Установить битовую маску можно либо в конфигурационном файле xorg.conf в разделе Device, либо через такие программы, как [nvidia-xconfig](d#nvidia-xconfig) и [EnvyControl](#envycontrol)
+Установить битовую маску можно либо в конфигурационном файле xorg.conf в разделе Device, либо через такие программы, как [nvidia-xconfig](#nvidia-xconfig) и [EnvyControl](#envycontrol)
 
 Пример работы с nvidia-xconfig:
 ```shell
