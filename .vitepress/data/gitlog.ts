@@ -126,7 +126,7 @@ export const gitMapContributors = [
     {
         name: "Максим Остапенко",
         avatar: "https://github.com/Krator3.png",
-        nameAliases: ['Krator3'],
+        nameAliases: ['Krator3', 'Maxim Ostapenko'],
     },
     {
         name: "Давид Султаниязов",
