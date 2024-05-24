@@ -1,5 +1,5 @@
  <div align="center"> 
-  <a href="https://github.com/Ampernic/ALTRegularGnomeWiki"> 
+  <a href="https://github.com/Ampernic/ALTKDEWiki"> 
     <img src="https://i.imgur.com/DA9QSc6.png" alt="Logo" width="256" height="256"> 
   </a> 
   <h1 align="center">ALT KDE Wiki
