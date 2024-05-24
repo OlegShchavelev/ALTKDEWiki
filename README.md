@@ -1,5 +1,18 @@
-# ALT KDE Wiki
-База знаний открытого сообщества пользователей операционной системы ALT Regular KDE
+ <div align="center"> 
+  <a href="https://github.com/Ampernic/ALTRegularGnomeWiki"> 
+    <img src="https://i.imgur.com/DA9QSc6.png" alt="Logo" width="256" height="256"> 
+  </a> 
+  <h1 align="center">ALT KDE Wiki
+  <br/>
+  <img alt="GitHub License" src="https://img.shields.io/github/license/OlegShchavelev/ALTKDEWiki">
+  <img alt="GitHub commit activity" src="https://img.shields.io/github/commit-activity/y/OlegShchavelev/ALTKDEWiki">
+  <img alt="GitHub Issues or Pull Requests" src="https://img.shields.io/github/issues/OlegShchavelev/ALTKDEWiki">
+  <img alt="GitHub deployments" src="https://img.shields.io/github/deployments/OlegShchavelev/ALTKDEWiki/github-pages?label=Last%20Deploy">
+  </h1> 
+  <p align="center"> База знаний открытого сообщества пользователей операционной системы ALT Regular KDE.</p>
+  <br/> 
+  <br/> 
+ </div> 
 
 ## Разработка
 Перед запуском проекта убедитесь, что у вас установелны необходимые компоненты
