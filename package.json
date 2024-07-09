@@ -1,23 +1,62 @@
 {
+  "name": "@alt-gnome/alt-wiki-vitepress-gnome",
+  "description": "Библиотека знаний операционной системы ALT Regular Gnome",
+  "homepage": "https://alt-gnome.wiki/",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/OlegShchavelev/ALTGnomeWiki/issues"
+  },
+  "keywords": [
+    "linux",
+    "altgnome",
+    "altregulargnome",
+    "altgnomewiki",
+    "altwiki",
+    "vitepress"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/OlegShchavelev/ALTGnomeWiki"
+  },
+  "type": "module",
+  "remarkConfig": {
+    "plugins": [
+      "remark-lint-no-multiple-toplevel-headings"
+    ]
+  },
   "devDependencies": {
+    "@cspell/dict-ru_ru": "^2.2.1",
     "@iconify-json/svg-spinners": "^1.1.2",
     "@nolebase/vitepress-plugin-enhanced-readabilities": "^1.22.4",
     "@nolebase/vitepress-plugin-git-changelog": "^2.0.0-rc12",
     "@types/node": "^20.12.12",
+    "cspell": "^8.10.4",
     "markdown-it-implicit-figures": "^0.12.0",
     "markdown-it-kbd": "^2.2.2",
+    "remark-cli": "^12.0.1",
+    "remark-lint": "^10.0.0",
+    "remark-lint-no-multiple-toplevel-headings": "^4.0.0",
     "vitepress": "^1.0.0-rc.25",
     "vitepress-plugin-tabs": "^0.5.0",
     "vitepress-sidebar": "^1.22.0",
-    "vue-silentbox": "^3.0.4"
+    "vue-silentbox": "^3.0.4",
+    "yaspeller": "^10.0.1"
   },
   "scripts": {
     "docs:dev": "vitepress dev",
     "docs:build": "vitepress build",
-    "docs:preview": "vitepress preview"
+    "docs:preview": "vitepress preview",
+    "docs:spell-check": "npm run docs:yaspeller-full && npm run docs:cspell-full",
+    "docs:yaspeller-full": "yaspeller --dictionary .yaspeller/frontmatter.json:.yaspeller/apps\\&companies.json:.yaspeller/names.json ./docs --only-errors",
+    "docs:yaspeller": "yaspeller --dictionary .yaspeller/frontmatter.json:.yaspeller/apps\\&companies.json:.yaspeller/names.json",
+    "docs:cspell-full": "npx cspell --show-context --show-suggestions --color ./docs/**/**/*.md",
+    "docs:cspell": "npx cspell --show-context --show-suggestions --color",
+    "docs:remark-full": "remark ./docs --frail",
+    "docs:remark": "remark"
   },
   "dependencies": {
     "@octokit/core": "^6.1.2",
+    "remark": "^15.0.1",
     "unocss": "^0.59.4"
   }
 }
