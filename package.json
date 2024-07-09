@@ -1,22 +1,22 @@
 {
-  "name": "@alt-gnome/alt-wiki-vitepress-gnome",
-  "description": "Библиотека знаний операционной системы ALT Regular Gnome",
-  "homepage": "https://alt-gnome.wiki/",
+  "name": "@alt-gnome/alt-wiki-vitepress-kde",
+  "description": "Библиотека знаний операционной системы ALT Regular KDE",
+  "homepage": "https://alt-kde.wiki/",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/OlegShchavelev/ALTGnomeWiki/issues"
+    "url": "https://github.com/OlegShchavelev/ALTKDEWiki/issues"
   },
   "keywords": [
     "linux",
-    "altgnome",
-    "altregulargnome",
-    "altgnomewiki",
+    "altkde",
+    "altregularkde",
+    "altkdewiki",
     "altwiki",
     "vitepress"
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/OlegShchavelev/ALTGnomeWiki"
+    "url": "https://github.com/OlegShchavelev/ALTKDEWiki"
   },
   "type": "module",
   "remarkConfig": {
