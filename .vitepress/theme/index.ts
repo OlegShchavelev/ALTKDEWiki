@@ -29,6 +29,9 @@ import {
 
 import { lexiconEnhancedReadabilities } from './lexicon/enhanced-readabilities'
 
+import { yandexMetrika } from '@hywax/vitepress-yandex-metrika'
+import * as config from '../config.json'
+
 import 'uno.css'
 import './styles/style.css'
 import './styles/custom.css'
@@ -47,16 +50,21 @@ export default {
       'aside-outline-after': () => h(defineClientComponent(() => import('./components/AKWDocsAsideMeta.vue'))),
     })
   },
-  enhanceApp({ app, router, siteData }) {
-    app.provide(InjectionKey, {
+  enhanceApp(ctx) {
+    ctx.app.provide(InjectionKey, {
       locales: lexiconEnhancedReadabilities
     } as Options)
-    enhanceAppWithTabs(app)
-    app.component('contribution', AKWTeamPage);
-    app.use(VueSilentbox, {
+    enhanceAppWithTabs(ctx.app)
+    ctx.app.component('contribution', AKWTeamPage);
+    ctx.app.use(VueSilentbox, {
       downloadButtonLabel: "Скачать 📥"
     });
-    app.component('Gallery', AKWGallery);
-    app.use(NolebaseGitChangelogPlugin, {locales: gitLocales, mapContributors: gitMapContributors})
+    ctx.app.component('Gallery', AKWGallery);
+    ctx.app.use(NolebaseGitChangelogPlugin, {locales: gitLocales, mapContributors: gitMapContributors})
+    yandexMetrika(ctx, {
+      counter: {
+        id: config.yaMetrikaId
+      },
+    })
   },
 } satisfies Theme
