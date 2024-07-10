@@ -1,9 +1,11 @@
 # Nouveau драйвер:
+
 ## Смена проприетарного драйвера от NVIDIA на Nouveau
 
 Для установки открытого драйвера NOUVEAU, необходимо следующее:
 
 ::: code-group
+
 ```shell[apt-get]
 su -
 apt-get remove nvidia_glx_common
@@ -39,6 +41,7 @@ epm reinstall xorg-dri-nouveau xorg-drv-nouveau
 # перезагрузиться
 reboot
 ```
+
 :::
 
 Как только все загрузилось и мы убедились, что NOUVEAU заработало:
@@ -50,6 +53,7 @@ make-initrd
 # посмотреть что в выводе сборки initrd присутствует Nouveau
 reboot
 ```
+
 ## Управление питанием на Nouveau
 
 Nouveau, драйвер с открытым исходным кодом для графических процессоров Nvidia, развивается посредством реверс-инжиниринга. В области управления питанием были как прогрессы, так и регрессы (см. страницу [PowerManagement](https://nouveau.freedesktop.org/PowerManagement.html)).

@@ -19,9 +19,11 @@ su -
 apt-get update
 apt-get install accountsservice
 ```
+
 ```shell[epm]
 epm -i accountsservice
 ```
+
 :::
 
 Теперь перезайдите в параметры системы для вступления изменений в силу.

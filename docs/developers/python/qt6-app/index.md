@@ -15,11 +15,13 @@ mkdir test_qt
 cd test_qt
 pip3 install pyqt6
 ```
+
 ```shell[poetry]
 poetry new test_qt
 cd test_qt
 poetry add pyqt6
 ```
+
 :::
 
 ### Вставляем код в файл main.py:
@@ -27,9 +29,11 @@ poetry add pyqt6
 ```shell
 nano main.py
 ```
+
 ::: info Обратите внимание
 В данном примере мы используем редактор `nano`, вы же можете использовать любой другой.
 :::
+
 ```python
 from PyQt6.QtWidgets import QApplication, QLabel, QMainWindow, QPushButton
 from PyQt6.QtGui import QDesktopServices
@@ -42,14 +46,14 @@ class MainWindow(QMainWindow):
         self.setWindowTitle("Пример")
         self.setMinimumSize(250, 200)
         self.setMaximumSize(250, 200)
-        
+
         label = QLabel("Привет, мир", self)
         label.move(78, 50)
 
         button = QPushButton("ALT KDE Wiki", self)
         button.move(75, 100)
         button.clicked.connect(self.open_website)
-        
+
     def open_website(self):
         url = QUrl("https://alt-kde.wiki")
         QDesktopServices.openUrl(url)
@@ -69,10 +73,12 @@ if __name__ == "__main__":
 ```shell[pip]
 python3 main.py
 ```
+
 ```shell[poetry]
 poetry shell
 python3 main.py
 ```
+
 :::
 
 ![qt-app](./img/qt-app.png)

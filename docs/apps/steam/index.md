@@ -1,31 +1,31 @@
 ---
 title: Steam
 aggregation:
-    flatpak: 
-        id: com.valvesoftware.Steam
-        build: unoffical
-    sisyphus: steam
-    epm:
-        play:
-            id: steam
-            build: unoffical
+  flatpak:
+    id: com.valvesoftware.Steam
+    build: unofficial
+  sisyphus: steam
+  epm:
+    play:
+      id: steam
+      build: unofficial
 appstream:
-    id: steam.desktop
-    name: Steam
-    icon: ./img/steam-logo.svg
-    summary: Клиент для платформы Steam
-    keywords: 
-        - proprietary
-        - restrictions
-    developer: 
-        name: Valve Software
-        avatar: https://avatars.githubusercontent.com/u/3082775?s=200&v=4
-    metadata_license: 
-        name: Собственная
-        link: https://store.steampowered.com/eula/243950_eula_0
-    url: 
-        homepage: https://store.steampowered.com/
-        bugtracker: https://github.com/ValveSoftware/steam-for-linux/issues 
+  id: steam.desktop
+  name: Steam
+  icon: ./img/steam-logo.svg
+  summary: Клиент для платформы Steam
+  keywords:
+    - proprietary
+    - restrictions
+  developer:
+    name: Valve Software
+    avatar: https://avatars.githubusercontent.com/u/3082775?s=200&v=4
+  metadata_license:
+    name: Собственная
+    link: https://store.steampowered.com/eula/243950_eula_0
+  url:
+    homepage: https://store.steampowered.com/
+    bugtracker: https://github.com/ValveSoftware/steam-for-linux/issues
 ---
 
 # Steam
@@ -54,11 +54,11 @@ Proton — интегрированный со Steam Play инструмент, 
 
 Запустите клиент и найдите в верхней части приложения надпись Steam. При нажатии на неё откроется контекстное меню, выберите пункт «Настройки». В настройках перейдите в раздел совместимость и выберите:
 
-* Включить Steam Play, для поддерживаемых продуктов
-* Включить Steam Play для других продуктов 
-* Включить другие игры с помощью `Proton 8.x.x`
+- Включить Steam Play, для поддерживаемых продуктов
+- Включить Steam Play для других продуктов
+- Включить другие игры с помощью `Proton 8.x.x`
 
-Включить поддержку Steam Play возможно и для конкретной игры. В разделе **БИБЛИОТЕКА** в перечне с играми выберите из списка игру, вызовите контекстное меню правой кликом мышки и выберите пункт свойства. В окне настроек в разделе **Совместимость**, активируйте опции **Принудительно использовать выбранный инструмент совместимости Steam Play** и выберите нужную вам ветку **Proton**   
+Включить поддержку Steam Play возможно и для конкретной игры. В разделе **БИБЛИОТЕКА** в перечне с играми выберите из списка игру, вызовите контекстное меню правой кликом мышки и выберите пункт свойства. В окне настроек в разделе **Совместимость**, активируйте опции **Принудительно использовать выбранный инструмент совместимости Steam Play** и выберите нужную вам ветку **Proton**
 
 ![Steam Play](./img/steam_play.gif)
 
@@ -77,9 +77,11 @@ su -
 apt-get update
 apt-get install vulkan-amdgpu xorg-drv-amdgpu i586-xorg-drv-amdgpu
 ```
+
 ```shell[epm]
 epm -i vulkan-amdgpu xorg-drv-amdgpu i586-xorg-drv-amdgpu
 ```
+
 :::
 
 ## Запуск Steam для графических устройств от Intel
@@ -93,9 +95,11 @@ su -
 apt-get update
 apt-get install i586-libGL i586-libGLU i586-xorg-dri-intel
 ```
+
 ```shell[epm]
 epm -i i586-libGL i586-libGLU i586-xorg-dri-intel
 ```
+
 :::
 
 ## Рекомендации и обходные решения
@@ -105,6 +109,7 @@ epm -i i586-libGL i586-libGLU i586-xorg-dri-intel
 Проверьте что при запуске игры в вашей системе выбрана английская раскладка клавиатуры. Если это не так, то закройте игру, поменяйте раскладку на английскую и запустите игру заново.
 
 Так-же можно добавить параметр запуска к игре, это должно решить проблему:
+
 ```shell
 -input_button_code_is_scan_code
 ```
@@ -113,7 +118,7 @@ epm -i i586-libGL i586-libGLU i586-xorg-dri-intel
 
 ### Залипают клавиши (stuck down) в играх Steam Play (Proton)
 
-Вы можете использовать xset утилиту, которая работает на X.org уровне в средах рабочего стола. 
+Вы можете использовать `xset` утилиту, которая работает на X.org уровне в средах рабочего стола.
 
 Отключить повторение с клавиатуры:
 
@@ -122,7 +127,8 @@ xset r off
 ```
 
 :::info
-Как правило, данная проблема связанна с ошибкой в библиотеке Ibus.)
+Как правило, данная проблема связанна с ошибкой в библиотеке Ibus.
+
 Данный метод работает как в Xorg, так и Wayland сессиях.
 :::
 
@@ -132,7 +138,7 @@ xset r off
 xset r on
 ```
 
-### Зависание мышки при движении в играх 
+### Зависание мышки при движении в играх
 
 Данная проблема обусловлена подключением «Неизвестного монитора» в списке устройств у пользователей NVIDIA c проприетарными драйверами версии 535.xx. Временное решение описано на станице [NVIDIA](https://alt-gnome.wiki/nvidia.html#%C2%AB%D0%BD%D0%B5%D0%B8%D0%B7%D0%B2%D0%B5%D1%81%D1%82%D0%BD%D1%8B%D0%B8-%D0%BC%D0%BE%D0%BD%D0%B8%D1%82%D0%BE%D1%80%C2%BB-%D0%B2-%D0%BD%D0%B0%D1%81%D1%82%D1%80%D0%BE%D0%B8%D0%BA%D0%B0%D1%85-%D0%B4%D0%B8%D1%81%D0%BF%D0%BB%D0%B5%D0%B5%D0%B2-%D0%B2-%D1%81%D0%B5%D1%81%D1%81%D0%B8%D0%B8-wayland)
 

@@ -18,9 +18,11 @@ apt-get update
 apt-get install gcc-c++ zlib-devel libssl-devel libsqlite3-devel libffi-devel
 exit
 ```
+
 ```shell[epm]
 epm -i gcc-c++ zlib-devel libssl-devel libsqlite3-devel libffi-devel
 ```
+
 :::
 
 ## Установка из исходного кода
@@ -59,8 +61,6 @@ exit
 `VERSION` — необходимая версия Python. \
 `--prefix` — устанавливает директорию для сборки, можно убрать.
 
-
-
 :::info
 При сборке Python в собственную директорию, необходимо добавить её в переменную PATH.
 :::
@@ -75,12 +75,14 @@ apt-get update
 apt-get install pip
 exit
 ```
+
 ```shell[epm]
 epm -i pip
 ```
+
 :::
 
-## Использование venv
+## Использование `venv`
 
 ### Переходим в папку проекта:
 

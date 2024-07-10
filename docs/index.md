@@ -3,8 +3,8 @@
 layout: home
 
 hero:
-  name: "ALT Regular KDE"
-  text: "Community"
+  name: 'ALT Regular KDE'
+  text: 'Community'
   image:
     src: /laptop.svg
     alt: Gnome
@@ -19,8 +19,8 @@ hero:
 
 features:
   - title: Раньше чем у других
-    details: Eжедневно обновляемый репозиторий пакетов свободных программ Sisyphus
-  - title: Цифровая НЕзависмость
+    details: Ежедневно обновляемый репозиторий пакетов свободных программ Sisyphus
+  - title: Цифровая НЕзависимость
     details: Семейство дистрибутивов Linux, производится в России с 2000 года.
   - title: Открытое сообщество
     details: Путеводитель в мир открытого программного обеспечения.

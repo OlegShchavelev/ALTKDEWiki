@@ -30,7 +30,8 @@ cargo new NAME
 
 `NAME` — название проекта.
 
-::: details Пример архитектуры 
+::: details Пример архитектуры
+
 ```shell
 new_project
 ├── Cargo.lock
@@ -40,6 +41,7 @@ new_project
 └── src/
     └── main.rs
 ```
+
 :::
 
 ### Указание зависимостей:

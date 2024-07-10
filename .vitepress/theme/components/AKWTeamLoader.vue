@@ -39,7 +39,7 @@ const random_placeholder = loading_placeholders[Math.floor(Math.random()*loading
   max-width: 1152px;
   background: var(--vp-c-bg-soft);
   border-radius: 10px;
-} 
+}
 
 @media only screen and (max-width: 1024px) {
 .AKWSpiner .container {

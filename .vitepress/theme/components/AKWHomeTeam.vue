@@ -1,33 +1,26 @@
 <script setup lang="ts">
-import {
-  VPTeamPage,
-  VPTeamPageTitle,
-  VPButton,
-} from 'vitepress/theme'
+import { VPTeamPage, VPTeamPageTitle, VPButton } from 'vitepress/theme'
 
-import AKWHomeTeamButton from './AKWHomeTeamButton.vue';
-import AKWHomeTeamMembers from './AKWHomeTeamMembers.vue';
-import AKWTeamLoader from './AKWTeamLoader.vue';
-
+import AKWHomeTeamButton from './AKWHomeTeamButton.vue'
+import AKWHomeTeamMembers from './AKWHomeTeamMembers.vue'
+import AKWTeamLoader from './AKWTeamLoader.vue'
 </script>
 
 <template>
-    <VPTeamPage>
-        <VPTeamPageTitle>
-            <template #title>
-                Участники
-            </template>
-        </VPTeamPageTitle>
-        <ClientOnly>
-            <Suspense>
-                <AKWHomeTeamMembers/>
-                <template #fallback>
-                    <AKWTeamLoader />
-                </template>
-            </Suspense>
-        </ClientOnly>
-        <AKWHomeTeamButton>
-            <VPButton text="Все участники" class="button" size="big" href="/project/contributions/" />
-        </AKWHomeTeamButton>
-    </VPTeamPage>
+  <VPTeamPage>
+    <VPTeamPageTitle>
+      <template #title> Участники </template>
+    </VPTeamPageTitle>
+    <ClientOnly>
+      <Suspense>
+        <AKWHomeTeamMembers />
+        <template #fallback>
+          <AKWTeamLoader />
+        </template>
+      </Suspense>
+    </ClientOnly>
+    <AKWHomeTeamButton>
+      <VPButton text="Все участники" class="button" size="big" href="/project/contributions/" />
+    </AKWHomeTeamButton>
+  </VPTeamPage>
 </template>
