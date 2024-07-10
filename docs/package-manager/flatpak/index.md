@@ -4,11 +4,11 @@ title: Flatpak
 
 # Flatpak
 
-Flatpak — пакетный менеджер для управления Flatpak-пакетами. В модели Flatpak приложения могут создаваться и распространяться независимо от устройства (host-системы), в которой они используются, приложение частично изолированы от хост-системы ('sandboxed') во время работы приложения.
+Flatpak — система для создания, распространения и запуска изолированных настольных приложений в Linux.
 
 ## Установка из репозитория
 
-Устоновим Flatpak используя Konsole:
+Установим Flatpak используя терминал:
 
 :::tabs
 == Flatpak
@@ -19,9 +19,11 @@ su -
 apt-get update
 apt-get install flatpak
 ```
+
 ```shell[epm]
 epm -i flatpak
 ```
+
 == Flatpak c FlatHub
 ::: code-group
 
@@ -30,9 +32,11 @@ su -
 apt-get update
 apt-get install flatpak-repo-flathub
 ```
+
 ```shell[epm]
 epm -i flatpak-repo-flathub
 ```
+
 :::
 
 ### Интеграция с центром приложений Discovery
@@ -46,22 +50,24 @@ su -
 apt-get update
 apt-get install plasma5-discover-flatpak
 ```
+
 ```shell[epm]
 epm -i plasma5-discover-flatpak
 ```
+
 :::
 
 ## Использование пакетного менеджера Flatpak
 
 ### Управления репозиториями
 
-Просмотр подключенных репозитриев осуществляется командой `remotes`, введите в Konsole:
+Просмотр подключенных репозиториев осуществляется командой `remotes`, введите в терминал:
 
 ```shell
 flatpak remotes
 ```
 
-Подключить репозиторий общесистемно используйте следующую команду. Опция `--if-not-exists` останавливает команду от выдачи ошибки, если удаленное устройство уже существует:
+Подключить репозиторий для всей системы используйте следующую команду. Опция `--if-not-exists` останавливает команду от выдачи ошибки, если удаленное устройство уже существует:
 
 ```shell
 flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
@@ -89,7 +95,7 @@ flatpak search krita
 flatpak install flathub org.kde.krita
 ```
 
-Альтернативном вариантом установки приложения указать агрумент путь к мета-файлу, в котором содержатя необходимые данные об установке:
+Альтернативном вариантом установки приложения указать аргумент путь к мета-файлу, в котором содержатся необходимые данные об установке:
 
 ```shell
 flatpak install https://flathub.org/repo/appstream/org.kde.krita.flatpakref

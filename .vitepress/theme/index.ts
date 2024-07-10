@@ -1,7 +1,7 @@
 // https://vitepress.dev/guide/custom-theme
 import { h } from 'vue'
 import type { Theme } from 'vitepress'
-import {defineClientComponent} from 'vitepress'
+import { defineClientComponent } from 'vitepress'
 import DefaultTheme from 'vitepress/theme'
 
 import AKWTeamPage from './components/AKWTeamPage.vue'
@@ -12,20 +12,15 @@ import VueSilentbox from 'vue-silentbox'
 
 import {
   NolebaseEnhancedReadabilitiesMenu,
-  NolebaseEnhancedReadabilitiesScreenMenu,
+  NolebaseEnhancedReadabilitiesScreenMenu
 } from '@nolebase/vitepress-plugin-enhanced-readabilities'
 import type { Options } from '@nolebase/vitepress-plugin-enhanced-readabilities'
 import { InjectionKey } from '@nolebase/vitepress-plugin-enhanced-readabilities'
 import { enhanceAppWithTabs } from 'vitepress-plugin-tabs/client'
 
-import { 
-  NolebaseGitChangelogPlugin 
-} from '@nolebase/vitepress-plugin-git-changelog/client'
+import { NolebaseGitChangelogPlugin } from '@nolebase/vitepress-plugin-git-changelog/client'
 
-import {
-  gitLocales,
-  gitMapContributors
-} from '../data/gitlog'
+import { gitLocales, gitMapContributors } from '../data/gitlog'
 
 import { lexiconEnhancedReadabilities } from './lexicon/enhanced-readabilities'
 
@@ -43,11 +38,8 @@ export default {
     return h(DefaultTheme.Layout, null, {
       'nav-bar-content-after': () => h(NolebaseEnhancedReadabilitiesMenu),
       'nav-screen-content-after': () => h(NolebaseEnhancedReadabilitiesScreenMenu),
-      'home-features-after': () => [
-        h(AKWHomeTeam),
-        h(AKWHomeSponsors)
-      ],
-      'aside-outline-after': () => h(defineClientComponent(() => import('./components/AKWDocsAsideMeta.vue'))),
+      'home-features-after': () => [h(AKWHomeTeam), h(AKWHomeSponsors)],
+      'aside-outline-after': () => h(defineClientComponent(() => import('./components/AKWDocsAsideMeta.vue')))
     })
   },
   enhanceApp(ctx) {
@@ -55,16 +47,16 @@ export default {
       locales: lexiconEnhancedReadabilities
     } as Options)
     enhanceAppWithTabs(ctx.app)
-    ctx.app.component('contribution', AKWTeamPage);
+    ctx.app.component('contribution', AKWTeamPage)
     ctx.app.use(VueSilentbox, {
-      downloadButtonLabel: "Скачать 📥"
-    });
-    ctx.app.component('Gallery', AKWGallery);
-    ctx.app.use(NolebaseGitChangelogPlugin, {locales: gitLocales, mapContributors: gitMapContributors})
+      downloadButtonLabel: 'Скачать 📥'
+    })
+    ctx.app.component('Gallery', AKWGallery)
+    ctx.app.use(NolebaseGitChangelogPlugin, { locales: gitLocales, mapContributors: gitMapContributors })
     yandexMetrika(ctx, {
       counter: {
         id: config.yaMetrikaId
-      },
+      }
     })
-  },
+  }
 } satisfies Theme

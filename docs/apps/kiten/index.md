@@ -1,24 +1,24 @@
 ---
 title: Kiten
 aggregation:
-    flatpak: org.kde.kiten
-    sisyphus: kde5-kiten
-    snap: kiten
+  flatpak: org.kde.kiten
+  sisyphus: kde5-kiten
+  snap: kiten
 appstream:
-    id: org.kde.kiten
-    name: Kiten
-    icon: ./img/org.kde.kiten.svg
-    summary: Справочник и учебное пособие по изучению японского языка.
-    keywords:
-        - kdedeveloped
-    developer:
-        name: KDE Community
-    metadata_license: 
-        name: GNU GPLv2.0+
-        link: https://choosealicense.com/licenses/gpl-2.0/
-    url: 
-        homepage: https://apps.kde.org/ru/kiten/
-        bugtracker: https://bugs.kde.org/enter_bug.cgi?product=Kiten
+  id: org.kde.kiten
+  name: Kiten
+  icon: ./img/org.kde.kiten.svg
+  summary: Справочник по японскому языку и учебное пособие.
+  keywords:
+    - kdedeveloped
+  developer:
+    name: KDE Community
+  metadata_license:
+    name: GNU GPLv2+
+    link: https://choosealicense.com/licenses/gpl-2.0/
+  url:
+    homepage: https://apps.kde.org/ru/kiten/
+    bugtracker: https://bugs.kde.org/enter_bug.cgi?product=Kiten
 ---
 
 # Kiten

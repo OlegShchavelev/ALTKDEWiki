@@ -1,7 +1,7 @@
 <template>
-    <div class="AKWTeamPageButton">
-        <slot></slot>
-    </div>
+  <div class="AKWTeamPageButton">
+    <slot></slot>
+  </div>
 </template>
 
 <style scoped>

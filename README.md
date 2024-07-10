@@ -1,20 +1,21 @@
- <div align="center"> 
-  <a href="https://github.com/OlegShchavelev/ALTKDEWiki"> 
-    <img src="https://i.imgur.com/DA9QSc6.png" alt="Logo" width="256" height="256"> 
-  </a> 
+<div align="center">
+  <a href="https://github.com/OlegShchavelev/ALTKDEWiki">
+    <img src="https://i.imgur.com/DA9QSc6.png" alt="Logo" width="256" height="256">
+  </a>
   <h1 align="center">ALT KDE Wiki
   <br/>
   <img alt="GitHub License" src="https://img.shields.io/github/license/OlegShchavelev/ALTKDEWiki">
   <img alt="GitHub commit activity" src="https://img.shields.io/github/commit-activity/y/OlegShchavelev/ALTKDEWiki">
   <img alt="GitHub Issues or Pull Requests" src="https://img.shields.io/github/issues/OlegShchavelev/ALTKDEWiki">
   <img alt="GitHub deployments" src="https://img.shields.io/github/deployments/OlegShchavelev/ALTKDEWiki/github-pages?label=Last%20Deploy">
-  </h1> 
+  </h1>
   <p align="center"> База знаний открытого сообщества пользователей операционной системы ALT Regular KDE.</p>
-  <br/> 
-  <br/> 
- </div> 
+  <br/>
+  <br/>
+</div>
 
 ## Разработка
+
 Перед запуском проекта убедитесь, что у вас установелны необходимые компоненты
 
 ```
@@ -34,7 +35,7 @@ npm run docs:dev
 
 ### Включение динамической сортировки участников на главной странице
 
-Для работы функции требуется создать `read-only` токен GitHub 
+Для работы функции требуется создать `read-only` токен GitHub
 
 (Оффициальный REST API GitHub не предоставляет данные об активности в репозитории без авторизации.
 Поэтому для использования данного функционала требуется ключ с правом на чтение публичных репозиториев)
@@ -62,17 +63,19 @@ VITE_GIT_KEY="{ваш токен}"
 - homeTopLimit - Лимит отображаемых пользователей на главной странице
 - home_filter_type - Тип сортировки пользователей на главной странице
 - page_filter_type - Тип сортировки пользователей на странице команды
+
 1. 'additions' - по количеству добавленых в репозиторий строк
 2. 'commits' - по количеству коммитов в репозиторий
 3. 'role+additions' - по роли участника (Разработчик -> Участник) и количеству добавленых в репозиторий строк
 4. 'role+commits' - по роли участника (Разработчик -> Участник) и количеству коммитов
+
 - enable_autosearch - Включено/выключено автозаполнение перечня участников из статистики
 - loading_placeholders - Массив с возможными выводами у спиннера загрузки виджета
 
-
-
 ## Зеркало
+
 Вся документация из этого репозитория размещается на сайте [alt-kde.wiki](https://alt-kde.wiki/) автоматически.
 
 ## Лицензия
+
 MIT Copyright © 2023-present OLEG SHCHAVELEV

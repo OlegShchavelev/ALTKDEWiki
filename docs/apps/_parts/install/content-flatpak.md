@@ -1,4 +1,4 @@
-## Установка с помощью Flatpak <Badge v-if="$frontmatter?.aggregation?.flatpak?.build === 'unoffical'" type="danger" text="Неофициальная сборка" />
+## Установка с помощью Flatpak <Badge v-if="$frontmatter?.aggregation?.flatpak?.build === 'unofficial'" type="danger" text="Неофициальная сборка" />
 
 При наличии пакета [Flatpak](/package-manager/flatpak/), можно установить **{{ $frontmatter?.appstream?.name }}** одной командой:
 
