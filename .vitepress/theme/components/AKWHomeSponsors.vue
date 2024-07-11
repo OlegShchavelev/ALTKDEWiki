@@ -1,22 +1,17 @@
 <script setup lang="ts">
+import { useData } from 'vitepress'
 import { VPHomeSponsors } from 'vitepress/theme'
-import { sponsors } from '../../data/sponsors'
 
-const { message, data } = defineProps({
-  message: {
-    type: String,
-    default:
-      'Данный сервис является Open-Source проектом и его поддержка и развитие зависит только от нашей совместной активности.'
-  },
-  data: {
-    type: Object,
-    default: () => {
-      return sponsors ?? []
-    }
-  }
-})
+const { frontmatter } = useData()
+const message = frontmatter.value.sponsors.introtext ?? null
+const data = frontmatter.value.sponsors.collections ?? {}
+
 </script>
 
 <template>
-  <VPHomeSponsors v-if="sponsors" :message="message" :data="sponsors" />
+  <VPHomeSponsors
+    v-if="data"
+    :message="message"
+    :data="data"
+  />
 </template>
