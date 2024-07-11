@@ -1,17 +1,18 @@
 <script setup lang="ts">
+import { computed } from 'vue'
 import { useData } from 'vitepress'
 import { VPHomeSponsors } from 'vitepress/theme'
 
 const { frontmatter } = useData()
-const message = frontmatter.value.sponsors.introtext ?? null
-const data = frontmatter.value.sponsors.collections ?? {}
-
+const props = computed(() => frontmatter.value.sponsors ?? {} )
 </script>
 
 <template>
   <VPHomeSponsors
-    v-if="data"
-    :message="message"
-    :data="data"
+    v-if="props.collections"
+    :actionText="props.donationtext"
+    :actionLink="props.donationlink"
+    :message="props.introtext"
+    :data="props.collections"
   />
 </template>
