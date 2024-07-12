@@ -38,6 +38,14 @@ export const contributions = [
     ]
   },
   {
+    avatar: 'https://avatars.githubusercontent.com/u/44705058?v=4',
+    name: 'Антон Политов',
+    title: 'Разработчик, Участник',
+    links: [{ icon: 'github', link: 'https://github.com/Ampernic' }],
+    actionText: 'Поддержать',
+    sponsor: 'https://www.tinkoff.ru/cf/vg9TWtByVW'
+  },
+  {
     avatar: 'https://github.com/trashb1t.png',
     name: 'Владислав Темнов',
     mapByNameAliases: ['trashb1t'],

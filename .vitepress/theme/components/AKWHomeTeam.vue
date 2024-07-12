@@ -15,7 +15,7 @@ import { data as team } from '../loaders/gitlogDataLoader.data'
       </VPTeamPageTitle>
       <VPTeamMembers :members="sortMembers(team, homeSorting).slice(0, limit)" />
       <div class="teamButton">
-        <VPButton text="Все участники" class="button" size="big" href="/contributions" />
+        <VPButton text="Все участники" class="button" size="big" href="/project/contributions" />
       </div>
     </VPTeamPage>
   </ClientOnly>
