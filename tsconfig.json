@@ -2,7 +2,7 @@
   "compilerOptions": {
     "target": "ESNext",
     "module": "ESNext",
-    "moduleResolution": "Node",
+    "moduleResolution": "Bundler",
     "allowSyntheticDefaultImports": true,
     "resolveJsonModule": true,
     "types": ["node", "vite/client"],
@@ -12,6 +12,6 @@
       "@vitepress/theme/*": ["node_modules/vitepress/dist/client/theme-default/*"]
     }
   },
-  "include": ["/*.d.ts", "/*.ts"],
+  "include": ["/*.d.ts", "/*.ts", "/*.data.ts"],
   "exclude": ["node_modules"]
 }

@@ -17,49 +17,31 @@ import {
   GitChangelogMarkdownSection
 } from '@nolebase/vitepress-plugin-git-changelog/vite'
 
-import {
-  gitRepository,
-  gitMaxCommits,
-  gitDisplay,
-  gitRewritePath,
-  gitHeadersLocale
-} from './data/gitlog'
+
+import { NolebaseGitChangelogOptions, YandexMetrikaOptions } from './config/plugins'
 
 export default defineConfigWithTheme({
   vite: {
     plugins: [
       UnoCSS(),
-      GitChangelog({
-        maxGitLogCount: gitMaxCommits,
-        repoURL: () => gitRepository,
-        rewritePathsBy: gitRewritePath,
-      }),
-      GitChangelogMarkdownSection({
-        getChangelogTitle: (_, __, { helpers }): string => {
-          return gitHeadersLocale.history_title
-        },
-        getContributorsTitle: (_, __, { helpers }): string => {
-          return gitHeadersLocale.author_title
-        },
-        excludes: [],
-        exclude: (_, { helpers }): boolean => {
-          for (var page of config.nolebase_exclude) {
-            if (helpers.idStartsWith(page))
-              return true
-          }
-          return false
-        },
-        sections: gitDisplay,
-      }),
+      GitChangelog(NolebaseGitChangelogOptions.plugin),
+      GitChangelogMarkdownSection(NolebaseGitChangelogOptions.pluginSections),
     ],
+    optimizeDeps: {
+      exclude: ['@nolebase/vitepress-plugin-enhanced-readabilities/client']
+    },
     ssr: {
       noExternal: [
         '@nolebase/vitepress-plugin-enhanced-readabilities',
-        '@nolebase/vitepress-plugin-page-properties',
-      ],
+        '@nolebase/vitepress-plugin-page-properties'
+      ]
     },
     resolve: {
-      alias: { '@vitepress/theme': fileURLToPath(new URL('../node_modules/vitepress/dist/client/theme-default', import.meta.url)) }
+      alias: {
+        '@vitepress/theme': fileURLToPath(
+          new URL('../node_modules/vitepress/dist/client/theme-default', import.meta.url)
+        )
+      }
     }
   },
   title: config.title,
@@ -75,7 +57,7 @@ export default defineConfigWithTheme({
     ['meta', { name: 'og:image', content: config.host + config.head.ogImage }],
     ['meta', { name: 'twitter:card', content: 'summary_large_image' }],
     ['meta', { name: 'twitter:image', content: config.host + config.head.ogImage }],
-    ['meta', { name: 'yandex-verification', content: config.yaWebmasterId }]
+    ['meta', { name: 'yandex-verification', content: YandexMetrikaOptions.webmaster.id }]
   ],
   srcDir: './docs',
   cleanUrls: true,

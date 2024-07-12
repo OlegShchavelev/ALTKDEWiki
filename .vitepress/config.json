@@ -7,14 +7,5 @@
     "themeColor": "#62a0ea",
     "type": "website",
     "ogImage": "og-alt-wiki.jpg"
-  },
-  "nolebase_exclude": [
-    "index.md",
-    "wiki/index.md",
-    "reference/index.md",
-    "project/about/index.md",
-    "project/contributions/index.md"
-  ],
-  "yaWebmasterId": "7f227bf12097f984",
-  "yaMetrikaId": 97206782
+  }
 }

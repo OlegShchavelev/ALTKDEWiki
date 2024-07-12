@@ -17,6 +17,6 @@ GitHub.sublime-settings
 ### JetBrains ###
 .idea/
 
-### .env ###
-docs/.env
+### Git Team Parsed ###
+.vitepress/data/fullteam.json
 

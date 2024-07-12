@@ -1,62 +1,117 @@
-// https://vitepress.dev/guide/custom-theme
+/*------------------------------------------------
+|             ALT KDE Wiki               <:0)~~~  |
+|  <:0)~~~         Theme configuration            |
+|-------------------------------------------------|
+|          Published under MIT Licence            |
+|-------------------------------------------------|
+| May the force be with you - FORCE OF SHITCODE   |
+|                             - (c) Ampernic 2024 | 
+-------------------------------------------------*/
+
+/*------------------------------------
+|   Vitepress/Vue - Default imports   |
+-------------------------------------*/
+
 import { h } from 'vue'
 import type { Theme } from 'vitepress'
 import { defineClientComponent } from 'vitepress'
 import DefaultTheme from 'vitepress/theme'
 
+/*------------------------------------
+|  ALT KDE/GNOME Team - Own componets |
+-------------------------------------*/
+
 import AKWTeamPage from './components/AKWTeamPage.vue'
 import AKWHomeTeam from './components/AKWHomeTeam.vue'
 import AKWHomeSponsors from './components/AKWHomeSponsors.vue'
 import AKWGallery from './components/AKWGallery.vue'
-import VueSilentbox from 'vue-silentbox'
 
-import {
+/*------------------------------------
+|     silencesys - Vue SilentBox      |
+-------------------------------------*/
+
+import VueSilentbox from 'vue-silentbox'
+import { VueSilentBoxOptions } from '../config/plugins/index'
+
+/*------------------------------------
+|  Nolebase - Enhanced Readabilities  |
+-------------------------------------*/
+
+import { 
   NolebaseEnhancedReadabilitiesMenu,
   NolebaseEnhancedReadabilitiesScreenMenu
-} from '@nolebase/vitepress-plugin-enhanced-readabilities'
-import type { Options } from '@nolebase/vitepress-plugin-enhanced-readabilities'
-import { InjectionKey } from '@nolebase/vitepress-plugin-enhanced-readabilities'
+} from '@nolebase/vitepress-plugin-enhanced-readabilities/client'
+import type { Options } from '@nolebase/vitepress-plugin-enhanced-readabilities/client'
+import { NolebaseEnhancedReadabilitiesOptions } from '../config/plugins/index'
+import { NolebaseEnhancedReadabilitiesPlugin } from '@nolebase/vitepress-plugin-enhanced-readabilities/client'
+import '@nolebase/vitepress-plugin-enhanced-readabilities/client/style.css' //
+
+
+/*------------------------------------
+|       Vitepress Tabs Plugin         |
+-------------------------------------*/
+
 import { enhanceAppWithTabs } from 'vitepress-plugin-tabs/client'
 
+/*------------------------------------
+|      Nolebase - Git Change Log      |
+-------------------------------------*/
+
 import { NolebaseGitChangelogPlugin } from '@nolebase/vitepress-plugin-git-changelog/client'
+import { NolebaseGitChangelogOptions } from '../config/plugins/index'
+import { data as team } from './loaders/gitlogDataLoader.data'
 
-import { gitLocales, gitMapContributors } from '../data/gitlog'
-
-import { lexiconEnhancedReadabilities } from './lexicon/enhanced-readabilities'
+/*------------------------------------
+|       hywax - Yandex Metrics        |
+-------------------------------------*/
 
 import { yandexMetrika } from '@hywax/vitepress-yandex-metrika'
-import * as config from '../config.json'
+import { YandexMetrikaOptions } from '../config/plugins/index'
 
-import 'uno.css'
+
+/*------------------------------------
+|            Used styles              |
+-------------------------------------*/
+import 'uno.css'  // Need to check work without this
 import './styles/style.css'
 import './styles/custom.css'
-import '@nolebase/vitepress-plugin-enhanced-readabilities/dist/style.css'
 
+/*------------------------------------
+|          Theme Export               |
+-------------------------------------*/
 export default {
   extends: DefaultTheme,
   Layout: () => {
     return h(DefaultTheme.Layout, null, {
+      // Add Nolebase Enhanced Readabilities menu
       'nav-bar-content-after': () => h(NolebaseEnhancedReadabilitiesMenu),
       'nav-screen-content-after': () => h(NolebaseEnhancedReadabilitiesScreenMenu),
-      'home-features-after': () => [h(AKWHomeTeam), h(AKWHomeSponsors)],
+      // Extend home page with Team and Sponsor block
+      'home-features-after': () => [
+        h(AKWHomeTeam),
+        h(AKWHomeSponsors)
+      ],
+      // Extend aside - add apps bar
       'aside-outline-after': () => h(defineClientComponent(() => import('./components/AKWDocsAsideMeta.vue')))
     })
   },
+  // Apply components in theme
   enhanceApp(ctx) {
-    ctx.app.provide(InjectionKey, {
-      locales: lexiconEnhancedReadabilities
-    } as Options)
+    // Vitepress Tabs
     enhanceAppWithTabs(ctx.app)
-    ctx.app.component('contribution', AKWTeamPage)
-    ctx.app.use(VueSilentbox, {
-      downloadButtonLabel: 'Скачать 📥'
-    })
+    
+    // Own components
+    ctx.app.component('Contribution', AKWTeamPage)
     ctx.app.component('Gallery', AKWGallery)
-    ctx.app.use(NolebaseGitChangelogPlugin, { locales: gitLocales, mapContributors: gitMapContributors })
-    yandexMetrika(ctx, {
-      counter: {
-        id: config.yaMetrikaId
-      }
-    })
+
+    // Vue SilentBox - Used in Galleries
+    ctx.app.use(VueSilentbox, VueSilentBoxOptions)
+
+    // Nolebase Components
+    ctx.app.use(NolebaseEnhancedReadabilitiesPlugin, NolebaseEnhancedReadabilitiesOptions as Options)           
+    ctx.app.use(NolebaseGitChangelogPlugin, { locales: NolebaseGitChangelogOptions.locales, mapAuthors: team })
+
+    // Yandex Metrix
+    yandexMetrika(ctx, YandexMetrikaOptions.metrica)
   }
 } satisfies Theme
