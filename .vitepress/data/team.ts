@@ -35,7 +35,9 @@ export const contributions = [
         },
         link: 'https://gitflic.ru/user/olegshchavelev'
       }
-    ]
+    ],
+    actionText: 'Поддержать',
+    sponsor: 'https://www.tinkoff.ru/cf/1uEC4uodPuV'
   },
   {
     avatar: 'https://avatars.githubusercontent.com/u/44705058?v=4',
@@ -97,7 +99,7 @@ export const contributions = [
   {
     avatar: 'https://avatars.githubusercontent.com/u/159694894?v=4',
     name: 'Максим Остапенко',
-    mapByNameAliases: ['Krator3'],
+    mapByNameAliases: ['Krator3', 'Maxim Ostapenko'],
     title: 'Участник',
     links: [{ icon: 'github', link: 'https://github.com/Krator3' }]
   },
@@ -112,5 +114,14 @@ export const contributions = [
     ],
     actionText: 'Поддержать',
     sponsor: 'https://www.tinkoff.ru/cf/IpsmO1P5PJ'
+  },
+  {
+    avatar: 'https://github.com/vlad196.png',
+    name: 'Владислав Бабенко',
+    mapByNameAliases: ['vlad196', 'Владислав Бабенко', 'Vladislav Babenko'],
+    title: 'Участник',
+    links: [{ icon: 'github', link: 'https://github.com/vlad196' }],
+    actionText: 'Поддержать',
+    sponsor: 'https://www.tinkoff.ru/cf/9cI2R0kzzxM'
   },
 ]

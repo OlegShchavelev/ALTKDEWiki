@@ -23,7 +23,7 @@ const authors = []
     Net + Local Mapping
 */
 
-const toolname = `${cyan(`[ @alt-gnome/alt-wiki-vitepress-gnome | Git Statistic ]`)}${gray(':')}`
+const toolname = `${cyan(`[ @alt-gnome/alt-wiki-vitepress-kde | Git Statistic ]`)}${gray(':')}`
 
 const spiner = ora({ discardStdin: false })
 spiner.start(`${toolname} Читаем данные с гита...\n`)
