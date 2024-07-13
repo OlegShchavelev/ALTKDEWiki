@@ -1,4 +1,3 @@
-ву
 <script setup lang="ts">
 import { VPTeamPage, VPTeamPageTitle, VPTeamPageSection, VPTeamMembers } from 'vitepress/theme'
 
