@@ -25,22 +25,21 @@ features:
   - title: Открытое сообщество
     details: Путеводитель в мир открытого программного обеспечения.
 
-
 sponsors:
-  introtext: Данный сервис является CПО-проектом и его поддержка и развитие зависит только от нашей совместной активности.
+  introtext: Данный сервис является СПО-проектом и его поддержка и развитие зависит только от нашей совместной активности.
   collections:
     - tier: Организационная структура
       size: big
-      items: 
+      items:
         - name: ALT Linux Team
           img: ./alt-linux-team.png
           url: https://packages.altlinux.org/ru/sisyphus
         - name: BaseALT
           img: ./basealt.png
           url: https://www.basealt.ru
-    - tier: Товарищи по цеху Vitepress
+    - tier: Товарищи по цеху VitePress
       size: 'big'
-      items: 
+      items:
         - name: 'MODX Pro'
           img: './modx.svg'
           url: 'https://docs.modx.pro/'
