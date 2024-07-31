@@ -25,4 +25,4 @@ Arianna — приложение для чтения электронных кн
 
 ![Скриншот программы](https://cdn.kde.org/screenshots/arianna/library-view.png)
 
-<!--@include: @apps/_parts/install/content-flatpak.md-->
+<!--@include: @apps/.parts/install/content-flatpak.md-->

@@ -6,4 +6,4 @@
 flatpak install flathub {{ $frontmatter?.aggregation?.flatpak.id ?? $frontmatter?.aggregation?.flatpak }}
 ```
 
-<!--@include: @apps/_parts/install/software-flatpak.md-->
+<!--@include: @apps/.parts/install/software-flatpak.md-->

@@ -25,5 +25,5 @@ AudioTube —  бесплатный клиент YouTube Music с открыты
 
 ![Скриншот программы](https://cdn.kde.org/screenshots/audiotube/desktop.png)
 
-<!--@include: @apps/_parts/install/content-flatpak.md-->
-<!--@include: @apps/_parts/install/content-repo.md-->
+<!--@include: @apps/.parts/install/content-flatpak.md-->
+<!--@include: @apps/.parts/install/content-repo.md-->

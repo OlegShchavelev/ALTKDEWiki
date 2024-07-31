@@ -2,7 +2,7 @@
 
 **{{ $frontmatter?.frontmatter?.name }}** можно установить любым привычным и удобным способом:
 
-<!--@include: @apps/_parts/install/software-repo.md-->
+<!--@include: @apps/.parts/install/software-repo.md-->
 
 **Установка через терминал**
 

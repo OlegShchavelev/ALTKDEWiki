@@ -29,5 +29,5 @@ KeePassXC - менеджер паролей, позволяющий хранит
 
 ![Скриншот программы KeePassXC](./img/keepassxc_screen.png 'Скриншот программы KeePassXC')
 
-<!--@include: @apps/_parts/install/content-repo.md-->
-<!--@include: @apps/_parts/install/content-flatpak.md-->
+<!--@include: @apps/.parts/install/content-repo.md-->
+<!--@include: @apps/.parts/install/content-flatpak.md-->

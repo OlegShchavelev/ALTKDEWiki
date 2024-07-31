@@ -69,7 +69,7 @@ epm -i LibreOffice LibreOffice-kde5
 Версия «Still» предлагает стабильные обновления, а «Fresh» более частые, но не всегда стабильные обновления.
 :::
 
-<!--@include: @apps/_parts/install/content-flatpak.md-->
+<!--@include: @apps/.parts/install/content-flatpak.md-->
 
 ## Шрифты в LibreOffice
 

@@ -25,4 +25,4 @@ PlasmaTube — приложение PlasmaTube позволяет просмат
 
 ![Скриншот программы](https://cdn.kde.org/screenshots/plasmatube/plasmatube.png)
 
-<!--@include: @apps/_parts/install/content-flatpak.md-->
+<!--@include: @apps/.parts/install/content-flatpak.md-->

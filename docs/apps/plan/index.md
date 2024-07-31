@@ -33,4 +33,4 @@ Plan — приложение по управлению проектами, пр
 
 ![Скриншот программы](./img/screenshot.png)
 
-<!--@include: @apps/_parts/install/content-repo.md-->
+<!--@include: @apps/.parts/install/content-repo.md-->

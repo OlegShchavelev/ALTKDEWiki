@@ -44,7 +44,7 @@ epm -i kde5-haruna
 
 :::
 
-<!--@include: @apps/_parts/install/content-flatpak.md-->
+<!--@include: @apps/.parts/install/content-flatpak.md-->
 
 ### Комбинации клавиш
 

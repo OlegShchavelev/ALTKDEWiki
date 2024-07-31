@@ -36,9 +36,9 @@ Steam — крупнейшая в мире платформа от Valve для 
 Для корректной работы рекомендуется устанавливать Steam с помощью `epm play`
 :::
 
-<!--@include: @apps/_parts/install/content-repo.md-->
-<!--@include: @apps/_parts/install/content-flatpak.md-->
-<!--@include: @apps/_parts/install/content-epm-play.md-->
+<!--@include: @apps/.parts/install/content-repo.md-->
+<!--@include: @apps/.parts/install/content-flatpak.md-->
+<!--@include: @apps/.parts/install/content-epm-play.md-->
 
 ## Как поменять язык в Steam
 
