@@ -43,7 +43,8 @@
     "vitepress-sidebar": "^1.22.0",
     "vue-silentbox": "^3.0.4",
     "yargs": "^17.7.2",
-    "yaspeller": "^10.0.1"
+    "yaspeller": "^10.0.1",
+    "ora": "^8.0.1"
   },
   "scripts": {
     "history:build": "npx esrun ./.tools/gitlog.ts",
