@@ -1,5 +1,3 @@
-import { generateSidebar } from 'vitepress-sidebar'
-
 export const nav = [
   { text: 'Главная', link: '/' },
   { text: 'Документация', link: '/wiki/' },
@@ -17,14 +15,47 @@ const sidebar_docs = [
   {
     text: 'Установка и обновление программ',
     base: '/apps/',
-    items: generateSidebar({
-      documentRootPath: 'docs/apps',
-      excludeFolders: ['_parts'],
-      useTitleFromFrontmatter: true,
-      useFolderTitleFromIndexFile: true,
-      useFolderLinkFromIndexFile: true
-    }),
-    collapsed: true
+    items: [{
+      text: 'Arianna',
+      link: 'arianna/'
+    }, {
+      text: 'КриптоПро CSP 5',
+      link: 'cryptopro/'
+    }, {
+      text: 'Flameshot',
+      link: 'flameshot/'
+    }, {
+      text: 'Haruna',
+      link: 'haruna/'
+    }, {
+      text: 'KeePassXC',
+      link: 'keepassxc/'
+    }, {
+      text: 'LibreOffice',
+      link: 'libreoffice/'
+    }, {
+      text: 'Micro',
+      link: 'micro/'
+    }, {
+      text: 'Nano',
+      link: 'nano/'
+    }, {
+      text: 'Plan',
+      link: 'plan/'
+    }, {
+      text: 'PlasmaTube',
+      link: 'plasmatube/'
+    }, {
+      text: 'qBittorrent',
+      link: 'qbittorrent/'
+    }, {
+      text: 'SafeEyes',
+      link: 'safeeyes'
+    }, {
+      text: 'Steam',
+      link: 'steam/'
+    }],
+    collapsed: false
   },
   {
     text: 'Настройка графики',
@@ -45,34 +76,63 @@ const sidebar_docs = [
   {
     text: 'Разработка',
     base: '/developers/',
-    items: generateSidebar({
-      documentRootPath: 'docs/developers',
-      useTitleFromFrontmatter: true,
-      useFolderTitleFromIndexFile: true,
-      useFolderLinkFromIndexFile: true
-    }),
+    items: [
+      {
+        text: 'Python',
+        link: 'python',
+        items: [
+          {
+            text: 'Poetry',
+            link: 'poetry/'
+          }, {
+            text: 'Приложение на Qt 6',
+            link: 'qt6-app'
+          }
+        ],
+      },
+      {
+        text: 'Rust',
+        link: 'rust/'
+      }
+    ],
     collapsed: true
   },
   {
     text: 'Решение проблем',
     base: '/workarrounds/',
-    items: generateSidebar({
-      documentRootPath: 'docs/workarrounds',
-      useTitleFromFrontmatter: true,
-      useFolderTitleFromIndexFile: true,
-      useFolderLinkFromIndexFile: true
-    }),
+    items: [
+      {
+        text: 'Некоторые GTK приложения выглядят чужеродно',
+        link: 'change-gtk-themes/'
+      },
+      {
+        text: 'Не работает загрузка сторонних тем KDE',
+        link: 'enable-downloading-of-third-party-themes/' 
+      }, {
+        text: 'Не срабатывает блокировка экрана после пробуждения системы',
+        link: 'how-lock-screen-after-waking/'
+      }, {
+        text: 'LightDM не запоминает последнюю выбранную сессию',
+        link: 'lightdm-does-not-remember-last-session'
+      }, {
+        text: 'Отсутствует список пользователей в настройках',
+        link: 'settings-user-no-list/'
+      }
+    ],
     collapsed: true
   },
   {
     text: 'Быстрые ссылки',
     base: '/package-manager/',
-    items: generateSidebar({
-      documentRootPath: 'docs/package-manager',
-      useTitleFromFrontmatter: true,
-      useFolderTitleFromIndexFile: true,
-      useFolderLinkFromIndexFile: true
-    })
+    items: [
+      {
+        text: 'EPM',
+        link: 'epm/'
+      }, {
+        text: 'Flatpak',
+        link: 'flatpak/'
+      }
+    ]
   }
 ]
 
