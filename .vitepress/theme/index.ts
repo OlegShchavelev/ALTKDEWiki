@@ -99,7 +99,7 @@ export default {
   enhanceApp(ctx) {
     // Vitepress Tabs
     enhanceAppWithTabs(ctx.app)
-    
+        
     // Own components
     ctx.app.component('Contribution', AKWTeamPage)
     ctx.app.component('Gallery', AKWGallery)
