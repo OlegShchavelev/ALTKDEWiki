@@ -83,10 +83,10 @@ const sidebar_docs = [
         items: [
           {
             text: 'Poetry',
-            link: 'poetry/'
+            link: '/python/poetry/'
           }, {
             text: 'Приложение на Qt 6',
-            link: 'qt6-app'
+            link: '/python/qt6-app/'
           }
         ],
       },
