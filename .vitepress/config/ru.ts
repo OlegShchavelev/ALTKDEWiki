@@ -14,30 +14,6 @@ export const ru = defineConfigWithTheme({
     themeConfig: {
         nav: nav,
         sidebar: sidebar,
-        search: {
-            provider: 'local',
-            options: {
-                locales: {
-                    root: {
-                        translations: {
-                            button: {
-                                buttonText: 'Поиск',
-                                buttonAriaLabel: 'Поиск'
-                            },
-                            modal: {
-                                noResultsText: 'Нет результатов по запросу',
-                                resetButtonTitle: 'Сбросить',
-                                footer: {
-                                    selectText: 'для выбора',
-                                    navigateText: 'для навигации',
-                                    closeText: 'закрыть'
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        },
         editLink: {
             pattern: 'https://github.com/OlegShchavelev/ALTRegularKDEWiki/edit/main/docs/:path',
             text: 'Предложить изменения на этой странице'

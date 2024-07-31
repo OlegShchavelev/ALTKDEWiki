@@ -2,3 +2,4 @@ export { NolebaseEnhancedReadabilitiesOptions } from './NolebaseEnhancedReadabil
 export { NolebaseGitChangelogOptions } from './NolebaseGitChangelog/index'
 export { VueSilentBoxOptions } from './VueSilentBox/index'
 export { YandexMetrikaOptions } from './YandexMetrica/index'
+export { vpSearchOptions } from './vitepress-search'
