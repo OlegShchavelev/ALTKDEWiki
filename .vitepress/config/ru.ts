@@ -1,5 +1,6 @@
 import { defineConfigWithTheme } from 'vitepress'
 import { nav, sidebar } from '../data/navigations'
+import { packages } from '../../package-lock.json'
 
 import * as config from '../config.json'
 
@@ -35,7 +36,7 @@ export const ru = defineConfigWithTheme({
         outlineTitle: 'Оглавление',
         footer: {
             message: 'Содержание доступно <a href="/licence">по лицензии MIT</a>',
-            copyright: `${new Date().getFullYear()} ALT KDE Wiki, разработано на платформе <a href="//vitepress.dev/">VitePress 1.1.4</a>`
+            copyright: `${new Date().getFullYear()} ALT KDE Wiki, разработано на платформе <a href="//vitepress.dev/">VitePress ${packages['node_modules/vitepress'].version}</a>`
         },
         notFound: {
             title: 'Страница не найдена',
