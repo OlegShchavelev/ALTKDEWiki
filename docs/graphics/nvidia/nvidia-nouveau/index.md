@@ -60,16 +60,16 @@ epm -i kernel-modules-drm-nouveau-un-def
 
 :::
 
-- Опционально можно переустановить обвязку Xorg:
+- Если у Вас видеокарта **Curie** или старше, удостоверьтесь, что у вас установлен пакет с Xf86-video-nouveau:
 
 ::: code-group
 
 ```shell[apt-get]
-apt-get install --reinstall xorg-dri-nouveau xorg-drv-nouveau
+apt-get install xorg-drv-nouveau
 ```
 
 ```shell[epm]
-epm reinstall xorg-dri-nouveau xorg-drv-nouveau
+epm -i xorg-drv-nouveau
 ```
 
 :::
@@ -118,6 +118,20 @@ grub-mkconfig -o /boot/grub/grub.cfg
 Видеочипы Kepler и Maxwell для их нормальной загрузки обязательно требуют внедрение прошивки. Если при первой установке или запуске системы на устройствах с видеочипом одной из этих архитектур наблюдаются проблемы, можно временно перейти на [другой видеорежим](/graphics/nvidia/nvidia-drivers/#черныи-экран-при-выборе-сессии-x11-или-ошибка-в-инициализации-cuda)
 :::
 
+- Установка прошивки:
+
+::: code-group
+
+```shell[apt-get]
+apt-get install firmware-nouveau
+```
+
+```shell[epm]
+epm -i firmware-nouveau
+```
+
+::: details Ручная установка прошивки
+
 - Распакуйте прошивку:
 
 ```shell
@@ -136,6 +150,8 @@ cd /tmp/nouveau
 mkdir /lib/firmware/nouveau
 cp -d nv* vuc-* /lib/firmware/nouveau/
 ```
+
+:::
 
 ### Reclocking (от Celsius до Fermi)
 
