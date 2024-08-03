@@ -4,7 +4,7 @@ aggregation:
   sisyphus: conky
 appstream:
   name: Conky
-  icon: /img/conky-logo.svg
+  icon: ./img/conky-logo.svg
   summary: Программа для системного мониторинга и не только
   metadata_license:
     name: GNU GPLv3
