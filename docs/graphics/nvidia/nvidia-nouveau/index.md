@@ -60,7 +60,7 @@ epm -i kernel-modules-drm-nouveau-un-def
 
 :::
 
-- Если у Вас видеокарта **Curie** или старше, удостоверьтесь, что у вас установлен пакет с Xf86-video-nouveau:
+- Если у Вас видеокарта **Curie** или старше, удостоверьтесь, что у вас установлен пакет xorg-drv-nouveau с DDX-драйвером Xf86-video-nouveau:
 
 ::: code-group
 
@@ -71,6 +71,14 @@ apt-get install xorg-drv-nouveau
 ```shell[epm]
 epm -i xorg-drv-nouveau
 ```
+
+:::
+
+::: info
+
+**Xf86-video-nouveau** — это [DDX-драйвер](https://dri.freedesktop.org/wiki/DDX/) для Xorg, необходимый для поддержки 2D и 3D-ускорения на старых видеокартах.
+
+Для новых видеокарт существует универсальный [modesetting-драйвер](https://www.x.org/wiki/ModeSetting/) **Xf86-video-modesetting**, который уже входит в пакет Mesa и не нуждается в установке.
 
 :::
 
