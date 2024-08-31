@@ -19,9 +19,10 @@ appstream:
     homepage: https://apps.kde.org/audiotube/
     bugtracker: https://bugs.kde.org/enter_bug.cgi?product=audiotube
 ---
+
 # AudioTube
 
-AudioTube —  бесплатный клиент YouTube Music с открытым исходным кодом, который позволяет выполнять поиск, составление плейлистов и воспроизведение музыки.
+AudioTube — бесплатный клиент YouTube Music с открытым исходным кодом, который позволяет выполнять поиск, составление плейлистов и воспроизведение музыки.
 
 ![Скриншот программы](https://cdn.kde.org/screenshots/audiotube/desktop.png)
 
