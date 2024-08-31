@@ -36,6 +36,7 @@ update-kernel
 Для дальнейшей установки проприетарного драйвера NVIDIA **необходимо перезагрузить операционную систему**.
 
 Установка проприетарного драйвера и добавление Nouveau в чёрный список:
+
 - Перейдите в режим root:
 
 ```shell
@@ -43,7 +44,7 @@ su -
 ```
 
 - Установите `nvidia_glx_common`:
-::: code-group
+  ::: code-group
 
 ```shell[apt-get]
 apt-get install nvidia_glx_common
@@ -432,8 +433,6 @@ epm -i nvidia-xconfig
 ```
 
 :::
-
-
 
 ## Детальная настройка драйвера
 
