@@ -1,7 +1,10 @@
+import {contributions} from '../../data/team'
+
 export const NolebaseGitChangelogOptions = {
   plugin: {
     maxGitLogCount: 20000,
-    repoURL: 'https://github.com/OlegShchavelev/ALTKDEWiki'
+    repoURL: 'https://github.com/OlegShchavelev/ALTKDEWiki',
+    mapAuthors: contributions
   },
   pluginSections: {
     sections: {
