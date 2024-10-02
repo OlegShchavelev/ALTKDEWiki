@@ -1,4 +1,4 @@
-import {contributions} from '../../data/team'
+import {contributions} from '../../../data/team'
 
 export const NolebaseGitChangelogOptions = {
   plugin: {
