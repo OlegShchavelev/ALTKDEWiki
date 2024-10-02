@@ -19,6 +19,9 @@ const sidebar_docs = [
       text: 'Arianna',
       link: 'arianna/'
     }, {
+      text: 'Distrobox',
+      link: 'distrobox/'
+    }, {
       text: 'КриптоПро CSP 5',
       link: 'cryptopro/'
     }, {
