@@ -9,14 +9,14 @@
 
 [ALT Regular KDE <Badge type="info" text="tested" /><Badge type="tip" text="x86_64" /><Badge type="tip" text="Рекомендуемый" />](https://mirror.yandex.ru/altlinux-nightly/tested/regular-kde-latest-x86_64.iso)
 
-[ALT Regular KDE <Badge type="info" text="current" /><Badge type="tip" text="x86_64" />](https://mirror.yandex.ru/altlinux-nightly/current/regular-kde5-latest-x86_64.iso)
+[ALT Regular KDE <Badge type="info" text="current" /><Badge type="tip" text="x86_64" />](https://mirror.yandex.ru/altlinux-nightly/current/regular-kde-latest-x86_64.iso)
 
 ## Скачать ALT Regular KDE из репозитория производителя Альт
 
-[ALT Regular KDE <Badge type="info" text="tested" /><Badge type="tip" text="x86_64" /><Badge type="tip" text="Рекомендуемый" />](https://nightly.altlinux.org/sisyphus/tested/regular-kde5-latest-x86_64.iso)
+[ALT Regular KDE <Badge type="info" text="tested" /><Badge type="tip" text="x86_64" /><Badge type="tip" text="Рекомендуемый" />](https://nightly.altlinux.org/sisyphus/tested/regular-kde-latest-x86_64.iso)
 
-[ALT Regular KDE <Badge type="info" text="tested" /><Badge type="tip" text="aarch64" /><Badge type="tip" text="Рекомендуемый" />](https://nightly.altlinux.org/sisyphus-aarch64/tested/regular-kde5-latest-aarch64.iso)
+[ALT Regular KDE <Badge type="info" text="tested" /><Badge type="tip" text="aarch64" /><Badge type="tip" text="Рекомендуемый" />](https://nightly.altlinux.org/sisyphus-aarch64/tested/regular-kde-latest-aarch64.iso)
 
-[ALT Regular KDE <Badge type="info" text="current" /><Badge type="tip" text="x86_64" />](https://nightly.altlinux.org/sisyphus/current/regular-kde5-latest-x86_64.iso)
+[ALT Regular KDE <Badge type="info" text="current" /><Badge type="tip" text="x86_64" />](https://nightly.altlinux.org/sisyphus/current/regular-kde-latest-x86_64.iso)
 
-[ALT Regular KDE <Badge type="info" text="current" /><Badge type="tip" text="aarch64" />](https://nightly.altlinux.org/sisyphus-aarch64/current/regular-kde5-latest-aarch64.iso)
+[ALT Regular KDE <Badge type="info" text="current" /><Badge type="tip" text="aarch64" />](https://nightly.altlinux.org/sisyphus-aarch64/current/regular-kde-latest-aarch64.iso)
