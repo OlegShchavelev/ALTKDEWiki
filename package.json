@@ -1,6 +1,6 @@
 {
   "name": "@alt-gnome/alt-wiki-vitepress-kde",
-  "description": "Библиотека знаний операционной системы ALT Regular KDE",
+  "description": "База знаний операционной системы ALT Regular KDE",
   "homepage": "https://alt-kde.wiki/",
   "license": "MIT",
   "bugs": {
