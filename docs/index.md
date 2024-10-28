@@ -3,7 +3,7 @@
 layout: home
 
 hero:
-  name: 'ALT Regular KDE'
+  name: 'ALT KDE Wiki'
   text: 'Community'
   image:
     src: /laptop.svg
