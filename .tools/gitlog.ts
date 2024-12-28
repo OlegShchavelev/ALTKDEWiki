@@ -86,7 +86,7 @@ for await (const gitter of await contributorsRawBase().then((response) => respon
 
   const author = {
     mapByNameAliases: [gitter.author.login],
-    name: userMore.name,
+    name: userMore.name ?? gitter.author.login,
     title: 'Участник',
     avatar: gitter.author.avatar_url,
     summary: {
