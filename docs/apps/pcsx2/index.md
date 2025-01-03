@@ -70,6 +70,7 @@ BIOS для эмулятора PCSX2 не поставляется в компл
 ### Запуск игры
 
 ![Список игр](./img/image5.png)
-После этого сделайте копию диска с вашей игрой в одном из поддерживаемых форматов: .bin/.iso (ISO Disc Images), .mdf (Media Descriptor File), .chd (Compressed Hunks of Data), .cso (Compressed ISO), .zso (Compressed ISO), или .gz (Gzip Compressed ISO). Эти форматы совместимы с PCSX2 и готовы к использованию. Потом в списке у вас появится игра. Нажимаете на нее несколько раз, и она запустится! 
+
+После этого скачивайте игру в одном из поддерживаемых форматов: `.bin/.iso` (ISO Disc Images), `.mdf` (Media Descriptor File), `.chd` (Compressed Hunks of Data), `.cso` (Compressed ISO), `.zso` (Compressed ISO), или `.gz` (Gzip Compressed ISO). Эти форматы совместимы с PCSX2 и готовы к использованию. Потом в списке у вас появится игра. Нажимаете на нее несколько раз, и она запустится!
 
 
