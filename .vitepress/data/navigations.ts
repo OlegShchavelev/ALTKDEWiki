@@ -41,12 +41,10 @@ const sidebar_docs = [
       link: 'micro/'
     }, {
       text: 'Nano',
-      link: 'nano/'
-      
+      link: 'nano/'      
     }, {
       text: 'PCSX2',
       link: 'pcsx2/'
-    
     }, {
       text: 'Plan',
       link: 'plan/'
