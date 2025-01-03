@@ -42,6 +42,11 @@ const sidebar_docs = [
     }, {
       text: 'Nano',
       link: 'nano/'
+      
+    }, {
+      text: 'PCSX2',
+      link: 'pcsx2/'
+    
     }, {
       text: 'Plan',
       link: 'plan/'
