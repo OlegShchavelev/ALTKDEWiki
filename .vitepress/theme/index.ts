@@ -74,6 +74,7 @@ import { YandexMetrikaOptions } from '../config/plugins/index'
 import 'uno.css' // Need to check work without this
 import './styles/style.css'
 import './styles/custom.css'
+import 'vitepress-markdown-timeline/dist/theme/index.css'
 
 /*------------------------------------
 |          Theme Export               |

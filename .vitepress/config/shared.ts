@@ -5,6 +5,7 @@ import { telegram, gitflic, vk } from '../data/icons'
 import { tabsMarkdownPlugin } from 'vitepress-plugin-tabs'
 import markdownItKdb from 'markdown-it-kbd'
 import markdownItImplicitFigures from 'markdown-it-implicit-figures'
+import VitepressMarkdownTimeline from 'vitepress-markdown-timeline'
 
 /* Markdown */
 import linkBlock from '../theme/composables/linkBlock'
@@ -112,6 +113,7 @@ export const shared = defineConfig({
         copyAttrs: '^class$'
       })
       md.use(linkBlock)
+      md.use(VitepressMarkdownTimeline)
     }
   },
   transformPageData: (pageData) => {
