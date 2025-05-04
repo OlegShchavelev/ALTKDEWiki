@@ -91,7 +91,7 @@ export default {
     // Own components
     ctx.app.component('Contribution', AKWTeamPage)
     ctx.app.component('Gallery', AKWGallery)
-    ctx.app.component('Gallery', AKWGalleryAlt)
+    ctx.app.component('GalleryALT', AKWGalleryAlt)
     ctx.app.component('AGWLinkBlock', AGWLinkBlock)
 
     // Vue SilentBox - Used in Galleries
