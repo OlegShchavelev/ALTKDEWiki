@@ -1,13 +1,3 @@
-/*------------------------------------------------
-|             ALT KDE Wiki               <:0)~~~  |
-|  <:0)~~~         Theme configuration            |
-|-------------------------------------------------|
-|          Published under MIT Licence            |
-|-------------------------------------------------|
-| May the force be with you - FORCE OF SHITCODE   |
-|                             - (c) Ampernic 2024 |
--------------------------------------------------*/
-
 /*------------------------------------
 |   Vitepress/Vue - Default imports   |
 -------------------------------------*/
@@ -25,6 +15,7 @@ import AKWTeamPage from './components/AKWTeamPage.vue'
 import AKWHomeTeam from './components/AKWHomeTeam.vue'
 import AKWHomeSponsors from './components/AKWHomeSponsors.vue'
 import AKWGallery from './components/AKWGallery.vue'
+import AKWGalleryAlt from './components/AGWGallery.vue'
 import AGWLinkBlock from './components/AGWLinkBlock.vue'
 
 /*------------------------------------
@@ -100,6 +91,7 @@ export default {
     // Own components
     ctx.app.component('Contribution', AKWTeamPage)
     ctx.app.component('Gallery', AKWGallery)
+    ctx.app.component('GalleryALT', AKWGalleryAlt)
     ctx.app.component('AGWLinkBlock', AGWLinkBlock)
 
     // Vue SilentBox - Used in Galleries
