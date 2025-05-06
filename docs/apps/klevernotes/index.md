@@ -26,8 +26,8 @@ KleverNotes — это простое и функциональное прило
 
 Программа поддерживает различные стили отображения заметок, а также диаграмм PlantUML, имеет возможность настройки шрифта, умеет создавать ссылку на другую заметку.
 
-![Скриншот программы](https://cdn.kde.org/screenshots/klevernotes/painting.png)
-![Скриншот программы](https://cdn.kde.org/screenshots/klevernotes/main_note_desktop.png)
+![Скриншот программы 1](./img/painting.png 'Скриншот 1')
+![Скриншот программы 2](./img/main_note_desktop.png 'Скриншот 2')
 
 <!--@include: @apps/.parts/install/content-repo.md-->
 <!--@include: @apps/.parts/install/content-flatpak.md-->
