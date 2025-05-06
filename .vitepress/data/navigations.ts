@@ -34,6 +34,9 @@ const sidebar_docs = [
       text: 'KeePassXC',
       link: 'keepassxc/'
     }, {
+      text: 'KleverNotes',
+      link: 'klevernotes/'
+    }, {
       text: 'LibreOffice',
       link: 'libreoffice/'
     }, {
