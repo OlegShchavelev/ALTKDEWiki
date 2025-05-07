@@ -37,6 +37,9 @@ const sidebar_docs = [
       text: 'KleverNotes',
       link: 'klevernotes/'
     }, {
+      text: 'Krusader',
+      link: 'krusader/'
+    }, {
       text: 'LibreOffice',
       link: 'libreoffice/'
     }, {
