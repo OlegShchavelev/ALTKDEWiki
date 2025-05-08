@@ -68,8 +68,8 @@ const sidebar_docs = [
         {
           text: 'Сеть',
           items: [
-            { text: 'Audiotube', link: '/net/audiotube/' },
-            { text: 'Plasmatube', link: '/net/plasmatube/' },
+            { text: 'AudioTube', link: '/net/audiotube/' },
+            { text: 'PlasmaTube', link: '/net/plasmatube/' },
             { text: 'qBittorrent', link: '/net/qbittorrent/' }
           ],
           collapsed: true
@@ -79,7 +79,7 @@ const sidebar_docs = [
           items: [
             { text: 'Arianna', link: '/office/arianna/' },
             { text: 'Kiten', link: '/office/kiten/' },
-            { text: 'Klevernotes', link: '/office/klevernotes/' },
+            { text: 'KleverNotes', link: '/office/klevernotes/' },
             { text: 'LibreOffice', link: '/office/libreoffice/' }
           ],
           collapsed: true
