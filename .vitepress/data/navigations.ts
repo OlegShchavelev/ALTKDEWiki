@@ -19,6 +19,12 @@ const sidebar_docs = [
       text: 'Arianna',
       link: 'arianna/'
     }, {
+      text: 'AudioTube',
+      link: 'audiotube/'
+    }, {
+      text: 'Conky',
+      link: 'conky/'
+    }, {
       text: 'Distrobox',
       link: 'distrobox/'
     }, {
@@ -33,6 +39,15 @@ const sidebar_docs = [
     }, {
       text: 'KeePassXC',
       link: 'keepassxc/'
+    }, {
+      text: 'Kiten',
+      link: 'kiten/'
+    }, {
+      text: 'KleverNotes',
+      link: 'klevernotes/'
+    }, {
+      text: 'Krusader',
+      link: 'krusader/'
     }, {
       text: 'LibreOffice',
       link: 'libreoffice/'
