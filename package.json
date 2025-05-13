@@ -64,6 +64,6 @@
     "@octokit/core": "^6.1.2",
     "remark": "^15.0.1",
     "swiper": "^11.2.6",
-    "unocss": "^0.59.4"
+    "unocss": "^66.1.0-beta.13"
   }
 }
