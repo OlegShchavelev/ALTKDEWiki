@@ -13,6 +13,16 @@ export const nav = [
 
 const sidebar_docs = [
   {
+    text: "KDE в Альте",
+    base: '/distributions/',
+    items: [
+	{ text: 'ALT Regular KDE', link: '/ALT-Regular-KDE' },
+        { text: 'ALT Starterkit KDE', link: '/ALT-Starterkit-KDE' },
+        { text: 'Альт Рабочая станция К', link: '/ALT-Workstation-K' }
+    ],
+   collapsed: true
+  },
+  {
     text: 'Установка и обновление программ',
     base: '/apps/',
     items: [{
