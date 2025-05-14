@@ -5,13 +5,10 @@ gallery:
       - src: ./img/main.png
       - src: ./img/initial-setup.png
       - src: ./img/menu.png
-      - type: slider
-
   - type: slider
     items:
       - src: ./img/installer-sliders.png
       - src: ./img/installer-selection-of-packages.png
-      - type: slider
 ---
 
 # Альт Рабочая станция K 11
