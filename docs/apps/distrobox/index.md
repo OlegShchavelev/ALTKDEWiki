@@ -16,13 +16,18 @@ appstream:
     homepage: https://distrobox.it/
     bugtracker: https://github.com/89luca89/distrobox/issues
     help: https://github.com/89luca89/distrobox
+gallery:
+  - title: Галерея
+    type: slider
+    items:
+      - src: ./img/distrobox-screen.png
 ---
 
 # Distrobox
 
 Distrobox - это инструмент, который позволяет запускать различные дистрибутивы Linux внутри вашего основного (хост) дистрибутива. Рассматриваемый софт основан на технологии контейнеризации, но, несмотря на это, дистрибутивы тесно интегрируются в вашу систему. Поэтому программы, установленные внутри них, имеют доступ к вашей файловой системе, USB-устройствам, аудио и видео (X11/Wayland) системам.
 
-![Скриншот программы Distrobox](./img/distrobox-screen.png 'Скриншот программы Distrobox')
+<GalleryALT id=0 />
 
 ## Установка из репозитория
 

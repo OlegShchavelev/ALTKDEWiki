@@ -4,7 +4,7 @@
 
 import { h } from 'vue'
 import type { Theme } from 'vitepress'
-import { defineClientComponent } from 'vitepress'
+import { defineClientComponent, useRoute } from 'vitepress'
 import DefaultTheme from 'vitepress/theme'
 
 /*------------------------------------
@@ -15,6 +15,7 @@ import AKWTeamPage from './components/AKWTeamPage.vue'
 import AKWHomeTeam from './components/AKWHomeTeam.vue'
 import AKWHomeSponsors from './components/AKWHomeSponsors.vue'
 import AKWGallery from './components/AKWGallery.vue'
+import AGWGallery from './components/AGWGallery.vue'
 import AGWLinkBlock from './components/AGWLinkBlock.vue'
 
 /*------------------------------------
@@ -58,6 +59,9 @@ import { data as team } from './loaders/gitlogDataLoader.data'
 import { yandexMetrika } from '@hywax/vitepress-yandex-metrika'
 import { YandexMetrikaOptions } from '../config/plugins/index'
 
+import imageViewer from 'vitepress-plugin-image-viewer'
+import './viewerjs/dist/viewer.css'
+
 /*------------------------------------
 |            Used styles              |
 -------------------------------------*/
@@ -90,7 +94,7 @@ export default {
     // Own components
     ctx.app.component('Contribution', AKWTeamPage)
     ctx.app.component('Gallery', AKWGallery)
-    ctx.app.component('GalleryALT', () => h(defineClientComponent(() => import('./components/AGWGallery.vue'))))
+    ctx.app.component('GalleryALT', AGWGallery)
     ctx.app.component('AGWLinkBlock', AGWLinkBlock)
 
     // Vue SilentBox - Used in Galleries
@@ -105,5 +109,32 @@ export default {
 
     // Yandex Metrix
     yandexMetrika(ctx, YandexMetrikaOptions.metrica)
+  },
+  setup() {
+    // Get route
+    const route = useRoute()
+    // Using
+    imageViewer(route, '.vp-doc img:not(.galleries, .VPImage)', {
+      title: true,
+      toolbar: {
+        zoomIn: 4,
+        zoomOut: 4,
+        oneToOne: 4,
+        reset: 4,
+        prev: false,
+        next: false
+      }
+    })
+    imageViewer(route, '.galleries', {
+      title: true,
+      toolbar: {
+        zoomIn: 4,
+        zoomOut: 4,
+        oneToOne: true,
+        reset: true,
+        prev: true,
+        next: true
+      }
+    })
   }
 } satisfies Theme
