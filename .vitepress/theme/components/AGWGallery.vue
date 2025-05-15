@@ -1,13 +1,19 @@
 <script setup lang="ts">
-import { type Ref, computed, onMounted } from 'vue'
 import { DefaultTheme, useData, useRoute } from 'vitepress'
+import { type Ref, computed, onMounted } from 'vue'
 import { assetImage } from '../composables/image'
 import { VPImage } from 'vitepress/theme'
+
 import { Swiper, SwiperSlide } from 'swiper/vue'
 import { Grid } from 'swiper/modules'
+import 'swiper/css'
+import 'swiper/css/pagination'
+import 'swiper/css/grid'
 
 const { theme, frontmatter } = useData()
 const route = useRoute()
+const isIndex = route.component.name.split('/').slice(-1)[0] === 'index.md'
+
 
 const props = defineProps({
   id: Number
@@ -17,7 +23,9 @@ const galleries = computed(() => {
   const {title, type, col, row, items} = frontmatter.value.gallery ? props.id && frontmatter.value.gallery[props.id] ? frontmatter.value.gallery[props.id] : frontmatter.value.gallery[0] ?? frontmatter.value.gallery ?? theme.value.gallery ?? [] : undefined
 
   items.forEach(item => {
-    item.src = assetImage(item.src, route.path.split('/').slice(0, -1).join('/')+"/")
+    item.src = isIndex ?
+                  assetImage(item.src, route.path):
+                  assetImage(item.src, route.path.split('/').slice(0, -1).join('/')+"/")
   });
 
   return {
@@ -28,13 +36,6 @@ const galleries = computed(() => {
     items: items
   }
 })
-
-console.log(galleries.value)
-
-import 'swiper/css'
-import 'swiper/css/pagination'
-import 'swiper/css/grid'
-
 
 </script>
 
