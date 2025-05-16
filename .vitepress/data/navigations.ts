@@ -26,66 +26,115 @@ const sidebar_docs = [
     text: 'Установка и обновление программ',
     base: '/apps/',
     items: [{
-      text: 'Arianna',
-      link: 'arianna/'
-    }, {
-      text: 'AudioTube',
-      link: 'audiotube/'
-    }, {
-      text: 'Conky',
-      link: 'conky/'
-    }, {
-      text: 'Distrobox',
-      link: 'distrobox/'
-    }, {
-      text: 'КриптоПро CSP 5',
-      link: 'cryptopro/'
-    }, {
-      text: 'Flameshot',
-      link: 'flameshot/'
-    }, {
-      text: 'Haruna',
-      link: 'haruna/'
-    }, {
-      text: 'KeePassXC',
-      link: 'keepassxc/'
-    }, {
-      text: 'Kiten',
-      link: 'kiten/'
-    }, {
-      text: 'KleverNotes',
-      link: 'klevernotes/'
-    }, {
-      text: 'Krusader',
-      link: 'krusader/'
-    }, {
-      text: 'LibreOffice',
-      link: 'libreoffice/'
-    }, {
-      text: 'Micro',
-      link: 'micro/'
-    }, {
-      text: 'Nano',
-      link: 'nano/'      
-    }, {
-      text: 'PCSX2',
-      link: 'pcsx2/'
-    }, {
-      text: 'Plan',
-      link: 'plan/'
-    }, {
-      text: 'PlasmaTube',
-      link: 'plasmatube/'
-    }, {
-      text: 'qBittorrent',
-      link: 'qbittorrent/'
-    }, {
-      text: 'SafeEyes',
-      link: 'safeeyes'
-    }, {
-      text: 'Steam',
-      link: 'steam/'
-    }],
+          text: 'Разработка',
+          items: [
+            { text: 'Plan', link: '/plan/' }
+          ],
+          collapsed: true
+        },
+        {
+          text: 'ЭЦП',
+          items: [
+            { text: 'КриптоПро CSP 5', link: '/cryptopro/' }
+          ],
+          collapsed: true
+        },
+        {
+          text: 'Файловые менеджеры',
+          items: [
+            { text: 'Krusader', link: '/krusader/' }
+          ],
+          collapsed: true
+        },
+        {
+          text: 'Игры',
+          items: [
+        {
+          text: 'Эмуляторы',
+          items: [
+        { text: 'PCSX2', link: '/pcsx2/' }
+        ],
+            collapsed: true
+        },
+          { text: 'Steam', link: '/steam/' }
+        ],
+          collapsed: true
+        },
+        {
+          text: 'Графика',
+          items: [
+        { text: 'Flameshot', link: '/flameshot/' }
+         ],
+          collapsed: true
+        },
+        {
+          text: 'Мультимедиа',
+          items: [
+        { text: 'Haruna', link: '/haruna/' }
+         ],
+           collapsed: true
+        },
+        {
+          text: 'Сеть',
+          items: [
+            { text: 'AudioTube', link: '/audiotube/' },
+            { text: 'PlasmaTube', link: '/plasmatube/' },
+            { text: 'qBittorrent', link: '/qbittorrent/' }
+          ],
+          collapsed: true
+        },
+        {
+          text: 'Офис',
+          items: [
+            { text: 'Arianna', link: '/arianna/' },
+            { text: 'Kiten', link: '/kiten/' },
+            { text: 'KleverNotes', link: '/klevernotes/' },
+            { text: 'LibreOffice', link: '/libreoffice/' }
+          ],
+          collapsed: true
+        },
+        {
+          text: 'Безопасность',
+          items: [
+            { text: 'KeePassXC', link: '/keepassxc/' }
+          ],
+          collapsed: true
+        },
+        {
+          text: 'Система',
+          items: [
+            { text: 'Conky', link: '/conky/' }
+          ],
+          collapsed: true
+        },
+        {
+          text: 'Инструменты',
+          items: [
+            {
+              text: 'Разное',
+              items: [
+                { text: 'SafeEyes', link: '/safeeyes/' }
+              ],
+              collapsed: true
+            },
+            {
+              text: 'Текстовые редакторы',
+              items: [
+                { text: 'Micro', link: '/micro/' },
+                { text: 'Nano', link: '/nano/' }
+              ],
+              collapsed: true
+            },
+          ],
+          collapsed: true
+        },
+        {
+          text: 'Виртуализация, контейнеризация',
+          items: [
+            { text: 'Distrobox', link: '/distrobox/' }
+          ],
+          collapsed: true
+        },],
     collapsed: false
   },
   {
