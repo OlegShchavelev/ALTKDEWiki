@@ -52,6 +52,7 @@ const sidebar_docs = [
         {
           text: 'Эмуляторы',
           items: [
+        { text: 'DuckStation', link: '/duckstation/' },
         { text: 'PCSX2', link: '/pcsx2/' }
         ],
             collapsed: true
