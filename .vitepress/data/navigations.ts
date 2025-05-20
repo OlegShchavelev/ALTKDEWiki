@@ -105,7 +105,8 @@ const sidebar_docs = [
         {
           text: 'Система',
           items: [
-            { text: 'Conky', link: '/conky/' }
+            { text: 'Conky', link: '/conky/' },
+            { text: 'Junction', link: '/junction/' }
           ],
           collapsed: true
         },
