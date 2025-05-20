@@ -42,6 +42,7 @@ const sidebar_docs = [
         {
           text: 'Файловые менеджеры',
           items: [
+            { text: 'Double Commander', link: '/doublecmd/' },
             { text: 'Krusader', link: '/krusader/' }
           ],
           collapsed: true
