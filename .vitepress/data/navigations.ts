@@ -42,6 +42,7 @@ const sidebar_docs = [
         {
           text: 'Файловые менеджеры',
           items: [
+            { text: 'Double Commander', link: '/doublecmd/' },
             { text: 'Krusader', link: '/krusader/' }
           ],
           collapsed: true
@@ -52,6 +53,7 @@ const sidebar_docs = [
         {
           text: 'Эмуляторы',
           items: [
+        { text: 'DuckStation', link: '/duckstation/' },
         { text: 'PCSX2', link: '/pcsx2/' }
         ],
             collapsed: true
