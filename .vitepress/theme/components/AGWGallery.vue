@@ -40,6 +40,7 @@ const galleries = computed(() => {
 </script>
 
 <template>
+<ClientOnly>
   <div class="galleries" v-if="galleries">
     <h3 v-if="galleries.title" v-html="galleries.title"></h3>
     <div v-if="galleries.type == 'grid'" class="grid-container">
@@ -97,6 +98,7 @@ const galleries = computed(() => {
       </swiper>
     </div>
   </div>
+</ClientOnly>
 </template>
 
 <style scoped>
