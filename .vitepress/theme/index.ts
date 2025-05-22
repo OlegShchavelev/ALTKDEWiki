@@ -2,10 +2,11 @@
 |   Vitepress/Vue - Default imports   |
 -------------------------------------*/
 
-import { h } from 'vue'
+import { h, onMounted, nextTick, watch} from 'vue'
 import type { Theme } from 'vitepress'
 import { defineClientComponent, useRoute } from 'vitepress'
 import DefaultTheme from 'vitepress/theme'
+import mediumZoom from "medium-zoom";
 
 /*------------------------------------
 |  ALT KDE/GNOME Team - Own componets |
@@ -59,9 +60,6 @@ import { data as team } from './loaders/gitlogDataLoader.data'
 import { yandexMetrika } from '@hywax/vitepress-yandex-metrika'
 import { YandexMetrikaOptions } from '../config/plugins/index'
 
-import imageViewer from 'vitepress-plugin-image-viewer'
-import './viewerjs/dist/viewer.css'
-
 /*------------------------------------
 |            Used styles              |
 -------------------------------------*/
@@ -111,30 +109,19 @@ export default {
     yandexMetrika(ctx, YandexMetrikaOptions.metrica)
   },
   setup() {
-    // Get route
-    const route = useRoute()
-    // Using
-    imageViewer(route, '.vp-doc img:not(.galleries, .VPImage)', {
-      title: true,
-      toolbar: {
-        zoomIn: 4,
-        zoomOut: 4,
-        oneToOne: 4,
-        reset: 4,
-        prev: false,
-        next: false
-      }
-    })
-    imageViewer(route, '.galleries', {
-      title: true,
-      toolbar: {
-        zoomIn: 4,
-        zoomOut: 4,
-        oneToOne: true,
-        reset: true,
-        prev: true,
-        next: true
-      }
-    })
-  }
+    const route = useRoute();
+    const setupMediumZoom = () => {
+      onMounted(() => {
+        mediumZoom("[data-zoomable]", {
+          background: "transparent",
+        })
+      })
+      watch(() => route.path, () => nextTick(() => {
+        mediumZoom("[data-zoomable]", {
+          background: "transparent",
+        })
+      }));
+    };
+    setupMediumZoom()
+  },
 } satisfies Theme

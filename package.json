@@ -41,7 +41,7 @@
     "remark-lint-no-multiple-toplevel-headings": "^4.0.0",
     "vitepress": "^1.5.0",
     "vitepress-markdown-timeline": "^1.2.2",
-    "vitepress-plugin-image-viewer": "1.1.6",
+    "vitepress-plugin-lightbox": "^1.0.2",
     "vitepress-plugin-tabs": "^0.5.0",
     "vitepress-sidebar": "^1.30.2",
     "vue-silentbox": "^3.0.4",

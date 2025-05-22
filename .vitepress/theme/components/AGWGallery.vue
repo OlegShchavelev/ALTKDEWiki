@@ -40,7 +40,6 @@ const galleries = computed(() => {
 </script>
 
 <template>
-<ClientOnly>
   <div class="galleries" v-if="galleries">
     <h3 v-if="galleries.title" v-html="galleries.title"></h3>
     <div v-if="galleries.type == 'grid'" class="grid-container">
@@ -62,7 +61,7 @@ const galleries = computed(() => {
         <swiper-slide v-for="file in galleries.items" :key="galleries.items.src" class="item">
           <figure class="figure">
               <figure class="figure ratio ratio-1x1">
-                <VPImage :image="file.src" :alt="frontmatter.title" class="gallery" />
+                <VPImage :image="file.src" :alt="frontmatter.title" class="gallery medium-zoom-image" data-zoomable="true" />
               </figure>
               <figcaption>{{ file.text }}</figcaption>
           </figure>
@@ -78,7 +77,7 @@ const galleries = computed(() => {
         <swiper-slide v-for="file in galleries.items" :key="galleries.items.src" class="item">
           <figure class="figure">
               <figure class="figure ratio ratio-1x1">
-                <VPImage :image="file.src" :alt="frontmatter.title" class="gallery" />
+                <VPImage :image="file.src" :alt="frontmatter.title" class="gallery medium-zoom-image" data-zoomable="true"/>
               </figure>
               <figcaption>{{ file.text }}</figcaption>
           </figure>
@@ -90,7 +89,7 @@ const galleries = computed(() => {
         <swiper-slide v-for="file in galleries.items" :key="galleries.items.src" class="item">
           <figure class="figure">
               <figure class="figure ratio ratio-16x9">
-                <VPImage :image="file.src" :alt="frontmatter.title" class="gallery" />
+                <VPImage :image="file.src" :alt="frontmatter.title" class="gallery medium-zoom-image" data-zoomable="true" />
               </figure>
               <figcaption>{{ file.text }}</figcaption>
           </figure>
@@ -98,7 +97,6 @@ const galleries = computed(() => {
       </swiper>
     </div>
   </div>
-</ClientOnly>
 </template>
 
 <style scoped>
@@ -151,6 +149,14 @@ figcaption {
   left: 0;
   height: 100%;
   object-fit: cover;
-  cursor: zoom-in;
+}
+
+.medium-zoom-overlay {
+  backdrop-filter: blur(2rem);
+}
+
+.medium-zoom-overlay,
+.medium-zoom-image--opened {
+  z-index: 999;
 }
 </style>

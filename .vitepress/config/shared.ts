@@ -6,6 +6,7 @@ import { tabsMarkdownPlugin } from 'vitepress-plugin-tabs'
 import markdownItKdb from 'markdown-it-kbd'
 import markdownItImplicitFigures from 'markdown-it-implicit-figures'
 import VitepressMarkdownTimeline from 'vitepress-markdown-timeline'
+import lightbox from "vitepress-plugin-lightbox"
 
 /* Markdown */
 import linkBlock from '../theme/composables/linkBlock'
@@ -114,6 +115,7 @@ export const shared = defineConfig({
       })
       md.use(linkBlock)
       md.use(VitepressMarkdownTimeline)
+      md.use(lightbox, {})
     }
   },
   transformPageData: (pageData) => {
