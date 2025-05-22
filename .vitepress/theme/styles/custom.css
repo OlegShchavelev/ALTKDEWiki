@@ -170,3 +170,13 @@ figure > figcaption {
   color: var(--vp-c-brand-lighter);
   font-size: 14px;
 }
+
+
+.medium-zoom-overlay {
+  backdrop-filter: blur(1rem);
+}
+
+.medium-zoom-overlay,
+.medium-zoom-image--opened {
+  z-index: 999;
+}
