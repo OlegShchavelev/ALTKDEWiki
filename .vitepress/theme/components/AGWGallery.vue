@@ -3,6 +3,7 @@ import { DefaultTheme, useData, useRoute } from 'vitepress'
 import { type Ref, computed, onMounted } from 'vue'
 import { assetImage } from '../composables/image'
 import { VPImage } from 'vitepress/theme'
+import mediumZoom from "medium-zoom";
 
 import { Swiper, SwiperSlide } from 'swiper/vue'
 import { Grid } from 'swiper/modules'
@@ -37,6 +38,11 @@ const galleries = computed(() => {
   }
 })
 
+onMounted(() => {
+  mediumZoom(".gallery", {
+    background: "transparent",
+  })
+})
 </script>
 
 <template>
