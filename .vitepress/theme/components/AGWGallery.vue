@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { DefaultTheme, useData, useRoute } from 'vitepress'
-import { type Ref, computed, onMounted } from 'vue'
+import { type Ref, computed, onMounted, inject } from 'vue'
 import { assetImage } from '../composables/image'
 import { VPImage } from 'vitepress/theme'
 import mediumZoom from "medium-zoom";
@@ -10,6 +10,8 @@ import { Grid } from 'swiper/modules'
 import 'swiper/css'
 import 'swiper/css/pagination'
 import 'swiper/css/grid'
+
+const zoom = inject('mediumZoom')
 
 const { theme, frontmatter } = useData()
 const route = useRoute()
@@ -39,9 +41,9 @@ const galleries = computed(() => {
 })
 
 onMounted(() => {
-  mediumZoom(".gallery", {
-    background: "transparent",
-  })
+  setTimeout(() => {
+    zoom.attach('.gallery')
+  }, 0) // idk why this needed, but if do this - it works correct
 })
 </script>
 
