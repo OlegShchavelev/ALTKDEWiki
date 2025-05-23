@@ -40,11 +40,9 @@ const galleries = computed(() => {
   }
 })
 
-onMounted(() => {
-  setTimeout(() => {
-    zoom.attach('.gallery')
-  }, 0) // idk why this needed, but if do this - it works correct
-})
+const onAfterInit = (swiper: any) => {
+  zoom.attach('.gallery')
+}
 </script>
 
 <template>
@@ -66,6 +64,7 @@ onMounted(() => {
           } 
         }"
         :space-between="20"
+        @afterInit="onAfterInit"
       >
         <swiper-slide v-for="file in galleries.items" :key="galleries.items.src" class="item">
           <figure class="figure">
@@ -82,6 +81,7 @@ onMounted(() => {
         :slides-per-view="1.1"
         :breakpoints="{ 767: { slidesPerView: 2 }, 1024: { slidesPerView: 4 } }"
         :space-between="20"
+        @afterInit="onAfterInit"
       >
         <swiper-slide v-for="file in galleries.items" :key="galleries.items.src" class="item">
           <figure class="figure">
@@ -94,7 +94,7 @@ onMounted(() => {
       </swiper>
     </div>
     <div v-if="galleries.type == 'slider'">
-      <swiper :slides-per-view="1.05" :space-between="20">
+      <swiper :slides-per-view="1.05" :space-between="20" @afterInit="onAfterInit">
         <swiper-slide v-for="file in galleries.items" :key="galleries.items.src" class="item">
           <figure class="figure">
               <figure class="figure ratio ratio-16x9">
