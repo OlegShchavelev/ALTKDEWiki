@@ -1,14 +1,17 @@
 <script setup lang="ts">
 import { DefaultTheme, useData, useRoute } from 'vitepress'
-import { type Ref, computed, onMounted } from 'vue'
+import { type Ref, computed, onMounted, inject } from 'vue'
 import { assetImage } from '../composables/image'
 import { VPImage } from 'vitepress/theme'
+import mediumZoom from "medium-zoom";
 
 import { Swiper, SwiperSlide } from 'swiper/vue'
 import { Grid } from 'swiper/modules'
 import 'swiper/css'
 import 'swiper/css/pagination'
 import 'swiper/css/grid'
+
+const zoom = inject('mediumZoom')
 
 const { theme, frontmatter } = useData()
 const route = useRoute()
@@ -37,9 +40,13 @@ const galleries = computed(() => {
   }
 })
 
+const onAfterInit = (swiper: any) => {
+  zoom.attach('.gallery')
+}
 </script>
 
 <template>
+<ClientOnly>
   <div class="galleries" v-if="galleries">
     <h3 v-if="galleries.title" v-html="galleries.title"></h3>
     <div v-if="galleries.type == 'grid'" class="grid-container">
@@ -57,6 +64,7 @@ const galleries = computed(() => {
           } 
         }"
         :space-between="20"
+        @afterInit="onAfterInit"
       >
         <swiper-slide v-for="file in galleries.items" :key="galleries.items.src" class="item">
           <figure class="figure">
@@ -73,6 +81,7 @@ const galleries = computed(() => {
         :slides-per-view="1.1"
         :breakpoints="{ 767: { slidesPerView: 2 }, 1024: { slidesPerView: 4 } }"
         :space-between="20"
+        @afterInit="onAfterInit"
       >
         <swiper-slide v-for="file in galleries.items" :key="galleries.items.src" class="item">
           <figure class="figure">
@@ -85,7 +94,7 @@ const galleries = computed(() => {
       </swiper>
     </div>
     <div v-if="galleries.type == 'slider'">
-      <swiper :slides-per-view="1.05" :space-between="20">
+      <swiper :slides-per-view="1.05" :space-between="20" @afterInit="onAfterInit">
         <swiper-slide v-for="file in galleries.items" :key="galleries.items.src" class="item">
           <figure class="figure">
               <figure class="figure ratio ratio-16x9">
@@ -97,6 +106,7 @@ const galleries = computed(() => {
       </swiper>
     </div>
   </div>
+</ClientOnly>
 </template>
 
 <style scoped>

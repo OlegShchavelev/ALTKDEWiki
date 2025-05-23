@@ -2,7 +2,7 @@
 |   Vitepress/Vue - Default imports   |
 -------------------------------------*/
 
-import { h, onMounted, nextTick, watch} from 'vue'
+import { h, onMounted, nextTick, watch, provide} from 'vue'
 import type { Theme } from 'vitepress'
 import { defineClientComponent, useRoute } from 'vitepress'
 import DefaultTheme from 'vitepress/theme'
@@ -109,19 +109,19 @@ export default {
     yandexMetrika(ctx, YandexMetrikaOptions.metrica)
   },
   setup() {
-    const route = useRoute();
-    const setupMediumZoom = () => {
-      onMounted(() => {
-        mediumZoom("[data-zoomable]", {
-          background: "transparent",
+    if (!import.meta.env.SSR) {
+      const route = useRoute();
+      const zoom = mediumZoom({ background: 'transparent'})
+      const setupMediumZoom = () => {
+        onMounted(() => {
+          zoom.attach('[data-zoomable]')
         })
-      })
-      watch(() => route.path, () => nextTick(() => {
-        mediumZoom("[data-zoomable]", {
-          background: "transparent",
-        })
-      }));
-    };
-    setupMediumZoom()
+        watch(() => route.path, () => nextTick(() => {
+          zoom.attach('[data-zoomable]')
+        }));
+      };
+      setupMediumZoom()
+      provide('mediumZoom', zoom)
+    }
   },
 } satisfies Theme
