@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import { DefaultTheme, useData, useRoute } from 'vitepress'
-import { type Ref, computed, onMounted, inject } from 'vue'
+import { useData, useRoute } from 'vitepress'
+import { type Ref, computed, inject } from 'vue'
 import { assetImage } from '../composables/image'
 import { VPImage } from 'vitepress/theme'
-import mediumZoom from "medium-zoom";
+import { type Zoom } from 'medium-zoom'
 
 import { Swiper, SwiperSlide } from 'swiper/vue'
 import { Grid } from 'swiper/modules'
@@ -11,25 +11,32 @@ import 'swiper/css'
 import 'swiper/css/pagination'
 import 'swiper/css/grid'
 
-const zoom = inject('mediumZoom')
+const zoom = inject<Ref<Zoom>>('mediumZoom')
 
 const { theme, frontmatter } = useData()
 const route = useRoute()
-const isIndex = route.component.name.split('/').slice(-1)[0] === 'index.md'
-
+const isIndex = route.component && route.component.name
+  ? route.component.name.split('/').slice(-1)[0] === 'index.md'
+  : false
 
 const props = defineProps({
   id: Number
 })
 
 const galleries = computed(() => {
-  const {title, type, col, row, items} = frontmatter.value.gallery ? props.id && frontmatter.value.gallery[props.id] ? frontmatter.value.gallery[props.id] : frontmatter.value.gallery[0] ?? frontmatter.value.gallery ?? theme.value.gallery ?? [] : undefined
+  const galleryConfig = frontmatter.value.gallery
+    ? props.id && frontmatter.value.gallery[props.id]
+      ? frontmatter.value.gallery[props.id]
+      : frontmatter.value.gallery[0] ?? frontmatter.value.gallery ?? theme.value.gallery ?? []
+    : null
 
-  items.forEach(item => {
-    item.src = isIndex ?
-                  assetImage(item.src, route.path):
-                  assetImage(item.src, route.path.split('/').slice(0, -1).join('/')+"/")
-  });
+  const { title, type, col, row, items } = galleryConfig
+
+  items.forEach((item) => {
+    item.src = isIndex
+      ? assetImage(item.src, route.path)
+      : assetImage(item.src, route.path.split('/').slice(0, -1).join('/') + '/')
+  })
 
   return {
     title: title,
@@ -40,77 +47,91 @@ const galleries = computed(() => {
   }
 })
 
-const onAfterInit = (swiper: any) => {
-  zoom.attach('.gallery')
+const onAfterInit = () => {
+  zoom?.value?.attach('.gallery')
 }
 </script>
 
 <template>
-<ClientOnly>
-  <div class="galleries" v-if="galleries">
-    <h3 v-if="galleries.title" v-html="galleries.title"></h3>
-    <div v-if="galleries.type == 'grid'" class="grid-container">
-      <swiper
-        :modules="[Grid]"
-        :slides-per-view="galleries.col"
-        :breakpoints="{ 
-          767: { slidesPerView: 2 },
-          1024: { 
-            slidesPerView: galleries.col,
-            grid: {
-              fill: 'row',
-              rows: galleries.row
+  <ClientOnly>
+    <div class="galleries" v-if="galleries">
+      <h3 v-if="galleries.title" v-html="galleries.title"></h3>
+      <div v-if="galleries.type == 'grid'" class="grid-container">
+        <swiper
+          :modules="[Grid]"
+          :slides-per-view="galleries.col"
+          :breakpoints="{
+            767: { slidesPerView: 2 },
+            1024: {
+              slidesPerView: galleries.col,
+              grid: {
+                fill: 'row',
+                rows: galleries.row
+              }
             }
-          } 
-        }"
-        :space-between="20"
-        @afterInit="onAfterInit"
-      >
-        <swiper-slide v-for="file in galleries.items" :key="galleries.items.src" class="item">
-          <figure class="figure">
+          }"
+          :space-between="20"
+          @afterInit="onAfterInit"
+        >
+          <swiper-slide v-for="file in galleries.items" :key="file.src" class="item">
+            <figure class="figure">
               <figure class="figure ratio ratio-1x1">
-                <VPImage :image="file.src" :alt="frontmatter.title" class="gallery medium-zoom-image" data-zoomable="true" />
+                <VPImage
+                  :image="file.src"
+                  :alt="frontmatter.title"
+                  class="gallery medium-zoom-image"
+                  data-zoomable="true"
+                />
               </figure>
               <figcaption>{{ file.text }}</figcaption>
-          </figure>
-        </swiper-slide>
-      </swiper>
-    </div>
-    <div v-if="galleries.type == 'carousel'">
-      <swiper
-        :slides-per-view="1.1"
-        :breakpoints="{ 767: { slidesPerView: 2 }, 1024: { slidesPerView: 4 } }"
-        :space-between="20"
-        @afterInit="onAfterInit"
-      >
-        <swiper-slide v-for="file in galleries.items" :key="galleries.items.src" class="item">
-          <figure class="figure">
+            </figure>
+          </swiper-slide>
+        </swiper>
+      </div>
+      <div v-if="galleries.type == 'carousel'">
+        <swiper
+          :slides-per-view="1.1"
+          :breakpoints="{ 767: { slidesPerView: 2 }, 1024: { slidesPerView: 4 } }"
+          :space-between="20"
+          @afterInit="onAfterInit"
+        >
+          <swiper-slide v-for="file in galleries.items" :key="file.src" class="item">
+            <figure class="figure">
               <figure class="figure ratio ratio-1x1">
-                <VPImage :image="file.src" :alt="frontmatter.title" class="gallery medium-zoom-image" data-zoomable="true"/>
+                <VPImage
+                  :image="file.src"
+                  :alt="frontmatter.title"
+                  class="gallery medium-zoom-image"
+                  data-zoomable="true"
+                />
               </figure>
               <figcaption>{{ file.text }}</figcaption>
-          </figure>
-        </swiper-slide>
-      </swiper>
-    </div>
-    <div v-if="galleries.type == 'slider'">
-      <swiper :slides-per-view="1.05" :space-between="20" @afterInit="onAfterInit">
-        <swiper-slide v-for="file in galleries.items" :key="galleries.items.src" class="item">
-          <figure class="figure">
+            </figure>
+          </swiper-slide>
+        </swiper>
+      </div>
+      <div v-if="galleries.type == 'slider'">
+        <swiper :slides-per-view="1.05" :space-between="20" @afterInit="onAfterInit">
+          <swiper-slide v-for="file in galleries.items" :key="file.src" class="item">
+            <figure class="figure">
               <figure class="figure ratio ratio-16x9">
-                <VPImage :image="file.src" :alt="frontmatter.title" class="gallery medium-zoom-image" data-zoomable="true" />
+                <VPImage
+                  :image="file.src"
+                  :alt="frontmatter.title"
+                  class="gallery medium-zoom-image"
+                  data-zoomable="true"
+                />
               </figure>
               <figcaption>{{ file.text }}</figcaption>
-          </figure>
-        </swiper-slide>
-      </swiper>
+            </figure>
+          </swiper-slide>
+        </swiper>
+      </div>
     </div>
-  </div>
-</ClientOnly>
+  </ClientOnly>
 </template>
 
 <style scoped>
-
 figcaption {
   color: var(--vp-c-text-2);
 }
