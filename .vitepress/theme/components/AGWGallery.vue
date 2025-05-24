@@ -81,13 +81,15 @@ const onAfterInit = () => {
                   :alt="frontmatter.title"
                   class="gallery medium-zoom-image"
                   data-zoomable="true"
+                  loading="lazy"
+                  :img-attrs="{ loading: 'lazy' }"
                 />
               </figure>
               <figcaption>{{ file.text }}</figcaption>
             </figure>
           </swiper-slide>
         </swiper>
-      </div>
+      </div> 
       <div v-if="galleries.type == 'carousel'">
         <swiper
           :slides-per-view="1.1"
@@ -103,6 +105,8 @@ const onAfterInit = () => {
                   :alt="frontmatter.title"
                   class="gallery medium-zoom-image"
                   data-zoomable="true"
+                  loading="lazy"
+                  :img-attrs="{ loading: 'lazy' }"
                 />
               </figure>
               <figcaption>{{ file.text }}</figcaption>
@@ -120,6 +124,8 @@ const onAfterInit = () => {
                   :alt="frontmatter.title"
                   class="gallery medium-zoom-image"
                   data-zoomable="true"
+                  loading="lazy"
+                  :img-attrs="{ loading: 'lazy' }"
                 />
               </figure>
               <figcaption>{{ file.text }}</figcaption>
