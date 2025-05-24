@@ -55,6 +55,7 @@
     "vitepress-markdown-timeline": "^1.2.2",
     "vitepress-plugin-lightbox": "^1.0.2",
     "vitepress-plugin-tabs": "^0.5.0",
+    "vue-silentbox": "^3.0.4",
     "yaspeller": "^10.0.1"
   },
   "remarkConfig": {
