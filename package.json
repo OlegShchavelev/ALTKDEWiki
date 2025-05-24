@@ -19,10 +19,23 @@
     "url": "https://github.com/OlegShchavelev/ALTKDEWiki"
   },
   "type": "module",
-  "remarkConfig": {
-    "plugins": [
-      "remark-lint-no-multiple-toplevel-headings"
-    ]
+  "scripts": {
+    "history:build": "npx esrun ./.tools/gitlog.ts",
+    "docs:dev": "vitepress dev",
+    "docs:build": "vitepress build",
+    "docs:preview": "vitepress preview",
+    "docs:spell-check": "npm run docs:yaspeller-full && npm run docs:cspell-full",
+    "docs:yaspeller-full": "yaspeller --dictionary .yaspeller/frontmatter.json:.yaspeller/apps\\&companies.json:.yaspeller/names.json ./docs --only-errors",
+    "docs:yaspeller": "yaspeller --dictionary .yaspeller/frontmatter.json:.yaspeller/apps\\&companies.json:.yaspeller/names.json",
+    "docs:cspell-full": "cspell --show-context --show-suggestions --color ./docs/**/**/*.md",
+    "docs:cspell": "cspell --show-context --show-suggestions --color",
+    "docs:remark-full": "remark ./docs --frail",
+    "docs:remark": "remark"
+  },
+  "dependencies": {
+    "@octokit/core": "^6.1.2",
+    "swiper": "^11.2.6",
+    "unocss": "^0.58.0"
   },
   "devDependencies": {
     "@cspell/dict-ru_ru": "^2.2.4",
@@ -35,36 +48,22 @@
     "cspell": "^8.17.1",
     "markdown-it-implicit-figures": "^0.12.0",
     "markdown-it-kbd": "^2.2.2",
-    "ora": "^8.1.1",
+    "ora": "^8.2.0",
+    "remark": "^15.0.1",
     "remark-cli": "^12.0.1",
     "remark-lint": "^10.0.0",
     "remark-lint-no-multiple-toplevel-headings": "^4.0.0",
-    "vitepress": "^1.5.0",
+    "vitepress": "^1.6.3",
     "vitepress-markdown-timeline": "^1.2.2",
     "vitepress-plugin-lightbox": "^1.0.2",
     "vitepress-plugin-tabs": "^0.5.0",
-    "vitepress-sidebar": "^1.30.2",
     "vue-silentbox": "^3.0.4",
     "yargs": "^17.7.2",
     "yaspeller": "^10.0.1"
   },
-  "scripts": {
-    "history:build": "npx esrun ./.tools/gitlog.ts",
-    "docs:dev": "vitepress dev",
-    "docs:build": "vitepress build",
-    "docs:preview": "vitepress preview",
-    "docs:spell-check": "npm run docs:yaspeller-full && npm run docs:cspell-full",
-    "docs:yaspeller-full": "yaspeller --dictionary .yaspeller/frontmatter.json:.yaspeller/apps\\&companies.json:.yaspeller/names.json ./docs --only-errors",
-    "docs:yaspeller": "yaspeller --dictionary .yaspeller/frontmatter.json:.yaspeller/apps\\&companies.json:.yaspeller/names.json",
-    "docs:cspell-full": "npx cspell --show-context --show-suggestions --color ./docs/**/**/*.md",
-    "docs:cspell": "npx cspell --show-context --show-suggestions --color",
-    "docs:remark-full": "remark ./docs --frail",
-    "docs:remark": "remark"
-  },
-  "dependencies": {
-    "@octokit/core": "^6.1.2",
-    "remark": "^15.0.1",
-    "swiper": "^11.2.6",
-    "unocss": "^66.1.0-beta.13"
+  "remarkConfig": {
+    "plugins": [
+      "remark-lint-no-multiple-toplevel-headings"
+    ]
   }
 }
