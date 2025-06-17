@@ -13,132 +13,126 @@ export const nav = [
 
 const sidebar_docs = [
   {
-    text: "KDE в Альте",
+    text: 'KDE в Альте',
     base: '/distributions/',
     items: [
-	{ text: 'ALT Regular KDE', link: '/ALT-Regular-KDE' },
-        { text: 'ALT Starterkit KDE', link: '/ALT-Starterkit-KDE' },
-        { text: 'Альт Рабочая станция К', link: '/ALT-Workstation-K' }
+      { text: 'ALT Regular KDE', link: '/ALT-Regular-KDE' },
+      { text: 'ALT Starterkit KDE', link: '/ALT-Starterkit-KDE' },
+      { text: 'Альт Рабочая станция К', link: '/ALT-Workstation-K' }
     ],
-   collapsed: true
+    collapsed: true
   },
   {
     text: 'Установка и обновление программ',
     base: '/apps/',
-    items: [{
-          text: 'Разработка',
-          items: [
-            { text: 'Plan', link: '/plan/' }
-          ],
-          collapsed: true
-        },
-        {
-          text: 'ЭЦП',
-          items: [
-            { text: 'КриптоПро CSP 5', link: '/cryptopro/' }
-          ],
-          collapsed: true
-        },
-        {
-          text: 'Файловые менеджеры',
-          items: [
-            { text: 'Double Commander', link: '/doublecmd/' },
-            { text: 'Krusader', link: '/krusader/' }
-          ],
-          collapsed: true
-        },
-        {
-          text: 'Игры',
-          items: [
-        {
-          text: 'Эмуляторы',
-          items: [
-        { text: 'DuckStation', link: '/duckstation/' },
-        { text: 'PCSX2', link: '/pcsx2/' }
+    items: [
+      {
+        text: 'Разработка',
+        items: [{ text: 'Plan', link: '/plan/' }],
+        collapsed: true
+      },
+      {
+        text: 'ЭЦП',
+        items: [{ text: 'КриптоПро CSP 5', link: '/cryptopro/' }],
+        collapsed: true
+      },
+      {
+        text: 'Файловые менеджеры',
+        items: [
+          { text: 'Double Commander', link: '/doublecmd/' },
+          { text: 'Krusader', link: '/krusader/' }
         ],
+        collapsed: true
+      },
+      {
+        text: 'Игры',
+        items: [
+          {
+            text: 'Эмуляторы',
+            items: [
+              { text: 'DuckStation', link: '/duckstation/' },
+              { text: 'PCSX2', link: '/pcsx2/' }
+            ],
             collapsed: true
-        },
+          },
           { text: 'Steam', link: '/steam/' }
         ],
-          collapsed: true
-        },
-        {
-          text: 'Графика',
-          items: [
-        { text: 'Flameshot', link: '/flameshot/' }
-         ],
-          collapsed: true
-        },
-        {
-          text: 'Мультимедиа',
-          items: [
-        { text: 'Haruna', link: '/haruna/' }
-         ],
-           collapsed: true
-        },
-        {
-          text: 'Сеть',
-          items: [
-            { text: 'AudioTube', link: '/audiotube/' },
-            { text: 'PlasmaTube', link: '/plasmatube/' },
-            { text: 'qBittorrent', link: '/qbittorrent/' }
-          ],
-          collapsed: true
-        },
-        {
-          text: 'Офис',
-          items: [
-            { text: 'Arianna', link: '/arianna/' },
-            { text: 'Kiten', link: '/kiten/' },
-            { text: 'KleverNotes', link: '/klevernotes/' },
-            { text: 'LibreOffice', link: '/libreoffice/' },
-            { text: 'WPS Office', link: '/wps-office/' }
-          ],
-          collapsed: true
-        },
-        {
-          text: 'Безопасность',
-          items: [
-            { text: 'KeePassXC', link: '/keepassxc/' }
-          ],
-          collapsed: true
-        },
-        {
-          text: 'Система',
-          items: [
-            { text: 'Conky', link: '/conky/' },
-            { text: 'Junction', link: '/junction/' }
-          ],
-          collapsed: true
-        },
-        {
-          text: 'Инструменты',
-          items: [
-            {
-              text: 'Разное',
-              items: [
-                { text: 'SafeEyes', link: '/safeeyes/' }
-              ],
-              collapsed: true
-            },
-            {
-              text: 'Текстовые редакторы',
-              items: [
-                { text: 'Micro', link: '/micro/' },
-                { text: 'Nano', link: '/nano/' }
-              ],
-              collapsed: true
-            },
-          ],
-          collapsed: true
-        },
-        {
-          text: 'Виртуализация, контейнеризация',
-          items: [
-            { text: 'Distrobox', link: '/distrobox/' }
-          ],
-          collapsed: true
-        },],
+        collapsed: true
+      },
+      {
+        text: 'Графика',
+        items: [{ text: 'Flameshot', link: '/flameshot/' }],
+        collapsed: true
+      },
+      {
+        text: 'Мультимедиа',
+        items: [{ text: 'Haruna', link: '/haruna/' }],
+        collapsed: true
+      },
+      {
+        text: 'Стриминговые сервисы',
+        base: '/apps/',
+        items: [
+          { text: 'Spotify', link: '/spotify/' },
+          { text: 'AudioTube', link: '/audiotube/' },
+          { text: 'PlasmaTube', link: '/plasmatube/' }
+        ],
+        collapsed: true
+      },
+      {
+        text: 'Сеть',
+        items: [{ text: 'qBittorrent', link: '/qbittorrent/' }],
+        collapsed: true
+      },
+      {
+        text: 'Офис',
+        items: [
+          { text: 'Arianna', link: '/arianna/' },
+          { text: 'Kiten', link: '/kiten/' },
+          { text: 'KleverNotes', link: '/klevernotes/' },
+          { text: 'LibreOffice', link: '/libreoffice/' },
+          { text: 'WPS Office', link: '/wps-office/' }
+        ],
+        collapsed: true
+      },
+      {
+        text: 'Безопасность',
+        items: [{ text: 'KeePassXC', link: '/keepassxc/' }],
+        collapsed: true
+      },
+      {
+        text: 'Система',
+        items: [
+          { text: 'Conky', link: '/conky/' },
+          { text: 'Junction', link: '/junction/' }
+        ],
+        collapsed: true
+      },
+      {
+        text: 'Инструменты',
+        items: [
+          {
+            text: 'Разное',
+            items: [{ text: 'SafeEyes', link: '/safeeyes/' }],
+            collapsed: true
+          },
+          {
+            text: 'Текстовые редакторы',
+            items: [
+              { text: 'Micro', link: '/micro/' },
+              { text: 'Nano', link: '/nano/' }
+            ],
+            collapsed: true
+          }
+        ],
+        collapsed: true
+      },
+      {
+        text: 'Виртуализация, контейнеризация',
+        items: [{ text: 'Distrobox', link: '/distrobox/' }],
+        collapsed: true
+      }
+    ],
     collapsed: false
   },
   {
@@ -168,11 +162,12 @@ const sidebar_docs = [
           {
             text: 'Poetry',
             link: '/python/poetry/'
-          }, {
+          },
+          {
             text: 'Приложение на Qt 6',
             link: '/python/qt6-app/'
           }
-        ],
+        ]
       },
       {
         text: 'Rust',
@@ -191,14 +186,17 @@ const sidebar_docs = [
       },
       {
         text: 'Не работает загрузка сторонних тем KDE',
-        link: 'enable-downloading-of-third-party-themes/' 
-      }, {
+        link: 'enable-downloading-of-third-party-themes/'
+      },
+      {
         text: 'Не срабатывает блокировка экрана после пробуждения системы',
         link: 'how-lock-screen-after-waking/'
-      }, {
+      },
+      {
         text: 'LightDM не запоминает последнюю выбранную сессию',
         link: 'lightdm-does-not-remember-last-session'
-      }, {
+      },
+      {
         text: 'Отсутствует список пользователей в настройках',
         link: 'settings-user-no-list/'
       }
@@ -207,14 +205,23 @@ const sidebar_docs = [
   },
   {
     text: 'Быстрые ссылки',
-    base: '/package-manager/',
+    base: '/system/',
     items: [
+      {
+        text: 'Sisyphus («Сизиф»)',
+        link: 'sisyphus/'
+      },
       {
         text: 'EPM',
         link: 'epm/'
-      }, {
+      },
+      {
         text: 'Flatpak',
         link: 'flatpak/'
+      },
+      {
+        text: 'Sudo',
+        link: 'sudo/'
       }
     ]
   }
