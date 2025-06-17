@@ -20,6 +20,9 @@ import { GitChangelog, GitChangelogMarkdownSection } from '@nolebase/vitepress-p
 import { NolebaseGitChangelogOptions, YandexMetrikaOptions } from './plugins/index'
 
 export const shared = defineConfig({
+  title: 'ALT KDE Wiki',
+  titleTemplate: ':title — ALT KDE Wiki',
+  base: '',
   srcDir: './docs',
   cleanUrls: true,
   head: [

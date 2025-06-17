@@ -1,17 +1,19 @@
 ---
 # https://vitepress.dev/reference/default-theme-home-page
 layout: home
+title: Главная
+titleTemplate: ALT KDE Wiki
 
 hero:
   name: 'ALT KDE Wiki'
   text: 'Community'
   image:
     src: /laptop.svg
-    alt: Gnome
+    alt: KDE
   tagline: открытое сообщество пользователей операционной системы ALT Regular KDE
   actions:
     - theme: brand
-      text: Скачать ALT Regular KDE
+      text: Скачать ALT KDE
       link: /download/
     - theme: alt
       text: Документация
