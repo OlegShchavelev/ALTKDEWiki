@@ -91,7 +91,8 @@ const sidebar_docs = [
             { text: 'Arianna', link: '/arianna/' },
             { text: 'Kiten', link: '/kiten/' },
             { text: 'KleverNotes', link: '/klevernotes/' },
-            { text: 'LibreOffice', link: '/libreoffice/' }
+            { text: 'LibreOffice', link: '/libreoffice/' },
+            { text: 'WPS Office', link: '/wps-office/' }
           ],
           collapsed: true
         },
