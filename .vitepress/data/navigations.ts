@@ -1,6 +1,7 @@
 export const nav = [
   { text: 'Главная', link: '/' },
   { text: 'Документация', link: '/wiki/' },
+  { text: 'Приложения KDE', link: 'https://apps.kde.org/ru/' },
   { text: 'Для авторов', link: '/reference/' },
   {
     text: 'О проекте',
@@ -70,11 +71,11 @@ const sidebar_docs = [
         collapsed: true
       },
       {
-        text: 'Сеть',
+        text: 'Стриминговые сервисы',
         items: [
+          { text: 'Spotify', link: '/spotify/' },
           { text: 'AudioTube', link: '/audiotube/' },
-          { text: 'PlasmaTube', link: '/plasmatube/' },
-          { text: 'qBittorrent', link: '/qbittorrent/' }
+          { text: 'PlasmaTube', link: '/plasmatube/' }
         ],
         collapsed: true
       },
@@ -100,6 +101,11 @@ const sidebar_docs = [
           { text: 'Conky', link: '/conky/' },
           { text: 'Junction', link: '/junction/' }
         ],
+        collapsed: true
+      },
+      {
+        text: 'Сеть',
+        items: [{ text: 'qBittorrent', link: '/qbittorrent/' }],
         collapsed: true
       },
       {
