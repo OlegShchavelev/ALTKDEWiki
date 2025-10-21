@@ -201,14 +201,28 @@ const sidebar_docs = [
   },
   {
     text: 'Быстрые ссылки',
-    base: '/package-manager',
+    base: '/system',
     items: [
-      { text: 'EPM', link: '/epm/' },
-      { text: 'Flatpak', link: '/flatpak/' }
+      {
+        text: 'Sisyphus («Сизиф»)',
+        link: '/sisyphus'
+      },
+      {
+        text: 'EPM',
+        link: '/epm'
+      },
+      {
+        text: 'Flatpak',
+        link: '/flatpak'
+      },
+      {
+        text: 'Sudo',
+        link: '/sudo'
+      }
     ]
   }
 ]
 
-const sidebar_reference = []
+const sidebar_reference: any[] = []
 
 export const sidebar = { '/': sidebar_docs, '/reference/': sidebar_reference }
