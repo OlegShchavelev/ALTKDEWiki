@@ -20,3 +20,4 @@ GitHub.sublime-settings
 ### Git Team Parsed ###
 .vitepress/data/fullteam.json
 
+.snapshots
