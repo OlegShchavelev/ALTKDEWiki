@@ -180,6 +180,9 @@ const sidebar_docs = [
       {
         text: 'Не работает загрузка сторонних тем KDE',
         link: '/enable-downloading-of-third-party-themes/'
+      }, {
+        text: 'Игнорирование закрытия крышки ноутбука',
+        link: 'ignore-handle-lid-switch'
       },
       {
         text: 'Не срабатывает блокировка экрана после пробуждения системы',
