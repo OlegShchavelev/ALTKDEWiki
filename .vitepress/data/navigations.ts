@@ -109,18 +109,76 @@ const sidebar_docs = [
         collapsed: true
       },
       {
+        text: 'Игры',
+        items: [
+          {
+            text: 'Эмуляторы',
+            items: [
+              { text: 'DuckStation', link: '/duckstation/' },
+              { text: 'PCSX2', link: '/pcsx2/' }
+            ],
+            collapsed: true
+          },
+          { text: 'Steam', link: '/steam/' }
+        ],
+        collapsed: true
+      },
+      {
+        text: 'Графика',
+        items: [{ text: 'Flameshot', link: '/flameshot/' }],
+        collapsed: true
+      },
+      {
+        text: 'Мультимедиа',
+        items: [{ text: 'Haruna', link: '/haruna/' }],
+        collapsed: true
+      },
+      {
+        text: 'Сеть',
+        items: [
+          { text: 'AudioTube', link: '/audiotube/' },
+          { text: 'PlasmaTube', link: '/plasmatube/' },
+          { text: 'qBittorrent', link: '/qbittorrent/' }
+        ],
+        collapsed: true
+      },
+      {
+        text: 'Офис',
+        items: [
+          { text: 'Arianna', link: '/arianna/' },
+          { text: 'Kiten', link: '/kiten/' },
+          { text: 'KleverNotes', link: '/klevernotes/' },
+          { text: 'LibreOffice', link: '/libreoffice/' },
+          { text: 'WPS Office', link: '/wps-office/' }
+        ],
+        collapsed: true
+      },
+      {
+        text: 'Безопасность',
+        items: [{ text: 'KeePassXC', link: '/keepassxc/' }],
+        collapsed: true
+      },
+      {
+        text: 'Система',
+        items: [
+          { text: 'Conky', link: '/conky/' },
+          { text: 'Junction', link: '/junction/' }
+        ],
+        collapsed: true
+      },
+      {
         text: 'Инструменты',
         items: [
           {
             text: 'Разное',
-            items: [{ text: 'SafeEyes', link: 'safeeyes/' }],
+            items: [{ text: 'SafeEyes', link: '/safeeyes/' }],
             collapsed: true
           },
           {
             text: 'Текстовые редакторы',
             items: [
-              { text: 'Micro', link: 'micro/' },
-              { text: 'Nano', link: 'nano/' }
+              { text: 'Micro', link: '/micro/' },
+              { text: 'Nano', link: '/nano/' }
             ],
             collapsed: true
           }
@@ -129,7 +187,7 @@ const sidebar_docs = [
       },
       {
         text: 'Виртуализация, контейнеризация',
-        items: [{ text: 'Distrobox', link: 'distrobox/' }],
+        items: [{ text: 'Distrobox', link: '/distrobox/' }],
         collapsed: true
       }
     ],
@@ -137,14 +195,15 @@ const sidebar_docs = [
   },
   {
     text: 'Настройка графики',
-    base: '/graphics/',
+    base: '/graphics',
     items: [
       {
         text: 'NVIDIA',
-        base: '/graphics/nvidia/',
+        base: '/graphics/nvidia',
+        link: '/',
         items: [
-          { text: 'Открытые драйвера', link: 'nvidia-nouveau/' },
-          { text: 'Закрытые драйвера', link: 'nvidia-drivers/' }
+          { text: 'Открытые драйвера', link: '/nvidia-nouveau/' },
+          { text: 'Закрытые драйвера', link: '/nvidia-drivers/' }
         ],
         collapsed: false
       }
@@ -153,74 +212,55 @@ const sidebar_docs = [
   },
   {
     text: 'Разработка',
-    base: '/developers/',
+    base: '/developers',
     items: [
       {
         text: 'Python',
-        base: '/developers/python/',
+        base: '/developers/python',
+        link: '/',
         items: [
-          { text: 'Poetry', link: 'poetry/' },
-          { text: 'Приложение на Qt 6', link: 'qt6-app/' }
-        ],
-        collapsed: true
+          { text: 'Poetry', link: '/poetry/' },
+          { text: 'Приложение на Qt 6', link: '/qt6-app/' }
+        ]
       },
-      {
-        text: 'Rust',
-        link: 'rust/',
-        collapsed: true
-      }
+      { text: 'Rust', link: '/rust/' }
     ],
     collapsed: true
   },
   {
     text: 'Решение проблем',
-    base: '/workarrounds/',
+    base: '/workarrounds',
     items: [
       {
         text: 'Некоторые GTK приложения выглядят чужеродно',
-        link: 'change-gtk-themes/'
+        link: '/change-gtk-themes/'
       },
       {
         text: 'Не работает загрузка сторонних тем KDE',
-        link: 'enable-downloading-of-third-party-themes/'
+        link: '/enable-downloading-of-third-party-themes/'
       },
       {
         text: 'Не срабатывает блокировка экрана после пробуждения системы',
-        link: 'how-lock-screen-after-waking/'
+        link: '/how-lock-screen-after-waking/'
       },
       {
         text: 'LightDM не запоминает последнюю выбранную сессию',
-        link: 'lightdm-does-not-remember-last-session/'
+        link: '/lightdm-does-not-remember-last-session/'
       },
       {
         text: 'Отсутствует список пользователей в настройках',
-        link: 'settings-user-no-list/'
+        link: '/settings-user-no-list/'
       }
     ],
     collapsed: true
   },
   {
     text: 'Быстрые ссылки',
-    base: '/system/',
+    base: '/package-manager',
     items: [
-      {
-        text: 'Sisyphus («Сизиф»)',
-        link: 'sisyphus/'
-      },
-      {
-        text: 'EPM',
-        link: 'epm/'
-      },
-      {
-        text: 'Flatpak',
-        link: 'flatpak/'
-      },
-      {
-        text: 'Sudo',
-        link: 'sudo/'
-      }
-    ],
-    collapsed: true
+      { text: 'EPM', link: '/epm/' },
+      { text: 'Flatpak', link: '/flatpak/' }
+    ]
   }
 ]
 
