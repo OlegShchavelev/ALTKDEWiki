@@ -182,7 +182,7 @@ const sidebar_docs = [
         link: '/enable-downloading-of-third-party-themes/'
       }, {
         text: 'Игнорирование закрытия крышки ноутбука',
-        link: 'ignore-handle-lid-switch'
+        link: '/ignore-handle-lid-switch/'
       },
       {
         text: 'Не срабатывает блокировка экрана после пробуждения системы',
