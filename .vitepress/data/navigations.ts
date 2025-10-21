@@ -6,8 +6,8 @@ export const nav = [
   {
     text: 'О проекте',
     items: [
-      { text: 'О проекте', link: '/project/about' },
-      { text: 'Участники', link: '/project/contributions' }
+      { text: 'О проекте', link: '/project/about/' },
+      { text: 'Участники', link: '/project/contributions/' }
     ]
   }
 ]
@@ -15,96 +15,33 @@ export const nav = [
 const sidebar_docs = [
   {
     text: 'KDE в Альте',
-    base: '/distributions/',
+    base: '/distributions',
     items: [
-      { text: 'ALT Regular KDE', link: 'ALT-Regular-KDE' },
-      { text: 'ALT Starterkit KDE', link: 'ALT-Starterkit-KDE' },
-      { text: 'Альт Рабочая станция К', link: 'ALT-Workstation-K' }
+      { text: 'ALT Regular KDE', link: '/ALT-Regular-KDE' },
+      { text: 'ALT Starterkit KDE', link: '/ALT-Starterkit-KDE' },
+      { text: 'Альт Рабочая станция К', link: '/ALT-Workstation-K' }
     ],
     collapsed: true
   },
   {
     text: 'Установка и обновление программ',
-    base: '/apps/',
+    base: '/apps',
     items: [
       {
         text: 'Разработка',
-        items: [{ text: 'Plan', link: 'plan/' }],
+        items: [{ text: 'Plan', link: '/plan/' }],
         collapsed: true
       },
       {
         text: 'ЭЦП',
-        items: [{ text: 'КриптоПро CSP 5', link: 'cryptopro/' }],
+        items: [{ text: 'КриптоПро CSP 5', link: '/cryptopro/' }],
         collapsed: true
       },
       {
         text: 'Файловые менеджеры',
         items: [
-          { text: 'Double Commander', link: 'doublecmd/' },
-          { text: 'Krusader', link: 'krusader/' }
-        ],
-        collapsed: true
-      },
-      {
-        text: 'Игры',
-        items: [
-          {
-            text: 'Эмуляторы',
-            items: [
-              { text: 'DuckStation', link: 'duckstation/' },
-              { text: 'PCSX2', link: 'pcsx2/' }
-            ],
-            collapsed: true
-          },
-          { text: 'Steam', link: 'steam/' }
-        ],
-        collapsed: true
-      },
-      {
-        text: 'Графика',
-        items: [{ text: 'Flameshot', link: 'flameshot/' }],
-        collapsed: true
-      },
-      {
-        text: 'Мультимедиа',
-        items: [{ text: 'Haruna', link: 'haruna/' }],
-        collapsed: true
-      },
-      {
-        text: 'Стриминговые сервисы',
-        items: [
-          { text: 'Spotify', link: 'spotify/' },
-          { text: 'AudioTube', link: 'audiotube/' },
-          { text: 'PlasmaTube', link: 'plasmatube/' }
-        ],
-        collapsed: true
-      },
-      {
-        text: 'Сеть',
-        items: [{ text: 'qBittorrent', link: 'qbittorrent/' }],
-        collapsed: true
-      },
-      {
-        text: 'Офис',
-        items: [
-          { text: 'Arianna', link: 'arianna/' },
-          { text: 'Kiten', link: 'kiten/' },
-          { text: 'KleverNotes', link: 'klevernotes/' },
-          { text: 'LibreOffice', link: 'libreoffice/' },
-          { text: 'WPS Office', link: 'wps-office/' }
-        ],
-        collapsed: true
-      },
-      {
-        text: 'Безопасность',
-        items: [{ text: 'KeePassXC', link: 'keepassxc/' }],
-        collapsed: true
-      },
-      {
-        text: 'Система',
-        items: [
-          { text: 'Conky', link: 'conky/' },
-          { text: 'Junction', link: 'junction/' }
+          { text: 'Double Commander', link: '/doublecmd/' },
+          { text: 'Krusader', link: '/krusader/' }
         ],
         collapsed: true
       },
@@ -134,11 +71,11 @@ const sidebar_docs = [
         collapsed: true
       },
       {
-        text: 'Сеть',
+        text: 'Стриминговые сервисы',
         items: [
+          { text: 'Spotify', link: '/spotify/' },
           { text: 'AudioTube', link: '/audiotube/' },
-          { text: 'PlasmaTube', link: '/plasmatube/' },
-          { text: 'qBittorrent', link: '/qbittorrent/' }
+          { text: 'PlasmaTube', link: '/plasmatube/' }
         ],
         collapsed: true
       },
@@ -164,6 +101,11 @@ const sidebar_docs = [
           { text: 'Conky', link: '/conky/' },
           { text: 'Junction', link: '/junction/' }
         ],
+        collapsed: true
+      },
+      {
+        text: 'Сеть',
+        items: [{ text: 'qBittorrent', link: '/qbittorrent/' }],
         collapsed: true
       },
       {
