@@ -193,6 +193,10 @@ const sidebar_docs = [
         text: 'Не работает загрузка сторонних тем KDE',
         link: 'enable-downloading-of-third-party-themes/' 
       }, {
+        text: 'Игнорирование закрытия крышки ноутбука',
+        link: 'ignore-handle-lid-switch'
+
+      }, {
         text: 'Не срабатывает блокировка экрана после пробуждения системы',
         link: 'how-lock-screen-after-waking/'
       }, {
@@ -200,7 +204,7 @@ const sidebar_docs = [
         link: 'lightdm-does-not-remember-last-session'
       }, {
         text: 'Отсутствует список пользователей в настройках',
-        link: 'settings-user-no-list/'
+        link: 'settings-user-no-list/'  
       }
     ],
     collapsed: true
