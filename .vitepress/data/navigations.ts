@@ -174,6 +174,10 @@ const sidebar_docs = [
     base: '/workarrounds',
     items: [
       {
+        text: 'Восстановление GRUB с BTRFS',
+        link: '/how-to-restore-grub-with-btrfs/'
+      },
+      {
         text: 'Некоторые GTK приложения выглядят чужеродно',
         link: '/change-gtk-themes/'
       },
@@ -182,7 +186,7 @@ const sidebar_docs = [
         link: '/enable-downloading-of-third-party-themes/'
       }, {
         text: 'Игнорирование закрытия крышки ноутбука',
-        link: 'ignore-handle-lid-switch'
+        link: '/ignore-handle-lid-switch/'
       },
       {
         text: 'Не срабатывает блокировка экрана после пробуждения системы',
@@ -205,19 +209,19 @@ const sidebar_docs = [
     items: [
       {
         text: 'Sisyphus («Сизиф»)',
-        link: '/sisyphus'
+        link: '/sisyphus/'
       },
       {
         text: 'EPM',
-        link: '/epm'
+        link: '/epm/'
       },
       {
         text: 'Flatpak',
-        link: '/flatpak'
+        link: '/flatpak/'
       },
       {
         text: 'Sudo',
-        link: '/sudo'
+        link: '/sudo/'
       }
     ]
   }
