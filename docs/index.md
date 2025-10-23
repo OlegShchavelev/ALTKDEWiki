@@ -1,30 +1,37 @@
 ---
-# https://vitepress.dev/reference/default-theme-home-page
 layout: home
 title: Главная
 titleTemplate: ALT KDE Wiki
 
 hero:
   name: 'ALT KDE Wiki'
-  text: 'Community'
+  tagline: 'база знаний операционных систем: ALT Regular KDE, ALT Starterkit KDE и Альт Рабочая станция K'
   image:
-    src: /laptop.svg
+    src: /alt-kde.png
     alt: KDE
-  tagline: открытое сообщество пользователей операционной системы ALT Regular KDE
   actions:
     - theme: brand
-      text: Скачать ALT KDE
+      text: Скачать
       link: /download/
     - theme: alt
       text: Документация
       link: /wiki/
 
 features:
-  - title: Раньше чем у других
+  - icon:
+      dark: /bolt-dark.svg
+      light: /bolt-light.svg
+    title: Раньше чем у других
     details: Ежедневно обновляемый репозиторий пакетов свободных программ Sisyphus
-  - title: Цифровая НЕзависимость
+  - icon:
+      dark: /shield-dark.svg
+      light: /shield-light.svg
+    title: Цифровая НЕзависимость
     details: Семейство дистрибутивов Linux, производится в России с 2000 года.
-  - title: Открытое сообщество
+  - icon:
+      dark: /users-dark.svg
+      light: /users-light.svg
+    title: Открытое сообщество
     details: Путеводитель в мир открытого программного обеспечения.
 
 sponsors:
