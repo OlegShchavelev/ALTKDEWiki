@@ -41,18 +41,18 @@ epm -i flatpak-repo-flathub
 
 ### Интеграция с центром приложений Discovery
 
-Для возможности установки Flatpak-приложений через Discovery (Центр приложений) необходимо установить пакет `plasma5-discover-flatpak`:
+Для возможности установки Flatpak-приложений через Discovery (Центр приложений) необходимо установить пакет `plasma-discover-flatpak`:
 
 ::: code-group
 
 ```shell[apt-get]
 su -
 apt-get update
-apt-get install plasma5-discover-flatpak
+apt-get install plasma-discover-flatpak
 ```
 
 ```shell[epm]
-epm -i plasma5-discover-flatpak
+epm -i plasma-discover-flatpak
 ```
 
 :::
