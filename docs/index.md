@@ -59,3 +59,6 @@ sponsors:
           img: './nolebase-logo.svg'
           url: 'https://nolebase.ayaka.io/'
 ---
+
+<AGWHomeTeam/>
+<AGWHomeSponsors/>

@@ -1,4 +1,0 @@
----
-layout: contribution
-longtitle: Участники
----

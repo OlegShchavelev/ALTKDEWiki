@@ -1,6 +1,10 @@
+---
+search: false
+---
+
 ## Установка из репозитория
 
-**{{ $frontmatter?.frontmatter?.name }}** можно установить любым привычным и удобным способом:
+**{{ $frontmatter?.appstream?.name }}** можно установить любым привычным и удобным способом:
 
 <!--@include: @apps/.parts/install/software-repo.md-->
 
@@ -11,11 +15,11 @@
 ```shell-vue[apt-get]
 su -
 apt-get update
-apt-get install {{ $frontmatter?.aggregation?.sisyphus.id ?? $frontmatter?.aggregation?.sisyphus }}
+apt-get install {{ $frontmatter?.aggregation?.sisyphus?.id ?? $frontmatter?.aggregation?.sisyphus }}
 ```
 
 ```shell-vue[epm]
-epm -i {{ $frontmatter?.aggregation?.sisyphus.id ?? $frontmatter?.aggregation?.sisyphus }}
+epm -i {{ $frontmatter?.aggregation?.sisyphus?.id ?? $frontmatter?.aggregation?.sisyphus }}
 ```
 
 :::

@@ -1,6 +1,7 @@
 node_modules
 .vitepress/cache
 .vitepress/dist
+.vitepress/.temp
 
 ### Obsidian ###
 .obsidian/
@@ -17,7 +18,10 @@ GitHub.sublime-settings
 ### JetBrains ###
 .idea/
 
-### Git Team Parsed ###
-.vitepress/data/fullteam.json
+### .env ###
+docs/.env
 
-.snapshots
+### team ###
+
+_data/fullteam.json
+.tools/chunk_analyse/stats.html

@@ -1,66 +1,71 @@
 @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
 /**
  * Colors
  * -------------------------------------------------------------------------- */
 
 :root {
-  --vp-c-blue: #316f98;
-  --vp-c-blue-light: #457da2;
-  --vp-c-blue-lighter: #6e9ab6;
-  --vp-c-blue-dark: #2c6388;
-  --vp-c-blue-darker: #224d6a;
-  --vp-c-blue-dimm-1: rgba(49, 111, 152, 0.05);
-  --vp-c-blue-dimm-2: rgba(49, 111, 152, 0.2);
-  --vp-c-blue-dimm-3: rgba(49, 111, 152, 0.5);
+  --vp-c-blue: #3584e4;
+  --vp-c-blue-light: #62a0ea;
+  --vp-c-blue-lighter: #99c1f1;
+  --vp-c-blue-dark: #1c71d8;
+  --vp-c-blue-darker: #1a5fb4;
+  --vp-c-blue-dimm-1: rgba(53, 132, 228, 0.05);
+  --vp-c-blue-dimm-2: rgba(53, 132, 228, 0.2);
+  --vp-c-blue-dimm-3: rgba(53, 132, 228, 0.5);
 
-  --vp-c-green: #20c996;
-  --vp-c-green-light: #36cea0;
-  --vp-c-green-lighter: #62d9b5;
-  --vp-c-green-dark: #1cb487;
-  --vp-c-green-darker: #168c69;
-  --vp-c-green-dimm-1: rgba(32, 201, 150, 0.05);
-  --vp-c-green-dimm-2: rgba(32, 201, 150, 0.2);
-  --vp-c-green-dimm-3: rgba(32, 201, 150, 0.5);
+  --vp-c-green: #33d17a;
+  --vp-c-green-light: #57e389;
+  --vp-c-green-lighter: #8ff0a4;
+  --vp-c-green-dark: #2ec27e;
+  --vp-c-green-darker: #26a269;
+  --vp-c-green-dimm-1: rgba(51, 209, 122, 0.05);
+  --vp-c-green-dimm-2: rgba(51, 209, 122, 0.2);
+  --vp-c-green-dimm-3: rgba(51, 209, 122, 0.5);
 
-  --vp-c-yellow: #ffc107;
-  --vp-c-yellow-light: #ffc71f;
-  --vp-c-yellow-lighter: #ffd351;
-  --vp-c-yellow-dark: #e5ad06;
-  --vp-c-yellow-darker: #b28704;
-  --vp-c-yellow-dimm-1: rgba(255, 193, 7, 0.05);
-  --vp-c-yellow-dimm-2: rgba(255, 193, 7, 0.2);
-  --vp-c-yellow-dimm-3: rgba(255, 193, 7, 0.5);
+  --vp-c-yellow: #f6d32d;
+  --vp-c-yellow-light: #f8e45c;
+  --vp-c-yellow-lighter: #f9f06b;
+  --vp-c-yellow-dark: #f5c211;
+  --vp-c-yellow-darker: #e5a50a;
+  --vp-c-yellow-dimm-1: rgba(246, 211, 45, 0.05);
+  --vp-c-yellow-dimm-2: rgba(246, 211, 45, 0.2);
+  --vp-c-yellow-dimm-3: rgba(246, 211, 45, 0.5);
 
-  --vp-c-red: #dc3545;
-  --vp-c-red-light: #df4957;
-  --vp-c-red-lighter: #e6717c;
-  --vp-c-red-dark: #c62f3e;
-  --vp-c-red-darker: #9a2530;
-  --vp-c-red-dimm-1: rgba(220, 53, 69, 0.05);
-  --vp-c-red-dimm-2: rgba(220, 53, 69, 0.2);
-  --vp-c-red-dimm-3: rgba(220, 53, 69, 0.5);
+  --vp-c-orange: #ff6600;
+  --vp-c-orange-light: #ff8533;
+  --vp-c-orange-lighter: #ff9966;
+  --vp-c-orange-dark: #e65c00;
+  --vp-c-orange-darker: #cc5200;
+  --vp-c-orange-dimm-1: rgba(255, 102, 0, 0.05);
+  --vp-c-orange-dimm-2: rgba(255, 102, 0, 0.2);
+  --vp-c-orange-dimm-3: rgba(255, 102, 0, 0.5);
+
+  --vp-c-red: #e01b24;
+  --vp-c-red-light: #ed333b;
+  --vp-c-red-lighter: #f66151;
+  --vp-c-red-dark: #c01c28;
+  --vp-c-red-darker: #a51d2d;
+  --vp-c-red-dimm-1: rgba(224, 27, 36, 0.05);
+  --vp-c-red-dimm-2: rgba(224, 27, 36, 0.2);
+  --vp-c-red-dimm-3: rgba(224, 27, 36, 0.5);
 }
 
 :root {
-  --vp-c-brand: #316f98;
-  --vp-c-brand-light: #457da2;
-  --vp-c-brand-lighter: #6e9ab6;
-  --vp-c-brand-lightest: #acc5d5;
-  --vp-c-brand-dark: #2c6388;
-  --vp-c-brand-darker: #224d6a;
+  --vp-c-brand: #1a5fb4;
+  --vp-c-brand-light: #1c71d8;
+  --vp-c-brand-lighter: #3584e4;
+  --vp-c-brand-lightest: #62a0ea;
+  --vp-c-brand-dark: #1a5fb4;
+  --vp-c-brand-darker: #1c71d8;
   --vp-c-brand-dimm: rgba(100, 108, 255, 0.08);
-}
-
-:root {
-  --vp-c-brand-1: var(--vp-c-blue);
-  --vp-c-brand-2: var(--vp-c-blue-light);
-  --vp-c-brand-3: var(--vp-c-blue-lighter);
 }
 
 :root {
   /* Typography */
   --vp-font-family-base: 'Manrope', sans-serif;
+  --vp-font-family-bages: 'Roboto', sans-serif
 }
 
 /**
@@ -111,18 +116,21 @@
   --vp-custom-block-details-bg: var(--vp-c-bg-soft-up);
 }
 
-kbd {
-  border: 1px solid var(--vp-c-border);
-  box-shadow:
-    var(--vp-c-gray-soft) 0px 1px 1px 0px,
-    var(--vp-c-neutral-inverse) 0px 1px 0px 0px inset;
+/**
+ * kdb
+ * -------------------------------------------------------------------------- */
+
+.vp-doc kbd {
+  font-size: 0.8rem;
+  border-radius: 4px;
+  padding: 2px 6px;
+  min-width: 24px;
+  text-align: center;
+  vertical-align: middle;
   background-color: var(--vp-c-gray-soft);
-  border-radius: 3px;
-  display: inline-block;
-  margin: 0 0.2em;
-  overflow-wrap: break-word;
-  padding: 0.1em 0.6em;
-  text-shadow: 0 1px 0 var(--vp-c-white);
+  border: 1px solid rgba(128, 128, 128, 0.15);
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.1);
+  text-wrap: nowrap;
 }
 
 :root {
@@ -130,36 +138,20 @@ kbd {
 }
 
 /**
- * VPHomeSponsors
+ * task-lists
  * -------------------------------------------------------------------------- */
 
-.vp-sponsor-grid.big .vp-sponsor-grid-image {
-  max-width: 170px;
-  max-height: 120px;
-}
-
-.VPHomeSponsors .message {
-  max-width: 800px;
-}
-
-.VPHome .VPHomeSponsors {
-  margin-top: 0 !important;
+.vp-doc .contains-task-list {
+  list-style: none;
+  padding-left: 0;
 }
 
 /**
-  *
-   * -------------------------------------------------------------------------- */
+ * Component: Algolia
+ * -------------------------------------------------------------------------- */
 
-.vp-doc kbd {
-  font-size: 0.8rem;
-  line-height: 14px;
-  border-radius: 4px;
-  padding: 3px 6px;
-  min-width: 24px;
-  text-align: center;
-  vertical-align: middle;
-  border: 1px solid rgba(128, 128, 128, 0.15);
-  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.1);
+.DocSearch {
+  --docsearch-primary-color: var(--vp-c-brand) !important;
 }
 
 /**
@@ -167,16 +159,135 @@ kbd {
  * -------------------------------------------------------------------------- */
 figure > figcaption {
   text-align: center;
-  color: var(--vp-c-brand-lighter);
+  color: var(--vp-c-brand-lightest);
   font-size: 14px;
 }
 
-
-.medium-zoom-overlay {
-  backdrop-filter: blur(1rem);
+.avatar-developer {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  border-radius: 50%;
+  object-fit: cover;
 }
 
-.medium-zoom-overlay,
-.medium-zoom-image--opened {
-  z-index: 999;
+.VPBadge {
+  font-family: var(--vp-font-family-bages);
+  letter-spacing: 0.0em;
+  font-weight: 400;
+  font-style: normal;
 }
+
+.VPBadge.success {
+  border-color: transparent;
+  color: var(--vp-c-success-1);
+  background-color: var(--vp-c-success-soft);
+}
+
+.VPBadge.success-1 {
+  border-color: transparent;
+  color: var(--vp-c-white);
+  background-color: var(--vp-c-success-2);
+}
+
+/**
+ * Swiper
+ * -------------------------------------------------------------------------- */
+
+:root {
+  --swiper-theme-color: var(--vp-c-brand-1);
+}
+
+@media (min-width: 960px) {
+  .VPHomeHero .image-src {
+    max-width: 350px;
+    max-height: 350px;
+  }
+}
+
+/**
+ * Alignment Containers
+ * -------------------------------------------------------------------------- */
+
+.center {
+  &.custom-block {
+    text-align: center;
+    padding: 0;
+    img {
+      margin: auto;
+    }
+  }
+}
+
+.half {
+  &.custom-block {
+    width: 50%;
+    padding: 1px;
+    display: inline-block;
+    vertical-align: top;
+    box-sizing: border-box;
+  }
+}
+
+.highlight {
+  &.custom-block {
+    text-align: left;
+    color: var(--vp-c-brand-1);
+    font-size: 1.2em;
+    font-weight: 700;
+    border-top: 4px dashed var(--vp-c-brand-soft);
+    border-bottom: 4px dashed var(--vp-c-brand-soft);
+    padding: 1em;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    p {
+      margin: 0;
+    }
+  }
+}
+
+.left {
+  &.custom-block {
+    float: left;
+    padding: 1em 2em;
+    padding-left: 0;
+    width: auto;
+    text-align: center;
+    max-width: 50%;
+  }
+}
+.right {
+  &.custom-block {
+    float: right;
+    padding: 1em 2em;
+    width: auto;
+    text-align: center;
+    max-width: 50%;
+  }
+}
+
+.vp-doc .custom-block img {
+  border-radius: 10px;
+}
+
+/**
+ * Component: GitChangeLog
+ * -------------------------------------------------------------------------- */
+ .bg-\$vp-custom-block-details-bg,
+ .bg-vp-custom-block-details-bg {
+   background-color: var(--vp-c-gray-3) !important;
+ }
+ 
+ .vp-nolebase-git-changelog-contributors a {
+   text-decoration: none;
+ }
+ 
+ /**
+  * Component: Page Properties
+  * -------------------------------------------------------------------------- */
+ .VPDocFooter[data-v-29ec59c0] {
+   margin-top: 10px !important;
+ }
+ 

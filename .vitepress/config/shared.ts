@@ -1,46 +1,79 @@
+/* System */
 import { defineConfig } from 'vitepress'
 import { fileURLToPath, URL } from 'node:url'
-import { telegram, gitflic, vk } from '../data/icons'
+import { telegram, vk } from '../support/icons'
+import { rewrites } from '../support/paths'
+import { normalize } from '../support/utils'
 
-import { tabsMarkdownPlugin } from 'vitepress-plugin-tabs'
-import markdownItKdb from 'markdown-it-kbd'
-import markdownItImplicitFigures from 'markdown-it-implicit-figures'
-import VitepressMarkdownTimeline from 'vitepress-markdown-timeline'
-import lightbox from "vitepress-plugin-lightbox"
+/* Tools */
+
+import vueDevTools from 'vite-plugin-vue-devtools'
+import { visualizer } from "rollup-plugin-visualizer"
 
 /* Markdown */
+import { createContainerPlugin } from '@alt-gnome/markdown-it-custom-containers'
+import VitepressMarkdownTimeline from 'vitepress-markdown-timeline'
+import markdownItKbd from 'markdown-it-kbd'
+import markdownItTaskLists from 'markdown-it-task-lists'
+import markdownItImplicitFigures from 'markdown-it-implicit-figures'
+import markdownItEmbed from 'markdown-it-html5-embed'
+import markdownItConditionalRender from 'markdown-it-conditional-render'
+import { tabsMarkdownPlugin } from 'vitepress-plugin-tabs'
 import linkBlock from '../theme/composables/linkBlock'
 
-import * as config from '../config.json'
+/* Syntaxises */
+import languages from '../theme/syntaxes'
 
 /* GitLog */
 import UnoCSS from 'unocss/vite'
 import { GitChangelog, GitChangelogMarkdownSection } from '@nolebase/vitepress-plugin-git-changelog/vite'
 
-import { NolebaseGitChangelogOptions, YandexMetrikaOptions } from './plugins/index'
+/* PagePropierties */
+import {
+  PageProperties,
+  PagePropertiesMarkdownSection
+} from '@nolebase/vitepress-plugin-page-properties/vite'
+
+import { alignmentContainers, headTransformer, nolebaseGitChangelogOptions } from './plugins'
 
 export const shared = defineConfig({
   title: 'ALT KDE Wiki',
   titleTemplate: ':title — ALT KDE Wiki',
   base: '',
   srcDir: './docs',
-  cleanUrls: true,
+  sitemap: {
+    hostname: 'https://alt-kde.wiki/'
+  },
   head: [
     ['link', { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
     ['link', { rel: 'icon', type: 'image/png', href: '/favicon.png' }],
-    ['meta', { name: 'theme-color', content: config.head.themeColor }],
-    ['meta', { name: 'og:type', content: config.head.type }],
-    ['meta', { name: 'og:site_name', content: config.title }],
-    ['meta', { name: 'og:image', content: config.host + config.head.ogImage }],
-    ['meta', { name: 'twitter:card', content: 'summary_large_image' }],
-    ['meta', { name: 'twitter:image', content: config.host + config.head.ogImage }],
-    ['meta', { name: 'yandex-verification', content: YandexMetrikaOptions.webmaster.id }]
+    ['meta', { name: 'theme-color', content: '#62a0ea' }],
+    ['meta', { name: 'yandex-verification', content: '7f227bf12097f984' }]
   ],
   vite: {
+    build: {
+      chunkSizeWarningLimit: 1600
+    },
     plugins: [
+      vueDevTools(),
+      visualizer({
+        gzipSize: true,
+        brotliSize: true,
+        filename: "./.tools/chunk_analyse/stats.html",
+      }) as PluginOption,
       UnoCSS(),
-      GitChangelog(NolebaseGitChangelogOptions.plugin),
-      GitChangelogMarkdownSection(NolebaseGitChangelogOptions.pluginSections)
+      GitChangelog(nolebaseGitChangelogOptions.plugin),
+      GitChangelogMarkdownSection(nolebaseGitChangelogOptions.pluginSections),
+      PageProperties(),
+      PagePropertiesMarkdownSection({
+        excludes: [],
+        exclude: (_, { helpers }): boolean => {
+          for (let page of ['index.md', 'wiki.md', 'contributions.md', 'about.md', 'games.md']) {
+            if (helpers.idEndsWith(page)) return true
+          }
+          return false
+        }
+      })
     ],
     optimizeDeps: {
       exclude: ['@nolebase/vitepress-plugin-enhanced-readabilities/client']
@@ -59,35 +92,11 @@ export const shared = defineConfig({
       }
     }
   },
-  sitemap: {
-    hostname: 'https://alt-kde.wiki'
-  },
   themeConfig: {
-    logo: { src: '/logo.png', width: 36, height: 36, alt: 'ALT KDE Wiki' },
     search: {
-      provider: 'local',
-      options: {
-        locales: {
-          root: {
-            translations: {
-              button: {
-                buttonText: 'Поиск',
-                buttonAriaLabel: 'Поиск'
-              },
-              modal: {
-                noResultsText: 'Нет результатов по запросу',
-                resetButtonTitle: 'Сбросить',
-                footer: {
-                  selectText: 'для выбора',
-                  navigateText: 'для навигации',
-                  closeText: 'закрыть'
-                }
-              }
-            }
-          }
-        }
-      }
+      provider: 'local'
     },
+    logo: { src: '/logo.png', width: 36, height: 36, alt: 'ALT KDE Wiki' },
     socialLinks: [
       {
         icon: {
@@ -95,13 +104,21 @@ export const shared = defineConfig({
         },
         link: 'https://t.me/alt_kde'
       },
-      { icon: 'github', link: 'https://github.com/OlegShchavelev/ALTRegularKDEWiki' }
+      {
+        icon: 'github',
+        link: 'https://github.com/OlegShchavelev/ALTKDEWiki'
+      }
     ],
+    editLink: {
+      pattern: 'https://github.com/OlegShchavelev/ALTKDEWiki/edit/main/docs/:path'
+    },
     outline: {
       level: [2, 3]
     }
   },
+  rewrites: rewrites,
   markdown: {
+    languages,
     container: {
       tipLabel: 'Подсказка',
       warningLabel: 'Внимание',
@@ -109,31 +126,38 @@ export const shared = defineConfig({
       infoLabel: 'Информация',
       detailsLabel: 'Подробнее'
     },
-    config(md) {
-      md.use(tabsMarkdownPlugin)
-      md.use(markdownItKdb)
+    config: (md) => {
+      md.use(createContainerPlugin, {
+        containers: alignmentContainers
+      })
+      md.use(markdownItKbd)
+      md.use(markdownItTaskLists)
+      md.use(VitepressMarkdownTimeline)
       md.use(markdownItImplicitFigures, {
         figcaption: 'title',
         copyAttrs: '^class$'
       })
+      md.use(markdownItEmbed, {
+        html5embed: {
+          useImageSyntax: true // Enables video/audio embed with ![]() syntax (default)
+        }
+      })
+      md.use(markdownItConditionalRender)
+      md.use(tabsMarkdownPlugin)
+
       md.use(linkBlock)
-      md.use(VitepressMarkdownTimeline)
-      md.use(lightbox, {})
     }
   },
+  lastUpdated: true,
   transformPageData: (pageData) => {
-    const canonicalUrl = `https://alt-kde.wiki/${pageData.relativePath}`
-      .replace(/index\.md$/, '')
-      .replace(/\.md$/, '.html')
-
-    pageData.frontmatter.head ??= []
-
-    pageData.frontmatter.head.push(
-      ['link', { rel: 'canonical', href: canonicalUrl }],
-      ['meta', { name: 'og:title', content: pageData.title + config.head.titleSeponator + config.title }]
-    )
-    if (pageData.frontmatter.layout !== 'home') {
-      pageData.description = `Cтатья написанная простым языком: «${pageData.title}» для ${config.title}. Последнее обновление ${config.title}: ${new Date(pageData.lastUpdated ?? new Date()).toLocaleString('ru-RU')}`
+    if (pageData.filePath.split('/')[0] in Object.keys(headTransformer)) {
+      pageData.frontmatter.head ??= []
+      headTransformer[pageData.filePath.split('/')[0]].frontmatterHead(pageData, normalize)
+      headTransformer[pageData.filePath.split('/')[0]].notHomeFrontmatter(pageData, normalize)
+    } else {
+      pageData.frontmatter.head ??= []
+      headTransformer['root'].frontmatterHead(pageData, normalize)
+      headTransformer['root'].notHomeFrontmatter(pageData, normalize)
     }
   }
 })

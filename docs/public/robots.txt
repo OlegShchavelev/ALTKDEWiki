@@ -1,4 +1,6 @@
 User-agent: *
 
 Host: https://alt-kde.wiki
+Disallow: /apps/.parts/*
+Disallow: /tests/*
 Sitemap: https://alt-kde.wiki/sitemap.xml

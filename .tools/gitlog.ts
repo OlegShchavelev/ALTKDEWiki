@@ -1,6 +1,6 @@
 import yargs from 'yargs/yargs'
 import { Octokit } from '@octokit/core'
-import { contributions as RawContributors } from '../.vitepress/data/team'
+import { contributions as RawContributors } from '../_data/team'
 import * as fs from 'fs'
 import * as path from 'path'
 import ora from 'ora'
@@ -12,7 +12,7 @@ import { cyan, gray, red } from 'colorette'
 const args = await yargs(process.argv)
   .options({
     key: { type: 'string', default: '' },
-    repoUrl: { type: 'string', default: 'https://github.com/OlegShchavelev/ALTGnomeWiki' },
+    repoUrl: { type: 'string', default: 'https://github.com/OlegShchavelev/ALTKDEWiki' },
     dev: { type: 'boolean', default: false }
   })
   .parseAsync()
@@ -58,17 +58,17 @@ if (!args.key && !args.dev) {
     }
     while (response?.status != 200 && response?.status != 500) {
       response = await octokit.request(
-        'GET /repos/{owner}/{repo}/stats/contributors', 
-          {
-            owner: args.repoUrl.split('/')[3],
-            repo: args.repoUrl.split('/')[4],
-            headers: {
-              'X-GitHub-Api-Version': '2022-11-28'
-            }
+        'GET /repos/{owner}/{repo}/stats/contributors',
+        {
+          owner: args.repoUrl.split('/')[3],
+          repo: args.repoUrl.split('/')[4],
+          headers: {
+            'X-GitHub-Api-Version': '2022-11-28'
           }
-        )
+        }
+      )
         .then((response) => response)
-        .catch((err)=>{
+        .catch((err) => {
           response = {
             status: 500,
             data: err.toString()
@@ -78,7 +78,7 @@ if (!args.key && !args.dev) {
     }
     return response
   }
-  
+
   const GetUserInfo = async (user: any) => {
     let response: { status: number; data?: any }
     response = await octokit
@@ -88,7 +88,7 @@ if (!args.key && !args.dev) {
           'X-GitHub-Api-Version': '2022-11-28'
         }
       })
-      .catch((err)=>{
+      .catch((err) => {
         response = {
           status: 500,
           data: err.toString()
@@ -106,9 +106,9 @@ if (!args.key && !args.dev) {
     spiner.info(`${toolname} Данные получены.`)
     for await (const Contributor of GithubContributors.data) {
       spiner.info(`${toolname} Обрабатываем автора: ${Contributor.author.login}`)
-      
+
       const ContributorProfileInfo = await GetUserInfo(Contributor.author.login).then((resp) => resp)
-      
+
       const RawContributor = RawContributors.find(Author => Author.mapByNameAliases?.includes(Contributor.author.login))
 
       if (RawContributor) {
@@ -124,7 +124,7 @@ if (!args.key && !args.dev) {
             add: 0,
             remove: 0
           },
-        } 
+        }
         CalculateStats(Contributor, Author)
         Authors.push(Author)
       } else {
@@ -152,16 +152,16 @@ if (!args.key && !args.dev) {
 
     for (const RawContributor of RawContributors) {
       let isGitContributed = false
-      for (const GitContributed of Authors){
-        if (RawContributor.mapByNameAliases){
-          for (const login of RawContributor?.mapByNameAliases){
-            if (GitContributed.mapByNameAliases?.includes(login)){
+      for (const GitContributed of Authors) {
+        if (RawContributor.mapByNameAliases) {
+          for (const login of RawContributor?.mapByNameAliases) {
+            if (GitContributed.mapByNameAliases?.includes(login)) {
               isGitContributed = true
               break
             }
           }
         }
-        if (isGitContributed) { 
+        if (isGitContributed) {
           break
         }
       }
@@ -179,17 +179,17 @@ if (!args.key && !args.dev) {
             add: 0,
             remove: 0
           },
-        } 
+        }
         Authors.push(Author)
       }
     }
 
     fs.writeFile(
-      path.join(__dirname, '../.vitepress/data/fullteam.json'),
+      path.join(__dirname, '../_data/fullteam.json'),
       JSON.stringify(Authors),
       (err) => err && spiner.fail(err.toString())
     )
-  
+
     spiner.succeed(`${toolname} Список успешно сгенерирован!\n`)
   } else {
     spiner.fail(`${toolname} Неудалось получить данные с гита! (${GithubContributors.data})\n`)
@@ -198,7 +198,7 @@ if (!args.key && !args.dev) {
 } else if (args.dev) {
   spiner.warn(`${toolname} Активен режим разработки. Создаём пустышку...\n`)
   fs.writeFile(
-    path.join(__dirname, '../.vitepress/data/fullteam.json'),
+    path.join(__dirname, '../_data/fullteam.json'),
     JSON.stringify(RawContributors),
     (err) => err && spiner.fail(err.toString())
   )

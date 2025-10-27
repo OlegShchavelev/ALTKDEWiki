@@ -1,81 +1,99 @@
-<div align="center">
-  <a href="https://github.com/OlegShchavelev/ALTKDEWiki">
-    <img src="https://i.imgur.com/DA9QSc6.png" alt="Logo" width="256" height="256">
-  </a>
-  <h1 align="center">ALT KDE Wiki
-  <br/>
-  <img alt="GitHub License" src="https://img.shields.io/github/license/OlegShchavelev/ALTKDEWiki">
-  <img alt="GitHub commit activity" src="https://img.shields.io/github/commit-activity/y/OlegShchavelev/ALTKDEWiki">
-  <img alt="GitHub Issues or Pull Requests" src="https://img.shields.io/github/issues/OlegShchavelev/ALTKDEWiki">
-  <img alt="GitHub deployments" src="https://img.shields.io/github/deployments/OlegShchavelev/ALTKDEWiki/github-pages?label=Last%20Deploy">
-  </h1>
-  <p align="center"> База знаний открытого сообщества пользователей операционной системы ALT Regular KDE.</p>
-  <br/>
-  <br/>
+<div class="header" align="center">
+
+[<img src="https://alt-kde.wiki/alt-kde.png" height="256">](https://github.com/OlegShchavelev/ALTKDEWiki)
+
+# ALT KDE Wiki
+
+База знаний открытого сообщества пользователей операционной системы «Альт» с графическим окружением KDE.
+
+![GitHub License](https://img.shields.io/github/license/OlegShchavelev/ALTKDEWiki)
+![GitHub commit activity](https://img.shields.io/github/commit-activity/y/OlegShchavelev/ALTKDEWiki)
+![GitHub Issues or Pull Requests](https://img.shields.io/github/issues/OlegShchavelev/ALTKDEWiki)
+![GitHub deployments](https://img.shields.io/github/deployments/OlegShchavelev/ALTKDEWiki/github-pages?label=Last%20Deploy)
+[![Telegram](https://img.shields.io/badge/Group-%235AA9E6?logo=telegram&label=Telegram)](https://t.me/alt_kde)
+
 </div>
 
 ## Разработка
 
-Перед запуском проекта убедитесь, что у вас установлены необходимые компоненты
+### :inbox_tray: Создание форка репозитория
+
+Для контроля качества и безопасности контента проекта ALT KDE Wiki все изменения вносятся в личную копию репозитория (Fork). Процесс создания форка описан в разделе [Внесение изменений](https://alt-gnome.wiki/reference/pages/alteration.html).
+
+### :gear: Локальный запуск проекта
+
+Перед запуском проекта локально убедитесь, что в вашей операционной системе установлены необходимые для запуска приложения: Git, Node.js, npm. Ниже приведен пример установки приложений для операционной системы «Альт»:
 
 ```shell
-sudo apt-get install node git
+su -
+apt-get install node npm git
 ```
 
-Выполним загрузку репозитория, перейдём в каталог проекта и запустим в режиме разработки
+**Клонируем** созданную ранее личную копию репозитория:
 
 ```shell
-git clone https://github.com/OlegShchavelev/ALTKDEWiki.git
+# Клонирование с использованием доступа к репозиторию по HTTPS
+git clone https://github.com/{user}/ALTKDEWiki.git
+```
+
+# Клонирование с использование доступа к репозиторию по SSH
+
+git clone git@github.com:{user}/ALTKDEWiki.git
+
+````
+
+Теперь на вашем компьютере в папке `ALTKDEWiki`, находится полная копия репозитория.
+
+> [!NOTE]
+> Замените `{user}` на ваше имя пользователя на GitHub. Проще всего его найти в cервисе GitHub в самом верху страницы репозитория.
+
+**Перейдите** в папку проекта и для начала работы запустите в режиме разработки (редактирования) склонированный проект ALT KDE Wiki:
+
+```shell
 cd ALTKDEWiki
 npm i
 npm run docs:dev
-```
+````
 
-## Дополнительный функционал
+### :pencil: Внесение изменений
 
-### Включение динамической сортировки участников на главной странице
+Для вашего удобства, все инструкции по созданию и редактированию статей собраны в разделе [«Для авторов»](https://alt-gnome.wiki/reference).
 
-Для работы функции требуется создать `read-only` токен GitHub
+Участники проекта разработали материалы, которые вы можете найти на странице [«Общие правила»](https://alt-gnome.wiki/reference/pages/general-rules.html). Они помогут вам лучше понять, как работает проект, и позволят вам эффективно и просто работать с ALT KDE Wiki в роли участника.
 
-(Официальный REST API GitHub не предоставляет данные об активности в репозитории без авторизации.
-Поэтому для использования данного функционала требуется ключ с правом на чтение публичных репозиториев)
+Настоятельно рекомендуется проверить ваши коммиты на орфографические и критические ошибки до отправке PR в основную ветку проекта. Для этого ознакомьтесь со страницей [Проверка текста на ошибки](https://alt-gnome.wiki/reference/tests/speller.html)
 
-[Как это сделать можно прочитать тут](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens)
+> [!TIP]
+> Следование вышеперечисленному — залог хорошего будущего проекта.
 
-Далее для локального использования нужно создать файл `.env` в папке `/docs/` и добавить в него данную строку:
+### :outbox_tray: Отправка изменений
 
-```
-VITE_GIT_KEY="{ваш токен}"
-```
-
-(Данный файл добавлен в исключения `.gitignore`, можно не бояться, что он уйдёт в репозиторий)
-
-А для использования функционала в сборке нужно создать `secret` c названием `VITE_GIT_KEY` для `GitHub Actions` в вашем репозитории
-
-[Как это сделать можно ознакомиться здесь](https://docs.github.com/actions/security-guides/encrypted-secrets)
-
-После этого будет доступен функционал сортировки.
-
-(На данный момент данный ключ используется только в `.vitepress/utils/gitStats.js`, если вы не доверяете проекту - вы можете проверить как ваш ключ используется ведь все компоненты имеют открытый исходный код. Либо вы можете просто не использовать данный функционал. Все остаётся на ваше усмотрение.)
-
-### Настройки динамической сортировки
-
-- `homeTopLimit` — лимит отображаемых пользователей на главной странице
-- `home_filter_type` — тип сортировки пользователей на главной странице
-- `page_filter_type` — тип сортировки пользователей на странице команды
-
-  1. `additions` — по количеству добавленных в репозиторий строк
-  2. `commits` — по количеству коммитов в репозиторий
-  3. `role+additions` — по роли участника (Разработчик -> Участник) и количеству добавленных в репозиторий строк
-  4. `role+commits` — по роли участника (Разработчик -> Участник) и количеству коммитов
-
-- `enable_autosearch` — включено/выключено автозаполнение перечня участников из статистики
-- `loading_placeholders` — массив с возможными выводами у спиннера загрузки виджета
+Для того, чтобы изменения стали доступны всем, нужно создать Запрос на слияние (Pull Request). Процесс создания описан в разделе [Внесение изменений](https://alt-gnome.wiki/reference/pages/alteration.html#_3-создаем-pull-request).
 
 ## Зеркало
 
-Вся документация из этого репозитория размещается на сайте [alt-kde.wiki](https://alt-kde.wiki/) автоматически.
+Вся документация из репозитория [ALTKDEWiki](https://github.com/OlegShchavelev/ALTKDEWiki) размещается на cайте [alt-kde.wiki](https://alt-kde.wiki/), обновление происходит автоматически, после переноса изменений в основную ветка проекта.
+
+## Участники проекта ALT KDE Wiki
+
+Список людей внесших вклад в проект:
+
+[![Участники](https://contrib.rocks/image?repo=OlegShchavelev/ALTKDEWiki)](https://github.com/OlegShchavelev/ALTKDEWiki/graphs/contributors)
+
+## Как помочь проекту ALT KDE Wiki
+
+Вы можете поддержать проект несколькими способами:
+
+- Создать задачу с проблемой или предложением по улучшению (Issue);
+- Создать запрос на слияние с добавлением/исправлением статьи или функционала;
+- Поддержать конкретного автора: все ссылки размещены на странице [Участники](https://alt-kde.wiki/contributions.html);
+
+## Благодарность
+
+Спасибо [команде разработки Nólëbase](https://github.com/nolebase) за создание и поддержку набора плагинов [Nólëbase Integrations](https://github.com/nolebase/integrations) и активное взаимодействие.
 
 ## Лицензия
 
-MIT Copyright © 2023-present OLEG SHCHAVELEV
+[MIT](https://github.com/OlegShchavelev/ALTKDEWiki/blob/main/LICENSE)
+
+Copyright © 2023-present <OLEG SHCHAVELEV>
