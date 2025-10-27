@@ -136,6 +136,33 @@ const sidebar_docs = [
     collapsed: false
   },
   {
+    text: 'Использование рабочего окружения KDE',
+    base: '/using_kde',
+    items: [
+      {
+        text: 'Настройка меню «Создать» в Dolphin',
+        link: '/dolphin-templates/'
+      },
+      {
+        text: 'Настройка яркости экрана',
+        link: '/display-brightness/'
+      }
+    ],
+    collapsed: true
+  },
+  {
+    text: 'Расширения рабочего окружения KDE',
+    base: '/extensions',
+    link: '/',
+    items: [
+      {
+        text: 'Smart Video Wallpaper Reborn',
+        link: '/smart-video-wallpaper-reborn/'
+      }
+    ],
+    collapsed: false
+  },
+  {
     text: 'Настройка графики',
     base: '/graphics',
     items: [

@@ -7,7 +7,7 @@ appstream:
   id: io.github.slgobinath.SafeEyes
   name: SafeEyes
   icon: ./img/io.github.slgobinath.SafeEyes.png
-  summary: Утилита для сохранения вашего зрения
+  summary: Утилита для сохранения вашего зрения.
   developer:
     name: Gobinath
   metadata_license:
@@ -24,5 +24,5 @@ SafeEyes — утилита для сохранения вашего зрени�
 
 ![Скриншот программы](./img/screenshot.jpg)
 
-<!--@include: @apps/.parts/install/content-flatpak.md-->
 <!--@include: @apps/.parts/install/content-repo.md-->
+<!--@include: @apps/.parts/install/content-flatpak.md-->

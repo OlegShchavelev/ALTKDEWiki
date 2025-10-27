@@ -83,6 +83,13 @@ export const ru = defineConfigWithTheme({
                     target: '_blank',
                     baseUrl: '//snapcraft.io/',
                     style: '--agw-btn-bg: var(--vp-c-orange-dimm-1); --agw-btn-color: var(--vp-c-orange-darker); --agw-btn-hover-bg:var(--vp-c-orange-dark); --agw-btn-hover-color: var(--vp-c-white);'
+                },
+                extension: {
+                    anchor: 'KDE Store',
+                    target: '_blank',
+                    baseUrl: '//store.kde.org/p/',
+                    style:
+                        '--agw-btn-bg: var(--vp-c-blue-dimm-1); --agw-btn-color: var(--vp-c-blue-darker); --agw-btn-hover-bg:var(--vp-c-blue-dark); --agw-btn-hover-color: var(--vp-c-white);'
                 }
             }
         }

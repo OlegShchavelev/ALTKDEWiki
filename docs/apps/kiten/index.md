@@ -2,7 +2,7 @@
 title: Kiten
 aggregation:
   flatpak: org.kde.kiten
-  sisyphus: kde5-kiten
+  sisyphus: kiten
   snap: kiten
 appstream:
   id: org.kde.kiten
@@ -12,7 +12,8 @@ appstream:
   keywords:
     - kdedeveloped
   developer:
-    name: KDE Community
+    name: KDE
+    avatar: /developers/kde-community-logo.png
   metadata_license:
     name: GNU GPLv2+
     link: https://choosealicense.com/licenses/gpl-2.0/

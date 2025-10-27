@@ -22,24 +22,7 @@ Nano - консольный текстовый редактор, подходя�
 
 ![Скриншот редактора Nano](./img/nano_screen.png 'Скриншот редактора Nano')
 
-## Установка
-
-:::tabs
-==apt-get
-
-```shell
-su -
-apt-get update
-apt-get install nano
-```
-
-==epm
-
-```shell
-epm -i nano
-```
-
-:::
+<!--@include: @apps/.parts/install/content-repo.md-->
 
 ## Возможности
 

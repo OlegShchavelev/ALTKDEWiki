@@ -13,7 +13,7 @@ appstream:
   id: steam.desktop
   name: Steam
   icon: ./img/steam-logo.svg
-  summary: Клиент для платформы Steam
+  summary: Клиент для платформы Steam.
   keywords:
     - proprietary
     - restrictions
