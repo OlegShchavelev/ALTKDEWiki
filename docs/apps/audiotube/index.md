@@ -2,16 +2,18 @@
 title: AudioTube
 aggregation:
   flatpak: org.kde.audiotube
-  sisyphus: kde5-audiotube
+  sisyphus: audiotube
 appstream:
   id: org.kde.audiotube
   name: AudioTube
-  icon: ./img/icon.png
+  icon: ./img/org.kde.audiotube.svg
   summary: Клиент YouTube Music
   keywords:
     - kdedeveloped
+    - adaptive
   developer:
-    name: KDE Community
+    name: KDE
+    avatar: /developers/kde-community-logo.png
   metadata_license:
     name: GNU GPLv2
     link: https://spdx.org/licenses/GPL-2.0+.html
@@ -24,7 +26,7 @@ appstream:
 
 AudioTube — бесплатный клиент YouTube Music с открытым исходным кодом, который позволяет выполнять поиск, составление плейлистов и воспроизведение музыки.
 
-![Скриншот программы](https://cdn.kde.org/screenshots/audiotube/desktop.png)
+![Скриншот программы AudioTube](https://cdn.kde.org/screenshots/audiotube/desktop.png)
 
-<!--@include: @apps/.parts/install/content-flatpak.md-->
 <!--@include: @apps/.parts/install/content-repo.md-->
+<!--@include: @apps/.parts/install/content-flatpak.md-->

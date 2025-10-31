@@ -20,15 +20,7 @@ appstream:
 
 **EPM** — команда управления пакетами, имеющая одинаковый интерфейс на всех системах. При интерфейсе, похожем на `rpm`, `apt` и `urpm`, выполняет необходимые операции **на любой платформе**.
 
-## Установка из репозитория
-
-**EPM** можно установить используя терминал:
-
-```shell
-su -
-apt-get update
-apt-get install eepm
-```
+<!--@include: @apps/.parts/install/content-repo.md-->
 
 ## Команды
 
@@ -57,20 +49,22 @@ epm print info
 ::: details Пример вывода информация о системе
 
 ```shell
-distro_info v20230406 (EPM version 3.62.5-alt1) : Copyright © 2007-2024 Etersoft
+distro_info v20250206 (EPM version 3.64.36-alt1) : Copyright © 2007-2025 Etersoft
 
-                      Pretty name (--pretty): ALT Regular (20240122) (Sisyphus)
-          (--distro-name / --distro-version): Sisyphus / 20240122 (orig. Sisyphus 20240122)
-        Base distro name (-d) / version (-v): ALTLinux/Sisyphus
-    Vendor distro name (-s) / Repo name (-r): alt / Sisyphus
-                Package manager/type (-g/-p): apt-rpm / rpm
-           Base OS name (-o) / CPU arch (-a): linux x86_64
-                CPU norm register size  (-b): 64 bit
-                         Virtualization (-i): (host system)
-                       CPU Cores/MHz (-c/-z): 4 / 2500 MHz
-                     System memory size (-m): 15906 MiB
-                Running service manager (-y): systemd
-           Bug report URL (--bug-report-url): https://bugs.altlinux.org/
+                       Pretty name (--pretty): ALT Regular (Sisyphus)
+           (--distro-name / --distro-version): ALT Linux / Sisyphus (orig. Sisyphus 20240122)
+         Base distro name (-d) / version (-v): ALTLinux/Sisyphus
+     Vendor distro name (-s) / Repo name (-r): alt / Sisyphus
+                 Package manager/type (-g/-p): apt-rpm / rpm
+            Base OS name (-o) / CPU arch (-a): linux x86_64
+                 CPU norm register size  (-b): 64 bit
+                          Virtualization (-i): (host system)
+                        CPU Cores/MHz (-c/-z): 12 / 3875 MHz
+                      System memory size (-m): 15919 MiB
+                 Running service manager (-y): systemd
+            Bug report URL (--bug-report-url): https://bugs.altlinux.org/
+
+(run with -h to get help)
 ```
 
 :::

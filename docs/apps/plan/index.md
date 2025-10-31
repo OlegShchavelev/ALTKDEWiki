@@ -1,16 +1,17 @@
 ---
 title: Plan
 aggregation:
-  sisyphus: calligra-plan
+  sisyphus: calligraplan
 appstream:
-  id: org.kde.calligraplan.desktop
+  id: org.kde.calligraplan
   name: Plan
   icon: ./img/org.kde.calligraplan.svg
   summary: Приложение по управлению проектами.
   keywords:
     - kdedeveloped
   developer:
-    name: KDE Community
+    name: KDE
+    avatar: /developers/kde-community-logo.png
   metadata_license:
     name: GNU GPLv2+
     link: https://choosealicense.com/licenses/gpl-2.0/

@@ -7,7 +7,7 @@ appstream:
   id: net.pcsx2.PCSX2
   name: PCSX2
   icon: ./img/pcsx2.png
-  summary: Эмулятор PlayStation 2
+  summary: Эмулятор PlayStation 2.
   developer:
     name: PCSX2 Team
   metadata_license:
@@ -17,15 +17,15 @@ appstream:
     homepage: https://pcsx2.net/
     bugtracker: https://github.com/PCSX2/pcsx2/issues
 ---
+
 # PCSX2
 
 PCSX2 — это эмулятор PlayStation 2 с открытым исходным кодом. Распространяется под лицензией GNU GPLv3.
 
 ![Скриншот эмулятора](https://flathub.org/_next/image?url=https%3A%2F%2Fdl.flathub.org%2Fmedia%2Fnet%2Fpcsx2%2FPCSX2%2F6d5e6671646868c8cbcc24b5c7121918%2Fscreenshots%2Fimage-1_orig.webp&w=1200&q=75)
 
-<!--@include: @apps/.parts/install/content-flatpak.md-->
-
 <!--@include: @apps/.parts/install/content-repo.md-->
+<!--@include: @apps/.parts/install/content-flatpak.md-->
 
 ## Настройка
 
@@ -58,8 +58,7 @@ BIOS для эмулятора PCSX2 не поставляется в компл
 
 ### Настройка контроллеров
 
-В этом разделе  выбираем тип контроллера, который будет эмулироваться. Оптимальным вариантом является выбор DualShock 2, так как этот контроллер полностью соответствует возможностям оригинального устройства, включая поддержку вибрации и аналоговых стиков, что обеспечивает максимальную совместимость с играми PlayStation 2.
-
+В этом разделе выбираем тип контроллера, который будет эмулироваться. Оптимальным вариантом является выбор DualShock 2, так как этот контроллер полностью соответствует возможностям оригинального устройства, включая поддержку вибрации и аналоговых стиков, что обеспечивает максимальную совместимость с играми PlayStation 2.
 
 ![Четвёртый этап настройки](./img/image4.png)
 
@@ -72,5 +71,3 @@ BIOS для эмулятора PCSX2 не поставляется в компл
 ![Список игр](./img/image5.png)
 
 После этого скачивайте игру в одном из поддерживаемых форматов: `.bin/.iso` (ISO Disc Images), `.mdf` (Media Descriptor File), `.chd` (Compressed Hunks of Data), `.cso` (Compressed ISO), `.zso` (Compressed ISO), или `.gz` (Gzip Compressed ISO). Эти форматы совместимы с PCSX2 и готовы к использованию. Потом в списке у вас появится игра. Нажимаете на неё несколько раз, и она запустится!
-
-

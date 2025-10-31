@@ -1,5 +1,24 @@
 ---
 title: Python
+aggregation:
+  sisyphus: python3
+appstream:
+  id: org.python.python
+  name: Python
+  icon: ./img/python-logo.svg
+  summary: Интерпретируемый высокоуровневый язык программирования общего назначения.
+  keywords:
+    - programming
+    - development
+  developer:
+    name: Python Software Foundation
+    avatar: ./img/python-logo.svg
+  metadata_license:
+    name: PSF License Version 2
+    link: https://docs.python.org/3/license.html
+  url:
+    homepage: https://www.python.org/
+    bugtracker: https://github.com/python/cpython/issues
 ---
 
 # Python
@@ -8,7 +27,7 @@ Python — интерпретируемый высокоуровневый яз�
 
 ## Установка зависимостей
 
-**Python** можно установить через терминал:
+**Зависимости Python** можно установить через терминал:
 
 ::: code-group
 

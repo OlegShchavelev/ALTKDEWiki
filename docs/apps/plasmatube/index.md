@@ -9,8 +9,10 @@ appstream:
   summary: Приложение для просмотра видео с YouTube на телефоне или компьютере.
   keywords:
     - kdedeveloped
+    - adaptive
   developer:
-    name: KDE Community
+    name: KDE
+    avatar: /developers/kde-community-logo.png
   metadata_license:
     name: GNU GPLv3
     link: https://choosealicense.com/licenses/gpl-3.0/

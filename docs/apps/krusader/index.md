@@ -17,6 +17,11 @@ appstream:
   url:
     homepage: https://krusader.org/
     bugtracker: https://krusader.org/report-bugs/index.html
+gallery:
+  - type: slider
+    items:
+      - src: ./img/krusader-twinpanel.png
+      - src: ./img/krusader-3rdhand-thumb.png
 ---
 
 # Krusader
@@ -24,18 +29,17 @@ appstream:
 Krusader — это мощный двухпанельный файловый менеджер, ориентированный на опытных пользователей. Из коробки он предлагает все возможности приложений KDE для работы с файлами ([Dolphin](https://apps.kde.org/dolphin), [Ark](https://apps.kde.org/ark), [KRename](https://apps.kde.org/krename), [Kompare](https://apps.kde.org/kompare), [Filelight](https://apps.kde.org/filelight/), [Konsole](https://apps.kde.org/ru/konsole/)), позволяет полностью управлять собой с клавиатуры, поддерживает синхронизацию папок и многое-многое другое.
 
 Некоторые функции Krusader:
+
 - Обширная поддержка различных форматов архивов
 - Работа с монтируемыми файловыми системами
 - Поддержка FTP
 - Мощный поиск и встроенный просмотрщик/редактор
 - Синхронизация папок и сравнение файлов
 - Пакетное переименование
-- Поддержка различных KIO-сервисов 
+- Поддержка различных KIO-сервисов
 - Режим очереди заданий
 - Запуск от root (не рекомендуется)
 
-![Скриншот программы 1](./img/krusader-twinpanel.png 'Скриншот 1')
-
-![Скриншот программы 2](./img/krusader-3rdhand-thumb.png 'Скриншот 2')
+<GalleryALT />
 
 <!--@include: @apps/.parts/install/content-repo.md-->

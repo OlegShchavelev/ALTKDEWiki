@@ -2,15 +2,17 @@
 title: Haruna
 aggregation:
   flatpak: org.kde.haruna
-  sisyphus: kde5-haruna
+  sisyphus: haruna
 appstream:
   id: org.kde.haruna
   name: Haruna
-  icon: ./img/haruna-logo.svg
-  summary: Медиаплеер от KDE на основе Qt.
+  icon: ./img/org.kde.haruna.svg
+  summary: Медиапроигрыватель на основе Qt, сочетающий в себе простоту и функциональность.
+  keywords:
+    - kdedeveloped
   developer:
     name: KDE
-    avatar: ./img/KDE_logo.png
+    avatar: /developers/kde-community-logo.png
   metadata_license:
     name: GNU GPLv3 or later
     link: https://choosealicense.com/licenses/gpl-3.0/
@@ -25,25 +27,7 @@ Haruna — медиаплеер с открытым исходным кодом,
 
 ![Скриншот программы Haruna](./img/haruna_screen.png 'Скриншот программы Haruna')
 
-## Установка из репозитория
-
-:::tabs
-==apt-get
-
-```shell
-su -
-apt-get update
-apt-get install kde5-haruna
-```
-
-==epm
-
-```shell
-epm -i kde5-haruna
-```
-
-:::
-
+<!--@include: @apps/.parts/install/content-repo.md-->
 <!--@include: @apps/.parts/install/content-flatpak.md-->
 
 ### Комбинации клавиш
@@ -55,7 +39,7 @@ epm -i kde5-haruna
 | :--------------------------: | :---------------------------------------: |
 |            [[F]]             |      Переключить полноэкранный режим      |
 | [[Ctrl]] + [[Shift]] + [[L]] | Загрузить последний воспроизведённый файл |
-|             [[m]             |              Выключить звук               |
+|            [[m]]             |              Выключить звук               |
 |       [[Ctrl]] + [[O]]       |               Открыть файл                |
 | [[Ctrl]] + [[Shift]] + [[O]] |                Открыть URL                |
 |            [[\]]]            |    Увеличить скорость воспроизведения     |
