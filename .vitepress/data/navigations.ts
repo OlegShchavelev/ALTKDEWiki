@@ -146,6 +146,10 @@ const sidebar_docs = [
       {
         text: 'Настройка яркости экрана',
         link: '/display-brightness/'
+      },
+      {
+        text: 'Настройка ночной цветовой схемы (Night Light)',
+        link: '/night-light/'
       }
     ],
     collapsed: true
