@@ -1,5 +1,3 @@
-import { text } from 'stream/consumers'
-
 export const nav = [
   { text: 'Главная', link: '/' },
   { text: 'Документация', link: '/wiki/' },

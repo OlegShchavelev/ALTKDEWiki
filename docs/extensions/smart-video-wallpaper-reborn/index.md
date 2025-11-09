@@ -3,7 +3,7 @@ aggregation:
   extension:
     type: widget
     id: 2139746
-  sisyphus: kde-plasma-addon-smart-video-wallpaper-reborn
+  sisyphus: plasma-addon-smart-video-wallpaper-reborn
 appstream:
   name: Smart Video Wallpaper Reborn
   summary: Плагин для воспроизведения видео в качестве обоев рабочего стола в KDE Plasma
