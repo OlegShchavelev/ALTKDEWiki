@@ -5,7 +5,7 @@ aggregation:
     id: 2136963
 appstream:
   name: KDE Material You Colors
-  summary: Автоматический генератор цветовых схем на основе обоев с использованием Material You
+  summary: Автоматический генератор цветовых схем на основе обоев с использованием Material You.
   developer:
     name: Luis Bocanegra
     nickname: luisbocanegra
@@ -49,7 +49,7 @@ appstream:
 
 ### Варианты цветовых схем
 
-Доступен выбор из нескольких вариантов Material You:
+Доступен выбор из нескольких вариантов палитры Material You:
 
 - **Vibrant** — яркие и насыщенные цвета
 - **Monochrome** — монохромная палитра
@@ -89,7 +89,9 @@ epm -i python3-module-pipx gcc python3-module-dbus glib2-devel libdbus-devel pyt
 
 ### Установка бэкенда
 
-Для Plasma 6:
+::: tabs
+
+== Plasma 6
 
 ```shell
 pipx install kde-material-you-colors
@@ -99,7 +101,8 @@ pipx inject kde-material-you-colors pywal16
 pipx upgrade kde-material-you-colors
 ```
 
-::: info Для пользователей Plasma 5
+== Plasma 5
+
 Если вы используете устаревшую версию Plasma 5, установите версию 1.7.1:
 
 ```shell
@@ -115,9 +118,9 @@ pipx inject kde-material-you-colors pywal
 
 Для применения цветовой схемы к Firefox доступны следующие варианты:
 
-- Использование расширения **Pywalfox** (https://github.com/Frewacom/pywalfox) для автоматической синхронизации
-- Ручная настройка через **Colors → Manage Colors → Use System Colors** с параметром **Override → Always**
-- Для тёмных тем может потребоваться настройка GTK-темы, например **Goldy-Dark-GTK**
+- Использование расширения «Pywalfox» (https://github.com/Frewacom/pywalfox) для автоматической синхронизации
+- Ручная настройка через «Colors» → «Manage Colors» → «Use System Colors» с параметром «Override» → «Always»
+- Для тёмных тем может потребоваться настройка GTK-темы, например «Goldy-Dark-GTK»
 
 ## Известные ограничения
 
@@ -126,5 +129,5 @@ pipx inject kde-material-you-colors pywal
 - Плагин слайд-шоу обоев может вызывать проблемы из-за ограничений API скриптов
 - Виджеты и папки на рабочем столе могут попадать на скриншоты и влиять на генерацию цветов
 - Существует визуальный баг с потерей выделения выбранного варианта цветовой схемы (функциональность сохраняется)
-- Ограниченная поддержка **KSyntaxHighlighting** — изменяется только часть цветов в редакторах кода
-  :::
+- Ограниченная поддержка «KSyntaxHighlighting» — изменяется только часть цветов в редакторах кода
+:::

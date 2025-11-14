@@ -5,7 +5,7 @@ aggregation:
     id: 2136636
 appstream:
   name: Command Output
-  summary: Виджет, выполняющий команду по интервалу и показывающий её вывод
+  summary: Виджет, выполняющий команду по интервалу и показывающий её вывод.
   developer:
     name: Zren (Chris Holland)
     nickname: Zren

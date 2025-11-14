@@ -5,7 +5,7 @@ aggregation:
     id: 2130967
 appstream:
   name: Panel Colorizer
-  summary: Расширенная кастомизация панелей с возможностями Latte Dock и WM status bar
+  summary: Расширенная кастомизация панелей с возможностями Latte Dock и статус-баров менеджеров окон.
   developer:
     name: Luis Bocanegra
     nickname: luisbocanegra
@@ -20,7 +20,7 @@ appstream:
 
 Виджет работает путём инъекции пользовательских стилей в панель, позволяя добиться внешнего вида статус-бара без модификации самих виджетов или замены стандартной панели Plasma.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/0QLyEexa9Y4" title="KDE Plasma Panel colorizer v0.3.0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+![plasma-panel-colorizer-1](./img/plasma-panel-colorizer-1.jpg)
 
 ## Основные возможности
 
@@ -78,6 +78,8 @@ appstream:
 :::
 
 ## Примеры использования
+
+![plasma-panel-colorizer-2](./img/plasma-panel-colorizer-2.jpg)
 
 Типичные сценарии применения виджета:
 

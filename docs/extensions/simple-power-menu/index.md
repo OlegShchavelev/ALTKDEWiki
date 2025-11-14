@@ -5,7 +5,7 @@ aggregation:
     id: 2137217
 appstream:
   name: Simple Customizable Power Menu for KDE
-  summary: Минималистичный виджет меню выключения с базовыми опциями
+  summary: Минималистичный виджет меню выключения с базовыми опциями.
   developer:
     name: divinae
     nickname: divinae

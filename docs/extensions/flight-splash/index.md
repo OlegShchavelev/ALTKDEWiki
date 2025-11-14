@@ -5,7 +5,7 @@ aggregation:
     id: 2144609
 appstream:
   name: Flight-Splash
-  summary: Заставка Plasma с плавной анимацией из набора Flight-Plasma-Themes
+  summary: Заставка Plasma с плавной анимацией из набора Flight-Plasma-Themes.
   developer:
     name: L4ki
     nickname: L4ki

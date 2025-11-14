@@ -5,7 +5,7 @@ aggregation:
     id: 2135195
 appstream:
   name: Kuro
-  summary: Анимированная заставка с котом для экрана запуска Plasma
+  summary: Анимированная заставка с котом для экрана запуска Plasma.
   developer:
     name: Alan Bouteiller
     nickname: bouteillerAlan

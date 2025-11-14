@@ -5,7 +5,7 @@ aggregation:
     id: 1801600
 appstream:
   name: Minimalist Clock
-  summary: Минималистичный виджет для отображения времени
+  summary: Минималистичный виджет для отображения времени.
   developer:
     name: Prayag Jain
     nickname: Prayag2

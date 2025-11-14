@@ -5,7 +5,7 @@ aggregation:
     id: 2136288
 appstream:
   name: Big Clock
-  summary: Виджет больших часов с датой для KDE Plasma
+  summary: Виджет больших часов с датой для KDE Plasma.
   developer:
     name: Zayron
     nickname: zayronxio

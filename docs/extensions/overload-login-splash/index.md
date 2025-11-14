@@ -5,7 +5,7 @@ aggregation:
     id: 2124799
 appstream:
   name: Overload login splash
-  summary: Яркая анимированная заставка для экрана входа
+  summary: Яркая анимированная заставка для экрана входа.
   developer:
     name: dgudim
     nickname: dgudim

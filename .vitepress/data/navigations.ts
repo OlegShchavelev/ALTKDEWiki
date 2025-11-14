@@ -136,7 +136,7 @@ const sidebar_docs = [
     collapsed: false
   },
   {
-    text: 'Использование рабочего окружения KDE',
+    text: 'Использование рабочего окружения KDE Plasma',
     base: '/using_kde',
     items: [
       {
@@ -151,7 +151,7 @@ const sidebar_docs = [
     collapsed: true
   },
   {
-    text: 'Расширения рабочего окружения KDE',
+    text: 'Расширения рабочего окружения KDE Plasma',
     base: '/extensions',
     link: '/',
     items: [

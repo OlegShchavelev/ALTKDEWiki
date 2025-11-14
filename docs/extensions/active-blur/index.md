@@ -5,7 +5,7 @@ aggregation:
     id: 2134907
 appstream:
   name: Active Blur
-  summary: Плагин обоев Plasma, размывающий фон при активном окне
+  summary: Плагин обоев Plasma, размывающий фон при активном окне.
   developer:
     name: Alan Bouteiller
     nickname: bouteillerAlan

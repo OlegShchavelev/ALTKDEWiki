@@ -5,7 +5,7 @@ aggregation:
     id: 2131462
 appstream:
   name: Desktop Indicator
-  summary: Минималистичный виджет для отображения индикатора рабочих столов
+  summary: Минималистичный виджет для отображения индикатора рабочих столов.
   developer:
     name: Dhruv Sharma
     nickname: dhruv8sh

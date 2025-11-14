@@ -5,7 +5,7 @@ aggregation:
     id: 2147871
 appstream:
   name: Clear Clock
-  summary: Минималистичный виджет даты и времени с настраиваемой типографикой
+  summary: Минималистичный виджет даты и времени с настраиваемой типографикой.
   developer:
     name: qewer
     nickname: qewer33

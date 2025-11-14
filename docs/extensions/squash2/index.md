@@ -5,7 +5,7 @@ aggregation:
     id: 1806319
 appstream:
   name: Squash2
-  summary: Эффект сворачивания/разворачивания окон в стиле GNOME для KWin
+  summary: Эффект сворачивания/разворачивания окон в стиле GNOME для KWin.
   developer:
     name: Shaurya Kalia
     nickname: Shaurya-Kalia
