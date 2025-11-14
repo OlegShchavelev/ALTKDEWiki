@@ -5,7 +5,7 @@ aggregation:
     id: 2136933
 appstream:
   name: Advanced Radio Player
-  summary: Компактный радио плеер с редактируемым списком станций и обложками треков
+  summary: Компактный радиоплеер с редактируемым списком станций и обложками треков
   developer:
     name: Yuri Saurov
     nickname: saurov
