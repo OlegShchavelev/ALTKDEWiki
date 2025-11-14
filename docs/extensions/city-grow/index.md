@@ -5,7 +5,7 @@ aggregation:
     id: 2138971
 appstream:
   name: City Grow
-  summary: Плагин анимированных обоев с простыми настройками в стиле «растущий город»
+  summary: Плагин анимированных обоев с простыми настройками в стиле «Растущий город»
   developer:
     name: HobbyBlobby
     nickname: HobbyBlobby
