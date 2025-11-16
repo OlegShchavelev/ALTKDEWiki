@@ -136,7 +136,7 @@ const sidebar_docs = [
     collapsed: false
   },
   {
-    text: 'Использование рабочего окружения KDE',
+    text: 'Использование рабочего окружения KDE Plasma',
     base: '/using_kde',
     items: [
       {
@@ -151,16 +151,80 @@ const sidebar_docs = [
     collapsed: true
   },
   {
-    text: 'Расширения рабочего окружения KDE',
+    text: 'Расширения рабочего окружения KDE Plasma',
     base: '/extensions',
     link: '/',
     items: [
       {
-        text: 'Smart Video Wallpaper Reborn',
-        link: '/smart-video-wallpaper-reborn/'
+        text: 'Виджеты',
+        items: [
+          { text: 'Advanced Radio Player', link: '/advanced-radio-player/' },
+          { text: 'Big Clock', link: '/big-clock/' },
+          { text: 'Clear Clock', link: '/clear-clock/' },
+          { text: 'Command Output', link: '/command-output/' },
+          { text: 'Day/Night Switcher', link: '/day-night-switcher/' },
+          { text: 'Desktop Indicator', link: '/desktop-indicator/' },
+          { text: 'KDE Material You Colors', link: '/kde-material-you-colors/' },
+          { text: 'KDE Modern Clock', link: '/kde-modern-clock/' },
+          { text: 'Klassy', link: '/klassy/' },
+          { text: 'Krohnkite', link: '/krohnkite/' },
+          { text: 'Launchpad Plasma', link: '/launchpad-plasma/' },
+          { text: 'Minimalist Clock', link: '/minimalist-clock/' },
+          { text: 'OnzeMenu 11', link: '/onzemenu-11/' },
+          { text: 'Panel Colorizer', link: '/plasma-panel-colorizer/' },
+          { text: 'Panel Spacer', link: '/panel-spacer/' },
+          { text: 'Plasma Control Hub', link: '/plasma-control-hub/' },
+          { text: 'PlasMusic Toolbar', link: '/plasmusic-toolbar/' },
+          { text: 'Simple Customizable Power Menu for KDE', link: '/simple-power-menu/' },
+          { text: 'Smart Video Wallpaper Reborn', link: '/smart-video-wallpaper-reborn/' },
+          { text: 'Time Progress Bar', link: '/time-progress-bar/' },
+          { text: 'Toggle Overview', link: '/toggle-overview/' },
+          { text: 'Wallpaper Effects', link: '/wallpaper-effects/' }
+        ],
+        collapsed: true
+      },
+      {
+        text: 'Обои',
+        items: [
+          { text: 'Active Blur', link: '/active-blur/' },
+          { text: 'City Grow', link: '/city-grow/' },
+          { text: 'Shader Wallpaper', link: '/shader-wallpaper/' },
+          { text: 'Wallpaper Engine for KDE', link: '/wallpaper-engine-kde/' }
+        ],
+        collapsed: true
+      },
+      {
+        text: 'Эффекты рабочего стола',
+        items: [
+          { text: 'Geometry Change', link: '/geometry-change/' },
+          { text: 'Kinetic Animations 6', link: '/kinetic-animations-6/' },
+          { text: 'Squash2', link: '/squash2/' }
+        ],
+        collapsed: true
+      },
+      {
+        text: 'Сценарии KWin',
+        items: [
+          { text: 'Dynamic Workspaces', link: '/dynamic-workspaces/' },
+          { text: 'Karousel', link: '/karousel/' },
+          { text: 'MACsimize6', link: '/macsimize6/' },
+          { text: 'Swap/Add/Remove - Virtual Desktop Shortcuts', link: '/swap-virtual-desktop/' },
+          { text: 'Temporary Virtual Desktops', link: '/temporary-virtual-desktops/' },
+          { text: 'Truely Maximized', link: '/truely-maximized/' }
+        ],
+        collapsed: true
+      },
+      {
+        text: 'Заставки',
+        items: [
+          { text: 'Flight-Splash', link: '/flight-splash/' },
+          { text: 'Kuro', link: '/kuro-splash/' },
+          { text: 'Overload login splash', link: '/overload-login-splash/' }
+        ],
+        collapsed: true
       }
     ],
-    collapsed: false
+    collapsed: true
   },
   {
     text: 'Настройка графики',
