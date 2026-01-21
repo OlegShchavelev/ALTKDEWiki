@@ -150,6 +150,10 @@ const sidebar_docs = [
       {
         text: 'Настройка ночной цветовой схемы (Night Light)',
         link: '/night-light/'
+      },
+      {
+        text: 'KRunner в KDE Plasma 6',
+        link: '/krunner/'
       }
     ],
     collapsed: true
