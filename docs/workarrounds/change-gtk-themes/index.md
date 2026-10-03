@@ -47,4 +47,4 @@ title: Некоторые GTK приложения выглядят чужеро
 
 Теперь подобные приложения должны использовать корректную тему:
 ![Breeze тема, приложение Synaptic](./img/breeze_theme.png)
-![Темная Breeze тема, приложение GParted](./img/correct_gparted.png)
+![Тёмная Breeze тема, приложение GParted](./img/correct_gparted.png)
