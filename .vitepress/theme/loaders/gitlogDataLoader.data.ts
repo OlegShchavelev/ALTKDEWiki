@@ -1,3 +1,7 @@
+import type { contributions as Team } from '../../data/team'
+
+export declare const data: typeof Team
+
 import fs from 'node:fs'
 import { contributions } from '../../data/team'
 

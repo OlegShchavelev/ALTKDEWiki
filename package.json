@@ -20,50 +20,80 @@
   },
   "type": "module",
   "scripts": {
-    "history:build": "npx esrun ./.tools/gitlog.ts",
-    "docs:dev": "vitepress dev",
+    "history:build": "esrun ./.tools/gitlog.ts",
+    "docs:dev": "pnpm run history:build --dev && vitepress dev",
     "docs:build": "vitepress build",
     "docs:preview": "vitepress preview",
-    "docs:spell-check": "npm run docs:yaspeller-full && npm run docs:cspell-full",
-    "docs:yaspeller-full": "yaspeller --dictionary .yaspeller/frontmatter.json:.yaspeller/apps\\&companies.json:.yaspeller/names.json ./docs --only-errors",
-    "docs:yaspeller": "yaspeller --dictionary .yaspeller/frontmatter.json:.yaspeller/apps\\&companies.json:.yaspeller/names.json",
-    "docs:cspell-full": "cspell --show-context --show-suggestions --color ./docs/**/**/*.md",
+    "docs:spell-check": "pnpm run docs:yaspeller-full && pnpm run docs:cspell-full",
+    "docs:yaspeller-full": "yaspeller --dictionary .yaspeller/frontmatter.json:.yaspeller/apps\\&companies.json:.yaspeller/names.json:.yaspeller/slang.json:.yaspeller/terms.json:.yaspeller/words.json ./docs --only-errors",
+    "docs:yaspeller": "yaspeller --dictionary .yaspeller/frontmatter.json:.yaspeller/apps\\&companies.json:.yaspeller/names.json:.yaspeller/slang.json:.yaspeller/terms.json:.yaspeller/words.json",
+    "docs:cspell-full": "cspell --dot --show-context --show-suggestions --color \"docs/**/*.md\"",
     "docs:cspell": "cspell --show-context --show-suggestions --color",
     "docs:remark-full": "remark ./docs --frail",
-    "docs:remark": "remark"
+    "docs:remark": "remark",
+    "docs:check-types": "tsc --noEmit",
+    "docs:dev-host": "vitepress dev --host"
   },
   "dependencies": {
-    "@octokit/core": "^6.1.2",
-    "swiper": "^11.2.6",
-    "unocss": "^0.58.0"
+    "@octokit/core": "^6.1.6",
+    "swiper": "^11.2.10",
+    "unocss": "^65.5.0"
   },
   "devDependencies": {
-    "@cspell/dict-ru_ru": "^2.2.4",
+    "@cspell/dict-ru_ru": "^2.3.2",
     "@digitak/esrun": "^3.2.26",
     "@hywax/vitepress-yandex-metrika": "^0.4.0",
-    "@iconify-json/svg-spinners": "^1.2.2",
-    "@nolebase/vitepress-plugin-enhanced-readabilities": "^2.12.0",
+    "@iconify-json/svg-spinners": "^1.2.4",
+    "@nolebase/vitepress-plugin-enhanced-readabilities": "^2.18.2",
     "@nolebase/vitepress-plugin-git-changelog": "^2.12.0",
-    "@types/node": "^20.17.10",
-    "cspell": "^8.17.1",
+    "@types/node": "^24.0.0",
+    "cspell": "^8.19.4",
     "markdown-it-implicit-figures": "^0.12.0",
     "markdown-it-kbd": "^2.2.2",
     "ora": "^8.2.0",
     "remark": "^15.0.1",
     "remark-cli": "^12.0.1",
-    "remark-lint": "^10.0.0",
-    "remark-lint-no-multiple-toplevel-headings": "^4.0.0",
-    "vitepress": "^1.6.3",
+    "remark-lint": "^10.0.1",
+    "remark-lint-no-multiple-toplevel-headings": "^4.0.1",
+    "vitepress": "^1.6.4",
     "vitepress-markdown-timeline": "^1.2.2",
     "vitepress-plugin-lightbox": "^1.0.2",
-    "vitepress-plugin-tabs": "^0.5.0",
+    "vitepress-plugin-tabs": "^0.9.0",
     "vue-silentbox": "^3.0.4",
     "yargs": "^17.7.2",
-    "yaspeller": "^10.0.1"
+    "yaspeller": "^10.0.1",
+    "typescript": "^5.9.3",
+    "@types/yargs": "^17.0.35",
+    "@types/markdown-it": "^14.1.2",
+    "medium-zoom": "^1.1.0",
+    "colorette": "^2.0.20",
+    "vue": "^3.5.32",
+    "vite": "^5.4.19",
+    "@ampernic/remark-lint-shiki-code-block-syntax-exist": "1.0.8-rc1",
+    "shiki": "^1.29.2"
   },
   "remarkConfig": {
     "plugins": [
-      "remark-lint-no-multiple-toplevel-headings"
+      "remark-lint",
+      "remark-lint-no-multiple-toplevel-headings",
+      "@ampernic/remark-lint-shiki-code-block-syntax-exist"
     ]
+  },
+  "packageManager": "pnpm@10.34.5",
+  "engines": {
+    "node": ">=24 <25"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "esbuild"
+    ],
+    "overrides": {
+      "markdown-it@<12.3.2": "^12.3.2",
+      "esbuild@<0.25.0": "^0.25.0",
+      "js-yaml@<3.14.2": "^3.14.2",
+      "js-yaml@>=4.0.0 <4.1.1": "^4.1.1",
+      "glob@>=10.2.0 <10.5.0": "^10.5.0",
+      "@cspell/dict-html-symbol-entities@<4.0.5": "^4.0.5"
+    }
   }
 }

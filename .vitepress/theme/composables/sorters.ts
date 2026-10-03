@@ -1,28 +1,29 @@
-export const sortMembers = (team, filter) => {
-  if (team.lastMonthActive & filter.includes('month')) {
-    if (filter.includes('commits')) {
-      return team.sort((member1, member2) =>
-        member1.lastMonthActive.commits < member2.lastMonthActive.commits ? 1 : -1
-      )
-    }
-    if (filter.includes('activity')) {
-      return team.sort((member1, member2) =>
-        member1.lastMonthActive.add + member1.lastMonthActive.remove <
-        member2.lastMonthActive.add + member1.lastMonthActive.remove
-          ? 1
-          : -1
-      )
-    }
+interface Activity {
+  commits: number
+  add: number
+  remove: number
+}
+
+interface MemberActivity {
+  summary?: Activity
+  lastMonthActive?: Activity
+}
+
+export const sortMembers = <T extends MemberActivity>(team: T[], filter: string): T[] => {
+  const period = filter.includes('month')
+    ? 'lastMonthActive'
+    : filter.includes('summary') ? 'summary' : undefined
+
+  if (!period) return team
+
+  if (filter.includes('commits')) {
+    return team.sort((member1, member2) =>
+      (member2[period]?.commits ?? 0) - (member1[period]?.commits ?? 0)
+    )
   }
-  if (team.commits & team.summary & filter.includes('summary')) {
-    if (filter.includes('commits')) {
-      return team.sort((member1, member2) => (member1.summary.commits < member2.summary.commits ? 1 : -1))
-    }
-    if (filter.includes('activity')) {
-      return team.sort((member1, member2) =>
-        member1.summary.add + member1.summary.remove < member2.summary.add + member1.summary.remove ? 1 : -1
-      )
-    }
+  if (filter.includes('activity')) {
+    const activity = (member: T) => (member[period]?.add ?? 0) + (member[period]?.remove ?? 0)
+    return team.sort((member1, member2) => activity(member2) - activity(member1))
   }
 
   return team

@@ -21,3 +21,8 @@ GitHub.sublime-settings
 .vitepress/data/fullteam.json
 
 .snapshots
+.vitepress/.temp
+
+package-lock.json
+
+docs/.env

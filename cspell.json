@@ -12,14 +12,19 @@
     },
     {
       "name": "frontmatter-block",
-      "pattern": "/^\\s*---[\\s\\S]*?^\\s*---/gm"
+      "pattern": "/^---\\r?\\n[\\s\\S]*?\\r?\\n---(?:\\r?\\n|$)/"
     },
     {
       "name": "html-comment-block",
-      "pattern": "/^\\s*<<!--[\\s\\S]*?^\\s*-->>/gs"
+      "pattern": "<!--[\\s\\S]*?-->|</?[A-Za-z][^>\\n]*>"
     }
   ],
-  "ignoreRegExpList": [["code-block"], ["frontmatter-block"], ["html-comment-block"], ["frontmatter-inter"]],
+  "ignoreRegExpList": [
+    "code-block",
+    "frontmatter-inter",
+    "frontmatter-block",
+    "html-comment-block"
+  ],
   "dictionaryDefinitions": [
     {
       "name": "apps & companies",
@@ -66,5 +71,7 @@
     "terms",
     "simple words"
   ],
-  "import": ["@cspell/dict-ru_ru/cspell-ext.json"]
+  "import": [
+    "@cspell/dict-ru_ru/cspell-ext.json"
+  ]
 }

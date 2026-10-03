@@ -1,10 +1,22 @@
-import { defineConfigWithTheme } from 'vitepress'
+import { defineConfigWithTheme, type DefaultTheme } from 'vitepress'
 import { nav, sidebar } from '../data/navigations'
-import { packages } from '../../package-lock.json'
 
 import * as config from '../config.json'
 
-export const ru = defineConfigWithTheme({
+interface KDEThemeConfig extends DefaultTheme.Config {
+    asideMeta: {
+        keywords: Record<string, { name: string; type: 'danger' | 'tip' | 'warning' | 'info' }>
+        labels: Record<string, string>
+        links: Record<string, {
+            anchor: string
+            target: '_blank' | '_self'
+            baseUrl: string
+            style: string
+        }>
+    }
+}
+
+export const ru = defineConfigWithTheme<KDEThemeConfig>({
     title: 'ALT KDE Wiki',
     description: "открытое сообщество пользователей операционной системы ALT Regular KDE",
     titleTemplate: ':title' + config.head.titleSeponator + 'ALT KDE Wiki',
@@ -36,7 +48,7 @@ export const ru = defineConfigWithTheme({
         outlineTitle: 'Оглавление',
         footer: {
             message: 'Содержание доступно <a href="/licence">по лицензии MIT</a>',
-            copyright: `${new Date().getFullYear()} ALT KDE Wiki, разработано на платформе <a href="//vitepress.dev/">VitePress ${packages['node_modules/vitepress'].version}</a>`
+            copyright: `${new Date().getFullYear()} ALT KDE Wiki, разработано на платформе <a href="//vitepress.dev/">VitePress</a>`
         },
         notFound: {
             title: 'Страница не найдена',

@@ -1,10 +1,17 @@
 import {contributions} from '../../../data/team'
 
+// Team cards and Git Changelog use different social-link schemas.
+export const mapChangelogAuthors = (authors: typeof contributions) =>
+  authors.map(({ links, ...author }) => ({
+    ...author,
+    links: links.map(({ icon, link }) => ({ type: typeof icon === 'string' ? icon : 'custom', link }))
+  }))
+
 export const NolebaseGitChangelogOptions = {
   plugin: {
     maxGitLogCount: 20000,
     repoURL: 'https://github.com/OlegShchavelev/ALTKDEWiki',
-    mapAuthors: contributions
+    mapAuthors: mapChangelogAuthors(contributions)
   },
   pluginSections: {
     sections: {

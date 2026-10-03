@@ -51,7 +51,6 @@ import { enhanceAppWithTabs } from 'vitepress-plugin-tabs/client'
 
 import { NolebaseGitChangelogPlugin } from '@nolebase/vitepress-plugin-git-changelog/client'
 import { NolebaseGitChangelogOptions } from '../config/plugins/index'
-import { data as team } from './loaders/gitlogDataLoader.data'
 
 /*------------------------------------
 |       hywax - Yandex Metrics        |
@@ -101,8 +100,7 @@ export default {
     // Nolebase Components
     ctx.app.use(NolebaseEnhancedReadabilitiesPlugin, NolebaseEnhancedReadabilitiesOptions as Options)
     ctx.app.use(NolebaseGitChangelogPlugin, {
-      locales: NolebaseGitChangelogOptions.locales,
-      mapAuthors: team
+      locales: NolebaseGitChangelogOptions.locales
     })
 
     // Yandex Metrix

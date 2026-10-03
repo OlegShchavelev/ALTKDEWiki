@@ -1,9 +1,10 @@
-import { isValidUrl } from './link'
+type MetadataEntry = Record<string, unknown>
+type LinkId = string | number | { id: string | number }
 
-export const getLists = (data: {}, labels: {}) => {
+export const getLists = (data: Record<string, string | MetadataEntry>, labels: Record<string, string>) => {
   if (!data) return []
 
-  const _data = []
+  const _data: Record<string, MetadataEntry> = {}
 
   Object.entries(data).forEach(([key, value]) => {
     _data[key] =
@@ -15,13 +16,13 @@ export const getLists = (data: {}, labels: {}) => {
   return { ..._data }
 }
 
-export const getLinks = (data: any, config: {}) => {
+export const getLinks = (data: Record<string, LinkId>, config: Record<string, MetadataEntry>) => {
   if (!data) return
 
-  const _data = []
+  const _data: Record<string, MetadataEntry> = {}
 
   Object.entries(data).forEach(([key, value]) => {
-    value && config[key] ? (_data[key] = Object.assign({}, { id: value?.id ?? value }, config[key])) : {}
+    value && config[key] ? (_data[key] = Object.assign({}, { id: typeof value === 'object' ? value.id : value }, config[key])) : {}
   })
 
   return Object.assign({}, _data)
